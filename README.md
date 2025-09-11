@@ -1,0 +1,1 @@
+# [Figma design](https://www.figma.com/design/jDdxERn6QDxX5slmY9klnM/Jadoo?m=auto&t=EUtu0cWIDWVZMrDi-6)
