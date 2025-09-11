@@ -1,0 +1,14 @@
+header{
+    background-color: transparent;
+    height: 105px;
+    position: relative;
+}
+
+.decore{
+    position: absolute;
+    top: 0;
+    right: 0;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+}

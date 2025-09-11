@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Volkhov';
+    src: local('Volkhov Regular'), local('Volkhov-Regular'),
+        url('Volkhov-Regular.woff2') format('woff2'),
+        url('Volkhov-Regular.woff') format('woff'),
+        url('Volkhov-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Volkhov';
+    src: local('Volkhov Bold'), local('Volkhov-Bold'),
+        url('Volkhov-Bold.woff2') format('woff2'),
+        url('Volkhov-Bold.woff') format('woff'),
+        url('Volkhov-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+

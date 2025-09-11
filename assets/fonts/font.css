@@ -1,0 +1,215 @@
+@import url('../css/variable.css');
+@import url('./GS/stylesheet.css');
+@import url('./Volkhov/stylesheet.css');
+@import url('./Poppins/stylesheet.css');
+
+
+/*      -----------         GOOGLE SANS     ----------------      */
+
+.text-gs-20-20b{
+    font-family: 'Google Sans', sans-serif;
+    font-size: 1.25em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-gs-18-18m{
+    font-family: 'Google Sans', sans-serif;
+    font-size: 1.125em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: medium;
+}
+
+.text-gs-16-16b{
+    font-family: 'Google Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-gs-14-14n{
+    font-family: 'Google Sans', sans-serif;
+    font-size: 0.875em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: normal;
+}
+
+.text-gs-12-16n{
+    font-family: 'Google Sans', sans-serif;
+    font-size: 0.75em;
+    line-height: calc(16 / 12);
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: normal;
+}
+
+
+
+/*      -----------         POPPINS     ----------------      */
+
+.text-poppins-44-44m{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.75em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: medium;
+}
+
+.text-poppins-30-30m{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.875em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: medium;
+}
+
+.text-poppins-20-30m{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    line-height: 1.5;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: medium;
+}
+
+.text-poppins-20-20b{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-poppins-18-18b{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: 600;
+}
+
+.text-poppins-18-18m{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: medium;
+}
+
+.text-poppins-18-18n{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: normal;
+}
+
+.text-poppins-16-20m{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    line-height: 1.25;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: medium;
+}
+
+.text-poppins-16-26n{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    line-height: 1.625;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: normal;
+}
+
+.text-poppins-14-20n{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875em;
+    line-height: calc(20 / 14);
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: normal;
+}
+
+
+.text-poppins-8-8b{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.5em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-poppins-8-8l{
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.5em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: light;
+}
+
+
+/*      -----------         VOLKHOV    ----------------      */
+
+.text-volkhov-70-80b{
+    font-family: 'Volkhov', sans-serif;
+    font-size: 4.375em;
+    line-height: calc(80 / 70);
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-volkhov-50-60b{
+    font-family: 'Volkhov', sans-serif;
+    font-size: 3.125em;
+    line-height: 1.2;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-volkhov-36-46b{
+    font-family: 'Volkhov', sans-serif;
+    font-size: 2.25em;
+    line-height: calc(46 / 36);
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: bold;
+}

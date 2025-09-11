@@ -1,0 +1,7 @@
+@import url('../css/variable.css');
+@import url('../css/components.css');
+@import url('../assets/fonts/font.css');
+
+body{
+    background-color: var(--background);
+}
