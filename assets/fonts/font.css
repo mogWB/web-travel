@@ -6,37 +6,48 @@
 
 /*      -----------         GOOGLE SANS     ----------------      */
 
-.text-gs-20-20b{
+.text-gs-44b{
+    font-family: 'Google Sans', sans-serif;
+    font-size: 2.75em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -3px;
+}
+
+.text-gs-20b{
     font-family: 'Google Sans', sans-serif;
     font-size: 1.25em;
     line-height: 1;
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-.text-gs-18-18m{
+.text-gs-18m{
     font-family: 'Google Sans', sans-serif;
     font-size: 1.125em;
     line-height: 1;
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: medium;
+    font-weight: 500;
 }
 
-.text-gs-16-16b{
+.text-gs-16b{
     font-family: 'Google Sans', sans-serif;
     font-size: 1em;
     line-height: 1;
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-.text-gs-14-14n{
+.text-gs-14n{
     font-family: 'Google Sans', sans-serif;
     font-size: 0.875em;
     line-height: 1;
@@ -60,24 +71,24 @@
 
 /*      -----------         POPPINS     ----------------      */
 
-.text-poppins-44-44m{
+.text-poppins-44m{
     font-family: 'Poppins', sans-serif;
     font-size: 2.75em;
     line-height: 1;
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: medium;
+    font-weight: 500;
 }
 
-.text-poppins-30-30m{
+.text-poppins-30m{
     font-family: 'Poppins', sans-serif;
     font-size: 1.875em;
     line-height: 1;
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: medium;
+    font-weight: 500;
 }
 
 .text-poppins-20-30m{
@@ -87,20 +98,20 @@
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: medium;
+    font-weight: 500;
 }
 
-.text-poppins-20-20b{
+.text-poppins-20b{
     font-family: 'Poppins', sans-serif;
     font-size: 1.25em;
     line-height: 1;
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-.text-poppins-18-18b{
+.text-poppins-18b{
     font-family: 'Poppins', sans-serif;
     font-size: 1.125em;
     line-height: 1;
@@ -110,17 +121,17 @@
     font-weight: 600;
 }
 
-.text-poppins-18-18m{
+.text-poppins-18m{
     font-family: 'Poppins', sans-serif;
     font-size: 1.125em;
     line-height: 1;
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: medium;
+    font-weight: 500;
 }
 
-.text-poppins-18-18n{
+.text-poppins-18n{
     font-family: 'Poppins', sans-serif;
     font-size: 1.125em;
     line-height: 1;
@@ -137,7 +148,7 @@
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: medium;
+    font-weight: 500;
 }
 
 .text-poppins-16-26n{
@@ -161,17 +172,17 @@
 }
 
 
-.text-poppins-8-8b{
+.text-poppins-8b{
     font-family: 'Poppins', sans-serif;
     font-size: 0.5em;
     line-height: 1;
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-.text-poppins-8-8l{
+.text-poppins-8l{
     font-family: 'Poppins', sans-serif;
     font-size: 0.5em;
     line-height: 1;
@@ -191,7 +202,7 @@
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .text-volkhov-50-60b{
@@ -201,7 +212,7 @@
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .text-volkhov-36-46b{
@@ -211,5 +222,5 @@
     text-decoration: none;
     color: var(--text, #212832); 
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 }

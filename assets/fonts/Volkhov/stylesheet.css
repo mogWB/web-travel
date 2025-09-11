@@ -15,7 +15,7 @@
         url('Volkhov-Bold.woff2') format('woff2'),
         url('Volkhov-Bold.woff') format('woff'),
         url('Volkhov-Bold.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
 }
 

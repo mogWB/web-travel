@@ -2,7 +2,42 @@ header{
     background-color: transparent;
     height: 105px;
     position: relative;
+    padding: 0 140px;
+    padding-top: 45px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.logo{
+    margin-top: 5px;
+}
+
+nav{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+nav >a:nth-of-type(5){
+    margin-left: 50px;
+}
+
+.sign-up{
+    width: 102px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--black);
+    border-radius: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.sign-up:hover{
+    background-color: red;
+}
+
 
 .decore{
     position: absolute;
