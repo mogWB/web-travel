@@ -15,3 +15,26 @@ body{
 a{
     text-decoration: none;
 }
+
+.decore{
+    position: absolute;
+    top: 0;
+    right: 0;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@media(max-width: 768px){
+    .decore{
+        width: 463px;
+        height: 489px;
+    }
+}
+
+@media(max-width: 536px){
+    .decore{
+        width: 238px;
+        height: 251px;
+    }
+}
