@@ -1,0 +1,22 @@
+.section-header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.section-header >p{
+    text-align: center;
+}
+
+.section-header >p:nth-of-type(1){
+    text-transform: uppercase;
+    color: var(--text70);
+}
+
+@media(max-width: 600px){
+    .section-header >p:nth-of-type(2){
+        font-size: 2.25em;
+        line-height: calc(46 / 36);
+    }
+}
