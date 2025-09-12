@@ -4,7 +4,11 @@
     --background: #ffffff;
     --text: #212832;
     --text70: rgba(33, 40, 50, 0.7);
+    --text-dif: #ffffff;
     --black: #212832;
     --white: #ffffff;
     --dark: #000000;
+
+    --orange: #FF946D;
+    --yellow: #F1A501;
 }

@@ -20,12 +20,20 @@ p{
     width: fit-content;
 }
 
+img{
+    user-select: none;
+    pointer-events: none;
+}
+
+button{
+    all: unset;
+    cursor: pointer;
+}
+
 .decore{
     position: absolute;
     top: 0;
     right: 0;
-    user-select: none;
-    pointer-events: none;
     z-index: -1;
 }
 

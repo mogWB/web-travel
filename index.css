@@ -1,0 +1,136 @@
+.hello{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 140px 0 140px;
+}
+
+.text-contant{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 500px;
+    margin-top: 100px;
+}
+
+.text-contant >p:nth-of-type(1){
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+.text-contant >p:nth-of-type(3){
+    color: var(--text70);
+    max-width: 470px;
+}
+
+.hello-link{
+    display: flex;
+    gap: 30px 70px;
+    flex-wrap: wrap;
+}
+
+
+.hello-link >button{
+    width: 170px;
+    height: 60px;
+    background-color: var(--yellow);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.hello-link >button >p{
+    color: var(--text-dif)    
+}
+
+
+.hello-link >div{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.hello-link >div >button{
+    height: 52px;
+    width: 52px;
+    border-radius: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--orange);
+}
+
+.hello-link >div >button >img{
+    height: 15px;
+    width: 15px;
+    margin-left: 3px;
+}
+
+.hello-img-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    max-width: 700px;
+}
+
+.hello-img-container >img{
+    max-width: 100%; 
+    height: auto; 
+    object-fit: contain;
+}
+
+
+@media(max-width: 1300px){
+    .hello{
+        padding: 70px 50px;
+        justify-content: center;
+    }
+
+    .text-contant{
+        margin: 0;
+        align-items: center;
+        max-width: 620px;
+    }
+
+    .text-contant >p{
+        text-align: center;
+    }
+
+    .text-contant >p:nth-of-type(3){
+        color: var(--text70);
+        max-width: 620px;
+    }
+
+    .hello-img-container{
+        display: none;
+    }
+}
+
+@media(max-width: 678px){
+    .hello{
+        padding: 50px 15px;
+    }
+
+    .text-contant >p:nth-of-type(3){
+        color: var(--text70);
+        max-width: 405px;   
+    }
+}
+
+@media(max-width: 600px){
+    .text-contant >p:nth-of-type(2){
+        font-size: 2.25em;
+        line-height: calc(46 / 36);
+    }
+}
+
+@media(max-width: 560px){
+    .hello-link{
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+
