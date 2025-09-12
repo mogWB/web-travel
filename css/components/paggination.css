@@ -1,0 +1,22 @@
+.paggination{
+    width: fit-content;
+    display: flex;
+    gap: 15px;
+}
+
+.paggination-item{
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--black);
+    background-color: transparent;
+    transition: all 0.5s;
+}
+
+.paggination-item.active{
+    background-color: var(--black);
+}
+
+.paggination-item:hover{
+    background-color: var(--orange);
+}
