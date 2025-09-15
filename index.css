@@ -212,7 +212,12 @@
     }
 
 }
+
+
+
 /*      ----------- selling -------------      */
+
+
 
 .selling{
     padding: 70px 140px;
@@ -321,3 +326,120 @@
         display: none;
     }
 }
+
+
+
+/*      ----------- book -------------      */
+
+
+.book{
+    padding: 70px 140px;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.header-box{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: left;
+}
+
+.book-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-card{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: left;
+    width: fit-content;
+}
+
+.book-card-item{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.book-card-item-image{
+    min-height: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--yellow);
+}
+
+.book-card-item-image >img{
+    max-height: 22px;
+    max-width: 22px;
+}
+
+.book-card-item:nth-of-type(2) >.book-card-item-image{
+    background-color: var(--orange);
+}
+
+.book-card-item:nth-of-type(3) >.book-card-item-image{
+    background-color: var(--blue);
+}
+
+.book-card-item-text{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: left;
+    max-width: 250px;
+    width: 100%;
+}
+
+.book-card-item-text >p:nth-of-type(2){
+    color: var(--text70);
+}
+
+@media(max-width: 1327px){
+    .book .line-break{
+        display: none;
+    }
+}
+
+@media(max-width: 1212px){
+    .book{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-box{
+        align-items: center;
+    }
+}
+
+@media(max-width: 850px){
+    .book{
+        padding: 70px 50px;
+    }
+}
+
+@media(max-width: 678px){
+    .book{
+        padding: 50px 15px;
+    }
+
+    .book-img >img{
+        max-width: 517px;
+        max-height: 400px;
+        width: 90%;
+        height: auto;
+        min-height: 225px;
+        min-width: 290px;
+        object-fit: cover;
+    }
+}
+
