@@ -443,3 +443,40 @@
     }
 }
 
+
+/*      ----------- spon -------------      */
+
+
+
+.spon{
+    padding: 70px 140px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spon >img{
+    height: auto;
+    max-height: fit-content;
+    width: 160px;
+}
+
+@media(max-width: 1200px){
+    .spon{
+        justify-content: center;
+    }
+}
+
+@media(max-width: 850px){
+    .spon{
+        padding: 70px 50px;
+    }
+}
+
+@media(max-width: 678px){
+    .spon{
+        padding: 50px 15px;
+    }
+}
