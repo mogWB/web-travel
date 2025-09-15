@@ -114,6 +114,10 @@ footer{
     padding: 50px 0;
 }
 
+.down >p{
+    color: var(--text70);
+}
+
 
 @media(max-width: 1209px){
     footer{
