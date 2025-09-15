@@ -1,7 +1,7 @@
 export function createSlider(boxWithSlide, boxCard, classCard, dataChild) {
     const dataSlide = {
         button: [],
-        data: [...dataChild], // Копируем массив, чтобы избежать изменений в оригинале
+        data: [...dataChild], 
         boxWithSlide: boxWithSlide,
         boxCard: boxCard,
         classCard: classCard

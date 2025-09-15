@@ -1,6 +1,6 @@
 .paggination{
     width: fit-content;
-    display: flex;
+    display: none;
     gap: 15px;
 }
 

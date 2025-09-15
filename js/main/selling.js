@@ -4,6 +4,7 @@ import {createPaggination} from '../basic/paggination.js'
 const tripDayLink = './assets/icons/tripDay.svg';
 
 const dataChild = [];
+let flag = null;
 
 const selling = document.querySelector('.selling');
 const sellingBox = selling.querySelector('.selling-content');
@@ -82,5 +83,23 @@ function createDataChild(){
 
 createDataChild();
 
-createPaggination(dataChild, selling, sellingBox, '.selling-card');
-createSlider(selling, sellingBox, '.selling-card', dataChild);
+function checkScreenWidth() {
+    const screenWidth = window.innerWidth; 
+    
+    flag == null && flag == screenWidth > 589 ? false : true;
+
+    if (screenWidth > 589) {
+        if(!flag){
+            createSlider(selling, sellingBox, '.selling-card', dataChild);
+            flag = true;
+        }
+    } else {
+        if(flag){
+            createPaggination(dataChild, selling, sellingBox, '.selling-card');
+            flag = false;
+        }
+    }
+}
+
+checkScreenWidth();
+window.addEventListener('resize', checkScreenWidth);

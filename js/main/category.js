@@ -60,37 +60,31 @@ function createDataChild(){
 function fillBoxWithout(){
     categoryBox.innerHTML = '';
 
-    const pagginationBox = category.querySelector('.paggination');
-    if(pagginationBox){
-        pagginationBox.remove();
-    }
-
     for(let i = 0; i < dataChild.length; i++){
         categoryBox.appendChild(dataChild[i]);
     }
 }
 
-// function checkScreenWidth() {
-//     const screenWidth = window.innerWidth; 
+function checkScreenWidth() {
+    const screenWidth = window.innerWidth; 
     
-//     flag == null && flag == screenWidth > 600 ? false : true;
+    flag == null && flag == screenWidth > 589 ? false : true;
 
-//     if (screenWidth > 600) {
-//         if(!flag){
-//             fillBoxWithout();
-//             flag = true;
-//         }
-//     } else {
-//         if(flag){
-//             createPagginationBox(category, categoryBox, dataChild);
-//             flag = false;
-//         }
-//     }
-// }
+    if (screenWidth > 589) {
+        if(!flag){
+            fillBoxWithout();
+            flag = true;
+        }
+    } else {
+        if(flag){
+            console.log('tyta')
+            createPaggination(dataChild, category, categoryBox, '.category-box-item');
+            flag = false;
+        }
+    }
+}
 
 createDataChild();
-// checkScreenWidth();
+checkScreenWidth();
 
-// window.addEventListener('resize', checkScreenWidth);
-
-createPaggination(dataChild, category, categoryBox, '.category-box-item');
+window.addEventListener('resize', checkScreenWidth);

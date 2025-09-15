@@ -202,8 +202,16 @@
     }
 }
 
+@media(max-width: 589px){
+    .category-box-item:nth-of-type(n+2){
+        display: none;
+    }
 
+    .category >.paggination{
+        display: flex;
+    }
 
+}
 /*      ----------- selling -------------      */
 
 .selling{
@@ -280,8 +288,36 @@
     }
 }
 
-@media(max-width: 1100px){
+@media(max-width: 1040px){
     .selling-card:nth-of-type(4){
+        display: none;
+    }
+}
+
+
+@media(max-width: 850px){
+    .selling{
+        padding: 70px 50px;
+    }
+}
+
+@media(max-width: 678px){
+    .selling{
+        padding: 50px 15px;
+    }
+}
+
+
+@media(max-width: 494px){
+    .selling-content{
+        justify-content: center;
+    }
+
+    .selling >.paggination{
+        display: flex;
+    }
+    
+    .selling-content >.slide{
         display: none;
     }
 }
