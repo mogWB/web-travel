@@ -1,4 +1,10 @@
-import {createPagginationBox} from './paggination.js'
+import {createPaggination} from '../basic/paggination.js'
+
+const dataChild = [];
+let flag = null;
+
+const category = document.querySelector('.category');
+const categoryBox = document.querySelector('.category-box');
 
 const data = [
     {
@@ -23,36 +29,33 @@ const data = [
     },
 ]
 
-const dataChild = [];
+function createCard(data){
+    const item = document.createElement('div');
+    item.className = 'category-box-item shadow-5';
 
-function createDataChild(data){
-    for(let i = 0; i < data.length; i++){
-        const item = document.createElement('div');
-        item.className = 'category-box-item shadow-5';
+    const img = document.createElement('img');
+    img.src = data.img;
 
-        const img = document.createElement('img');
-        img.src = data[i].img;
+    const header = document.createElement('p');
+    header.classList.add('text-gs-20b');
+    header.textContent = data.header;
 
-        const header = document.createElement('p');
-        header.classList.add('text-gs-20b');
-        header.textContent = data[i].header;
+    const desc = document.createElement('p');
+    desc.classList.add('text-poppins-16-26n');
+    desc.textContent = data.desc;
+    
+    item.appendChild(img);
+    item.appendChild(header);
+    item.appendChild(desc);
 
-        const desc = document.createElement('p');
-        desc.classList.add('text-poppins-16-26n');
-        desc.textContent = data[i].desc;
-        
-        item.appendChild(img);
-        item.appendChild(header);
-        item.appendChild(desc);
-
-        dataChild.push(item);
-    }
+    return item;
 }
 
-const category = document.querySelector('.category');
-const categoryBox = document.querySelector('.category-box');
-
-let flag = null;
+function createDataChild(){
+    for(let i = 0; i < data.length; i++){
+        dataChild.push(createCard(data[i]));
+    }
+}
 
 function fillBoxWithout(){
     categoryBox.innerHTML = '';
@@ -67,26 +70,27 @@ function fillBoxWithout(){
     }
 }
 
-
-function checkScreenWidth() {
-    const screenWidth = window.innerWidth; 
+// function checkScreenWidth() {
+//     const screenWidth = window.innerWidth; 
     
-    flag == null && flag == screenWidth > 600 ? false : true;
+//     flag == null && flag == screenWidth > 600 ? false : true;
 
-    if (screenWidth > 600) {
-        if(!flag){
-            fillBoxWithout();
-            flag = true;
-        }
-    } else {
-        if(flag){
-            createPagginationBox(category, categoryBox, dataChild);
-            flag = false;
-        }
-    }
-}
+//     if (screenWidth > 600) {
+//         if(!flag){
+//             fillBoxWithout();
+//             flag = true;
+//         }
+//     } else {
+//         if(flag){
+//             createPagginationBox(category, categoryBox, dataChild);
+//             flag = false;
+//         }
+//     }
+// }
 
-createDataChild(data);
-checkScreenWidth();
+createDataChild();
+// checkScreenWidth();
 
-window.addEventListener('resize', checkScreenWidth);
+// window.addEventListener('resize', checkScreenWidth);
+
+createPaggination(dataChild, category, categoryBox, '.category-box-item');

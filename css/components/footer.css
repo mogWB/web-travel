@@ -35,6 +35,10 @@ footer{
     gap: 15px;
 }
 
+.navigate-item >a{
+    color: var(--text70)
+}
+
 .navigate-item >p:nth-of-type(1){
     margin-bottom: 15px;
 }
