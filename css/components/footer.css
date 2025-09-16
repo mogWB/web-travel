@@ -49,6 +49,10 @@ footer{
     gap: 15px;
 }
 
+.share >p{
+    color: var(--text70);
+}
+
 .share-box{
     margin-bottom: 15px;
     display: flex;

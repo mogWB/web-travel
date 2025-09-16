@@ -25,10 +25,11 @@ img{
     pointer-events: none;
 }
 
-button{
+button, input{
     all: unset;
     cursor: pointer;
 }
+
 
 .decore{
     position: absolute;

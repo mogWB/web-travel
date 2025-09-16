@@ -1,0 +1,13 @@
+.button-big{
+    min-width: 170px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-big >span{
+    color: #ffffff;
+}

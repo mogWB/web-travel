@@ -4,7 +4,7 @@
 .hello{
     display: flex;
     justify-content: space-between;
-    padding: 15px 140px 0 140px;
+    padding: 15px 50px 0 140px;
 }
 
 .text-contant{
@@ -12,7 +12,7 @@
     flex-direction: column;
     gap: 30px;
     max-width: 500px;
-    margin-top: 100px;
+    margin-top: 85px;
 }
 
 .text-contant >p:nth-of-type(1){
@@ -29,6 +29,7 @@
     display: flex;
     gap: 30px 70px;
     flex-wrap: wrap;
+    margin-top: 5px;
 }
 
 
@@ -74,22 +75,23 @@
 }
 
 .hello-img-container{
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 300px;
     max-width: 700px;
+    width: 100%;
+
 }
 
 .hello-img-container >img{
-    max-width: 100%; 
+    width: 100%; 
     height: auto; 
     object-fit: contain;
 }
 
 
-@media(max-width: 1300px){
+@media(max-width: 1380px){
     .hello{
         padding: 70px 50px;
         justify-content: center;
@@ -297,6 +299,10 @@
     .selling-card:nth-of-type(4){
         display: none;
     }
+
+    .selling-card{
+        min-width: 290px;
+    }
 }
 
 
@@ -351,6 +357,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 17px;
 }
 
 .book-card{
@@ -419,6 +426,10 @@
     .header-box{
         align-items: center;
     }
+
+    .book-img{
+        margin-top: 0px;
+    }
 }
 
 @media(max-width: 850px){
@@ -478,5 +489,67 @@
 @media(max-width: 678px){
     .spon{
         padding: 50px 15px;
+    }
+}
+
+
+
+
+/*      ----------- quest -------------      */
+
+.quest{
+    padding: 70px 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quest-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 80px 100px;
+    background-color: #F2EFFD;
+    border-radius: 170px 0 0 0;
+}
+
+.quest-container >p{
+    color: var(--text70);
+    text-align: center;
+}
+
+.quest-container-box{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+@media(max-width: 1000px){
+    .quest-container{
+        padding: 80px 70px;
+    }
+
+    .quest-container >p{
+        font-size: 1.25em;
+        line-height: 1.5;
+    }
+}
+
+@media(max-width: 850px){
+    .quest{
+        padding: 70px 50px;
+    }
+}
+
+@media(max-width: 678px){
+    .quest{
+        padding: 50px 15px;
+    }
+
+    .quest-container{
+        padding: 80px 30px 50px 30px;
     }
 }
