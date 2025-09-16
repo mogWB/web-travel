@@ -16,14 +16,12 @@ export function createPaggination(dataChild, box, boxCard, classCard) {
         if (dataPaggination.data[number]) {
             dataPaggination.boxCard.appendChild(dataPaggination.data[number]);
         }
-
-        console.log('tyta')
     }
 
-    function createBox() {
+    function createBox() {  
         const pagginationBox = dataPaggination.box.querySelector('.paggination');
-        
-        if (!pagginationBox.querySelector('.paggination-item')) {
+
+        if (!pagginationBox.querySelector('.paggination-item')) {      
             for (let i = 0; i < dataPaggination.data.length; i++) {
                 const item = document.createElement('div');
                 item.classList.add('paggination-item');
@@ -41,11 +39,11 @@ export function createPaggination(dataChild, box, boxCard, classCard) {
 
                 pagginationBox.appendChild(item);
 
-                if (i === 0) {
+                if (i == 0) {
                     item.classList.add('active');
                     active = item;
                     number = i;
-
+            
                     fillPagginationContainer();
                 }
             }
