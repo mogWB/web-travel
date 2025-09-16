@@ -46,10 +46,14 @@ function createCard(data, reverse){
     down.textContent = data.down;
 
     if(reverse){
+        img.classList.add('event-card-margin');
+
         div.appendChild(img);
         div.appendChild(up);
         div.appendChild(down);
     }else{
+        down.classList.add('event-card-margin');
+
         div.appendChild(up);
         div.appendChild(down);
         div.appendChild(img);
