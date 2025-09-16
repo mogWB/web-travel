@@ -1,0 +1,90 @@
+.continent{
+    padding: 70px 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+}
+
+.continent-box{
+    position: relative;
+    width: 100%;
+    height: fit-content;  
+    max-width: 1000px;
+    z-index: 10;
+}
+
+.continent-box >img{
+    position: absolute;
+    object-fit: cover;
+    cursor: pointer;
+    z-index: 20;
+    user-select: none;
+    pointer-events: auto;
+}
+
+.continent-box >img:nth-of-type(1){
+    opacity: 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 161px;  
+    max-height: 557px;
+    pointer-events: none;
+}
+
+.continent-box >img:nth-of-type(2){
+    top: 0;
+    left: 0;
+    max-width: 45%;
+    max-height: 51%;
+}
+
+.continent-box >img:nth-of-type(3){
+    bottom: 0;
+    left: 20.6%;
+    max-width: 16.2%;
+    max-height: 50%;
+}
+
+.continent-box >img:nth-of-type(4){
+    top: 31.1%;
+    left: 43%;
+    max-width: 23.3%;
+    max-height: 51%;
+    z-index: 40;
+}
+
+.continent-box >img:nth-of-type(5){
+    top: 4.13%;
+    right: 0.06%;
+    max-width: 54.5%;
+    max-height: 60.5%;
+}
+
+.continent-box >img:nth-of-type(6){
+    bottom: 12.2%;
+    right: 0;
+    max-width: 14.9%;
+    max-height: 21.8%;
+}
+
+.continent-box >img:hover{
+    filter: invert(76%) sepia(29%) saturate(1173%) hue-rotate(322deg) brightness(101%) contrast(101%);
+}
+
+.continent-box >img.active{
+    filter: invert(76%) sepia(29%) saturate(1173%) hue-rotate(322deg) brightness(101%) contrast(101%);
+}
+
+@media(max-width: 850px){
+    .continent{
+        padding: 70px 50px;
+    }
+}
+
+@media(max-width: 678px){
+    .continent{
+        padding: 50px 15px;
+    }
+}
