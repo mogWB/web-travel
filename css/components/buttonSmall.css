@@ -1,0 +1,14 @@
+.button-small{
+    max-width: 150px;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-small >span{
+    color: #ffffff;
+}
