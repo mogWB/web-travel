@@ -9,9 +9,10 @@
     align-items: center;
     gap: 10px;
     padding: 18px 30px;
+    border: 1px solid var(--black70);
 }
 
-.input >input{
+.input >input {
     flex-grow: 1;
     font-family: 'Google Sans', sans-serif;
     font-size: 0.875em;

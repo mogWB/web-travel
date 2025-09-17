@@ -1,5 +1,6 @@
 import {createSlider} from '../basic/slider.js'
 import {createPaggination} from '../basic/paggination.js'
+import { createSelect } from '../basic/select.js';
 
 const tripDayLink = '../../assets/icons/tripDay.svg';
 
@@ -103,3 +104,6 @@ function checkScreenWidth() {
 
 checkScreenWidth();
 window.addEventListener('resize', checkScreenWidth);
+
+createSelect([1,2,3,4], selling.querySelector('.sell-setting >div:nth-of-type(1)'));
+createSelect([1,2,3,4], selling.querySelector('.sell-setting >div:nth-of-type(2)'));

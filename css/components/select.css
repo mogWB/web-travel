@@ -1,0 +1,72 @@
+.select{
+    max-width: 290px;
+    width: 100%;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--black70);
+    border-radius: 15px;
+    background-color: var(--white);  
+    cursor: pointer;
+    position: relative;
+}
+
+.select >p{
+    color: var(--text70)
+}
+
+.select >img{
+    transform: rotate(-90deg);
+    margin-left: 15px;
+    max-width: 7px;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+
+.select >img.active{
+    transform: rotate(-270deg);
+}
+
+.select-option{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    outline: 1px solid var(--black70);
+    border: 19px solid white; 
+    background-color: var(--white);
+    display: none;
+    width: 100%; 
+    height: fit-content;
+    max-height: 190px;
+    overflow: auto;
+    border-radius: 15px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.select-option::-webkit-scrollbar {
+    width: 4px; /* Ширина скроллбара */
+}
+
+.select-option::-webkit-scrollbar-track {
+    background: transparent; /* Цвет фона трека */
+    border-radius: 10px; /* Закругление углов трека */
+}
+
+.select-option::-webkit-scrollbar-thumb {
+    background: var(--black70); /* Цвет ползунка */
+    border-radius: 10px; /* Закругление углов ползунка */
+}
+
+.select-option::-webkit-scrollbar-thumb:hover {
+    background: var(--black); /* Цвет ползунка при наведении */
+}
+
+.select-option.active{
+    display: flex;
+}

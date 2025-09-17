@@ -105,10 +105,11 @@
 }
 
 .sell-setting{
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
 }
-
-
 
 .sell .section-header{
     align-items: start;
@@ -119,8 +120,14 @@
     text-align: left;
 }
 
-
-
+.test{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 100px;
+    top: 120px;
+}
 
 .sell-box{
     display: flex;
@@ -204,6 +211,13 @@
 @media(max-width: 850px){
     .sell{
         padding: 70px 50px;
+    }
+}
+
+@media(max-width: 730px){
+    .sell-setting{
+        align-items: center;
+        justify-content: center;
     }
 }
 
