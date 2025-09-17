@@ -42,70 +42,83 @@
         <section class="registration">
             <p class="text-volkhov-50-60b">Sign up</p>
             <div class="registration-container">
-                <div class="text-container">
+                <div class="text-container" id="name">
                     <p>name</p>
                     <label class="input">
                         <input type="text" placeholder="Name">
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error">name must contain 2 to 20 characters</p>
                 </div>
-                <div class="text-container">
-                    <p>Surame</p>
+                <div class="text-container" id="surname">
+                    <p>Surname</p>
                     <label class="input">
-                        <input type="text" placeholder="Surame">
+                        <input type="text" placeholder="Surname">
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error">surname must contain 2 to 20 characters</p>
                 </div>
-                <div class="text-container">
+                <div class="text-container" id="patronymic">
                     <p>Patronymic</p>
                     <label class="input">
                         <input type="text" placeholder="Patronymic">
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error">no more than 20 characters <br> (*optional field)</p>
                 </div>
-                <div class="text-container">
+                <div class="text-container" id="telephone">
                     <p>Telephone</p>
                     <label class="input">
                         <input type="text" placeholder="Telephone">
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error">number corresponds to +375 (xx) xxx-xx-xx</p>
                 </div>
-                <div class="text-container">
+                <div class="text-container" id="email">
                     <p>Email</p>
                     <label class="input">
                         <input type="text" placeholder="Email">
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error">email must contain 2 to 30 characters and match ...@gmail.com</p>
                 </div>
-                <div class="text-container">
+                <div class="text-container" id="birthday">
                     <p>Birthday</p>
                     <label class="input">
                         <input type="text" placeholder="Birthday">
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error">There is no such date.<br>Only for users over the age of 16</p>
                 </div>
-                <div class="text-container">
+                <div class="text-container" id="login">
                     <p>Login</p>
                     <label class="input">
                         <input type="text" placeholder="Login">
+                        <p class="text-poppins-14-20n" id="loginGenerate">generate</p>
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error">This username is busy</p>
+                    <p class="input-error-generate">Please try again later. Enter your username</p>
                 </div>
-                <div class="text-container">
+                <div class="text-container" id="password">
                     <p>Password</p>
                     <label class="input">
                         <input type="text" placeholder="Password">
+                        <div id="showHide">
+                            <img src="../../assets/icons/hide.svg"  alt="">
+                        </div>
+                        <p class="text-poppins-14-20n generate" id="passwordGenerate">generate</p>
                     </label>
                     <p class="input-error">there is no such login</p>
+                    <p class="input-error-generate">Please try again later. Enter your password</p>
+                    <p class="input-error-one" data-i18n="error.1">The password must include at least one lowercase letter</p>
+                    <p class="input-error-two" data-i18n="error.2">The password must include at least one capital letter</p>
+                    <p class="input-error-three" data-i18n="error.3">The password must include at least one circe</p>
+                    <p class="input-error-four" data-i18n="error.4">The password must include at least one special character</p>
+                    <p class="input-error-five" data-i18n="error.5">The password must contain 8-20 characters</p>
+                    <p class="input-error-six" data-i18n="error.6">The password should not be among the top 100 passwords of 2023</p>
                 </div>
-                <div class="text-container">
+                <div class="text-container" id="repeat">
                     <p>Repeat</p>
                     <label class="input">
                         <input type="text" placeholder="Repeat the password">
                     </label>
                     <p class="input-error">there is no such login</p>
                 </div>
-                <button class="button-small">
+                <button class="button-small" id="registration">
                     <span class="text-gs-14m">Sign up</span>
                 </button>
             </div>
@@ -170,5 +183,6 @@
             <p class="text-gs-16b">All rights reserved@jadoo.com</p>
         </div>
     </footer>
+    <script type="module" src="../../js/registration/registration.js"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@
 
 .input >input {
     flex-grow: 1;
+    width: 100%;
     font-family: 'Google Sans', sans-serif;
     font-size: 0.875em;
     line-height: 1;
@@ -30,17 +31,23 @@
     width: 100%;
 }
 
-.input >img{
+.input >div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
     width: 21px;
     height: 18px;
 }
 
-.input-error{
+.input-error, .input-error-generate,
+.input-error-one, .input-error-two, .input-error-three, .input-error-four, .input-error-five, .input-error-six{
     position: absolute;
     z-index: -10;
     top: 30px;
     transition: all 0.5s;
 
+    font-family: 'Poppins', sans-serif;
     font-size: 0.875em !important;
     line-height: calc(20 / 14) !important;
     font-weight: 400 !important;
@@ -51,10 +58,22 @@
     margin-bottom: 30px;
 }
 
-.text-container.error >.input, .text-container.error >.input >input{
+.text-container.generate, .text-container.one, .text-container.two, .text-container.three,
+.text-container.four, .text-container.five, .text-container.six{
+    margin-bottom: 50px;
+}
+
+.text-container.error >.input, .text-container.error >.input >input,
+.text-container.err >.input, .text-container.err >.input >input{
     background-color: var(--red20);
 }
 
-.text-container.error >.input-error{
+.text-container.error >.input-error, .text-container.generate >.input-error-generate,
+.text-container.one >.input-error-one, .text-container.two >.input-error-two, .text-container.three >.input-error-three, 
+.text-container.four >.input-error-four, .text-container.five >.input-error-five, .text-container.six >.input-error-six{
     top: 90px;
+}
+
+.generate{
+    color: var(--text70);
 }
