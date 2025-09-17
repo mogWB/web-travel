@@ -73,3 +73,97 @@
         padding: 50px 15px;
     }
 }
+
+
+
+.map{
+    padding: 70px 140px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.map-header{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.map-header >.section-header{
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.map-header >.section-header >p{
+    text-align: left;
+}
+
+.map-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.map-contact >p:nth-of-type(2){
+    color: var(--text70);
+}
+
+.map-container {
+    width: 100%; /* Ширина контейнера */
+    max-width: 600px; /* Максимальная ширина */
+    height: 328px; /* Высота контейнера */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    position: relative; /* Для абсолютного позиционирования ссылок */
+    border-radius: 25px;
+}
+
+.map-container iframe {
+    width: 100%; /* Ширина iframe */
+    max-height: 328px; /* Высота iframe */
+    border-radius: 25px;
+}
+
+@media(max-width: 1284px){
+    .map{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .map-header{
+        align-items: center;
+        width: 100%;
+    }
+
+    .map-header >.section-header{
+        align-items: center
+    }
+
+    .map-header >.section-header >p{
+        text-align: center;
+    }
+
+    .map-contact{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .map-container {
+        
+    }
+
+    .map-container iframe {
+        
+    }
+}
+
+@media(max-width: 850px){
+    .map{
+        padding: 70px 50px;
+    }
+}
+
+@media(max-width: 678px){
+    .map{
+        padding: 50px 15px;
+    }
+}
