@@ -21,19 +21,40 @@
     color: var(--text70, #212832); 
     margin: 0;
     font-weight: normal;
+    background-color: var(--white);
 }
 
-/* .input >input::placeholder{
-    font-family: 'Google Sans', sans-serif;
-    font-size: 0.875em;
-    line-height: 1;
-    text-decoration: none;
-    color: var(--text70, #212832); 
-    margin: 0;
-    font-weight: normal;
-} */
+.registration-container >.text-container, .login-container >.text-container{
+    position: relative;
+    transition: all 0.5s;
+    width: 100%;
+}
 
 .input >img{
     width: 21px;
     height: 18px;
+}
+
+.input-error{
+    position: absolute;
+    z-index: -10;
+    top: 30px;
+    transition: all 0.5s;
+
+    font-size: 0.875em !important;
+    line-height: calc(20 / 14) !important;
+    font-weight: 400 !important;
+    color: var(--red) !important;
+}
+
+.text-container.error{
+    margin-bottom: 30px;
+}
+
+.text-container.error >.input, .text-container.error >.input >input{
+    background-color: var(--red20);
+}
+
+.text-container.error >.input-error{
+    top: 90px;
 }
