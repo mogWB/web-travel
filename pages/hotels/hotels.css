@@ -281,6 +281,11 @@
     flex-wrap: wrap;
 }
 
+.variant-box >button{
+    max-width: 150px !important;
+    min-width: 150px;
+}
+
 @media(max-width: 1400px){
     .variant-box{
         flex-direction: column;

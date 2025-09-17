@@ -3,17 +3,31 @@ let currentOpenSelect = null;
 
 export function createSelect(option, box) {
     const selectIcon = box.querySelector('img');
+    const selectText = box.querySelector('p');
     const selectOption = box.querySelector('.select-option');
 
+    for(let i = 0; i < option.length; i++){
+        const p = document.createElement('p');
+        p.textContent = option[i];
+        p.classList.add('text-gs-14-26m');
+
+        p.addEventListener('click', function(){
+            selectText.textContent = option[i];
+
+            resolve(option[i]); // Возвращаем выбранное значение
+            closeSelect(box);
+        })
+
+        selectOption.appendChild(p);
+    }
+
     box.addEventListener('click', function(e) {
-        e.stopPropagation(); // Предотвращаем всплытие события
+        e.stopPropagation();
         
-        // Закрываем предыдущий открытый селект
         if (currentOpenSelect && currentOpenSelect !== box) {
             closeSelect(currentOpenSelect);
         }
         
-        // Открываем/закрываем текущий селект
         const isOpening = !selectOption.classList.contains('active');
         
         if (isOpening) {
@@ -25,13 +39,11 @@ export function createSelect(option, box) {
         }
     });
     
-    // Предотвращаем закрытие при прокрутке внутри select-option
     selectOption.addEventListener('scroll', function(e) {
-        e.stopPropagation(); // Останавливаем всплытие события прокрутки
+        e.stopPropagation(); 
     });
 }
 
-// Функция закрытия селекта
 function closeSelect(selectElement) {
     const selectIcon = selectElement.querySelector('img');
     const selectOption = selectElement.querySelector('.select-option');
@@ -44,14 +56,12 @@ function closeSelect(selectElement) {
     }
 }
 
-// Закрытие всех селектов при клике вне области
 document.addEventListener('click', function(e) {
     if (currentOpenSelect && !currentOpenSelect.contains(e.target)) {
         closeSelect(currentOpenSelect);
     }
 });
 
-// Закрытие всех селектов при прокрутке (улучшенная версия)
 document.addEventListener('scroll', function(e) {
     if (currentOpenSelect) {
         // Проверяем, является ли цель прокрутки или ее родители нашим select-option
@@ -72,7 +82,7 @@ document.addEventListener('scroll', function(e) {
         }
     }
 }, true);
-// Дополнительно: закрытие при изменении размера окна
+
 window.addEventListener('resize', function() {
     if (currentOpenSelect) {
         closeSelect(currentOpenSelect);

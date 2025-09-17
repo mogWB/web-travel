@@ -63,10 +63,6 @@
     border-radius: 10px; /* Закругление углов ползунка */
 }
 
-.select-option::-webkit-scrollbar-thumb:hover {
-    background: var(--black); /* Цвет ползунка при наведении */
-}
-
 .select-option.active{
     display: flex;
 }

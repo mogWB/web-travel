@@ -1,0 +1,126 @@
+.order{
+    padding: 70px 140px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.order:nth-of-type(2){
+    padding: 50px 140px;
+}
+
+.order-header{
+    display: flex;
+    padding-top: 5px;
+    gap: 10px;
+}
+
+.order-header >p:nth-of-type(2){
+    color: var(--orange);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.order-header >p:nth-of-type(2):hover{
+    color: var(--blue)
+}
+
+.order-setting{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.order-box{
+    max-height: 276px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 14px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}  
+
+.order-box::-webkit-scrollbar {
+    width: 4px; /* Ширина скроллбара */
+}
+
+.order-box::-webkit-scrollbar-track {
+    background: transparent; /* Цвет фона трека */
+    border-radius: 10px; /* Закругление углов трека */
+}
+
+.order-box::-webkit-scrollbar-thumb {
+    background: var(--black70); /* Цвет ползунка */
+    border-radius: 10px; /* Закругление углов ползунка */
+}
+
+.order-box-item{
+    padding: 20px 30px;
+    border-radius: 25px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+    align-items: start;
+    transition: all 0.5s;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.order-box-item >div{
+    display: flex;
+    gap: 30px 50px;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.order-box-item:hover{
+    background-color: var(--black70);
+}
+
+.order-box-item >div >div >p{
+    transition: all 0.5s;
+}
+
+.order-box-item:hover >div >div >p{
+    color: var(--white);
+}
+
+@media(max-width: 1140px){
+    .order-box{
+        max-height: 492px;
+    }
+}
+
+@media(max-width: 850px){
+    .order{
+        padding: 70px 50px;
+    }
+
+    .order:nth-of-type(2){
+        padding: 50px;
+    }
+}
+
+@media(max-width: 709px){
+    .order-box-item{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 678px){
+    .order{
+        padding: 50px 15px;
+    }
+
+    .order:nth-of-type(2){
+        padding: 50px 15px;
+    }
+
+    .order-box{
+        max-height: 475px;
+    }
+}
