@@ -1,0 +1,108 @@
+.info{
+    padding: 70px 140px 50px 140px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.info-box{
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 290px;
+}
+
+.info-box >p{
+    width: 100%;
+}
+
+.info >.info-box:nth-of-type(1){
+    max-width: 340px;
+}
+
+.info-box >.text-container{
+    min-width: 145px;
+    max-width: 145px;
+}
+
+.info-box >.text-container >p:nth-of-type(2){
+    color: var(--text);
+}
+
+
+.info-box-setting{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.info-box-setting >div{
+    max-width: 610px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.info-box-setting >div >.text-container{
+    width: 290px;
+}
+
+.info-box:nth-of-type(2){
+    flex-direction: column;
+}
+
+
+
+.setting{
+    padding: 50px 140px 70px 140px;
+    display: flex;
+    gap: 100px
+}
+
+.setting >.info-box{
+    max-width: 650px;
+}
+
+.info-box-select{
+    display: flex;
+    gap: 30px 70px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.info-box-select >div{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 290px;
+}
+
+.disable-button{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.disable-button >p{
+    color: var(--text70);
+    max-width: 280px;
+}
+
+
+@media(max-width: 850px){
+    .info{
+        padding: 70px 50px 50px 50px;
+    }
+
+    .setting{
+        padding: 50px 50px 70px 50px;
+    }
+}
+
+@media(max-width: 678px){
+    .info, .setting{
+        padding: 50px 15px;
+    }
+}
