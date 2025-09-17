@@ -13,3 +13,8 @@ function closeMenu() {
 
 window.addEventListener('scroll', closeMenu);
 window.addEventListener('resize', closeMenu);
+
+
+const header = document.querySelector('header');
+const login = header.querySelector('#login');
+

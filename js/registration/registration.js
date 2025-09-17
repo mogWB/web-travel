@@ -1,4 +1,4 @@
-// import { getUsers, addUser, getAllLogin } from "../../server/api.js";
+import { getUsers, addUser, getAllLogin } from "../../server/api.js";
 
 const commonPasswords = [
     "Tes1_0000",
@@ -108,10 +108,12 @@ const userData = {
 };
 
 let users = [];
-let login = ['stas'];
+let login = [];
 
 
 document.addEventListener('DOMContentLoaded', async () => {
+    await loadUsers();
+
     inputHandler('name', (value) => (value.length < 2 || value.length > 20));
     inputHandler('surname', (value) => (value.length < 2 || value.length > 20));
     inputHandler('patronymic', (value) => value.length > 20);
@@ -153,10 +155,10 @@ function errorHandler(some, funcError){
 }
 
 
-// // async function loadUsers() {
-// //     users = await getUsers();
-// //     login = await getAllLogin();
-// // }
+async function loadUsers() {
+    users = await getUsers();
+    login = await getAllLogin();
+}
 
 async function maxIndex() {
     const maxId = users.reduce((max, user) => {
@@ -469,7 +471,7 @@ regButton.addEventListener('click', async function(event){
         try {
             userData.id = (await maxIndex() + 1).toString();
             console.log(userData.id)
-            // await addUser(userData);
+            await addUser(userData);
 
             window.location.href = '../../pages/authorization/authorization.html';
         } catch (error) {

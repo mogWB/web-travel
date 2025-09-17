@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "login": "admin",
+      "password": "admin1",
+      "role": "admin",
+      "name": "admin",
+      "surname": "adminov",
+      "patronymic": "adminovich",
+      "telephone": "+375 (33) 234-51-55",
+      "email": "admin@gmail.com",
+      "date of birth": "20.04.1999"
+    },
+    {
+      "id": "2",
+      "role": "user",
+      "name": "Vladislav",
+      "surname": "Vladislavov",
+      "patronymic": "Vladislavovich",
+      "telephone": "+375 (33) 895-25-53",
+      "email": "vladlen@gmail.com",
+      "date of birth": "12.12.2003",
+      "login": "Vlad",
+      "password": "Vv1_1234",
+      "repeat": "Vv1_1234"
+    }
+  ]
+}

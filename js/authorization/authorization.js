@@ -1,19 +1,14 @@
-// import { getUsers } from "../../server/api.js";
+import { getUsers } from "../../server/api.js";
 
-let users = [
-    {
-        login: 'sss',
-        password: '123'
-    }
-];
+let users = [];
 
-// document.addEventListener('DOMContentLoaded', async () => {
-//     await loadUsers();
-// });
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadUsers();
+});
 
-// async function loadUsers() {
-//     users = await getUsers();
-// }
+async function loadUsers() {
+    users = await getUsers();
+}
 
 const authorizationButton = document.querySelector('#authorization');
 
