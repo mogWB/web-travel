@@ -1,0 +1,75 @@
+.faq{
+    padding: 70px 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.faq-box{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.faq-item{
+    width: 100%;
+    border-radius: 25px;
+    height: fit-content;
+    padding: 25px 30px;
+    border: 1px solid var(--black70);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.faq-item >div:nth-of-type(1){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-item >div >img{
+    width: 12px;
+    height: 12px;
+    transform: rotate(-90deg);
+}
+
+.faq-item >div:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item >div:nth-of-type(2) >p{
+    text-align: justify;
+    color: var(--text70);
+}
+
+.faq-setting{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.faq-setting >button:nth-of-type(1){
+    background-color: var(--orange);
+}
+
+.faq-setting >button:nth-of-type(2){
+    background-color: var(--blue);
+}
+
+
+@media(max-width: 850px){
+    .faq{
+        padding: 70px 50px;
+    }
+}
+
+@media(max-width: 678px){
+    .faq{
+        padding: 50px 15px;
+    }
+}

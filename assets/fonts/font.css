@@ -27,6 +27,16 @@
     font-weight: 700;
 }
 
+.text-gs-18-26m{
+    font-family: 'Google Sans', sans-serif;
+    font-size: 1.125em;
+    line-height: calc(26 / 18);
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: 500;
+}
+
 .text-gs-18m{
     font-family: 'Google Sans', sans-serif;
     font-size: 1.125em;
@@ -36,6 +46,7 @@
     margin: 0;
     font-weight: 500;
 }
+
 
 .text-gs-16b{
     font-family: 'Google Sans', sans-serif;
