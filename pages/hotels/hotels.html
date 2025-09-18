@@ -45,33 +45,28 @@
                 <p class="text-volkhov-50-60b">Choose Your Vacation</p>
             </div>
             <div class="continent-box">
-                <img src="../../assets/images/check.svg" alt="">
-                <img src="../../assets/images/north.svg" alt="">
-                <img src="../../assets/images/sourth.svg" alt="">
-                <img src="../../assets/images/africa.svg" alt="">
-                <img src="../../assets/images/eurasia.svg" alt="">
-                <img src="../../assets/images/australia.svg" alt="">
+                <img src="../../assets/images/check.svg" alt="ch">
+                <img src="../../assets/images/north.svg" alt="nr" data-value="North America">
+                <img src="../../assets/images/sourth.svg" alt="sr" data-value="South America">
+                <img src="../../assets/images/africa.svg" alt="af" data-value="Africa">
+                <img src="../../assets/images/eurasia.svg" alt="eu" data-value="Eurasia">
+                <img src="../../assets/images/australia.svg" alt="au" data-value="Australia">
             </div>
         </section>
         <section class="sell">
             <div class="sell-setting">
                 <label class="input">
-                    <input type="text" id="email" placeholder="Your email">
+                    <input type="text" id="search" placeholder="Your email">
                 </label>
                 <div class="select">
                     <p class="text-gs-14n">Sort</p>
                     <img src="../../assets/icons/arroww.svg" alt="ar">
                     <div class="select-option"></div>
                 </div>
-                <div class="select">
-                    <p class="text-gs-14n">City</p>
-                    <img src="../../assets/icons/arroww.svg" alt="ar">
-                    <div class="select-option"></div>
-                </div>
             </div>
             <div class="section-header">
                 <p class="text-poppins-18b">continent</p>
-                <p class="text-volkhov-50-60b">South America</p>
+                <p class="text-volkhov-50-60b" id="continentText">South America</p>
             </div>
             <div class="sell-box">
                 <div class="slide">
@@ -81,6 +76,9 @@
                     <img src="../../assets/icons/arroww.svg" alt="rg">
                 </div>
             </div>
+            <div class="no-continent" id="noContinent">
+                <p>Выберите континент</p>
+            </div>
             <div class="paggination"></div>
         </section>
         <section class="variant">
@@ -89,29 +87,8 @@
                 <p class="text-volkhov-50-60b">London, UK</p>
             </div>
             <div class="variant-box">
-                <div>
-                    <div class="text-container">
-                        <p>Hotels</p>
-                        <p>London, UK</p>
-                    </div>
-                    <div class="text-container">
-                        <p>Days</p>
-                        <p>12</p>
-                    </div>
-                    <div class="text-container">
-                        <p>Price</p>
-                        <p>$12k</p>
-                    </div>
-                    <div class="text-container">
-                        <p>people</p>
-                        <p>5</p>
-                    </div>
-                    <div class="text-container">
-                        <p>street</p>
-                        <p>some st. in City</p>
-                    </div>
-                </div>
-                <button class="button-big">
+                <div></div>
+                <button class="button-big" id="reserve">
                     <span class="text-gs-18m">Reserve</span>
                 </button>
             </div>

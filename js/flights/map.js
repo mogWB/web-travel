@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', async function(){
 function addDisplayContent(display){
     sellingBox.style.display = display ? 'flex': 'none';
     headerSelling.style.display = display ? 'flex': 'none';
+
+    addDisplayError();
 }
 
 function addDisplayError(text){

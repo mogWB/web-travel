@@ -66,7 +66,19 @@
             "date": "2025-09-18T21:49:17.826Z"
           }
         ],
-        "hotels": []
+        "hotels": [
+          {
+            "id": 6,
+            "image": "../../assets/images/saoPauloHotel.jpg",
+            "country": "Brazil, Sao Paulo",
+            "price": "27.6",
+            "people": 4,
+            "street": "Avenida Paulista",
+            "days": 11,
+            "continent": "South America",
+            "date": "2025-09-18T23:02:41.918Z"
+          }
+        ]
       }
     }
   ],
@@ -265,132 +277,192 @@
   "hotels": {
     "North America": [
       {
-        "image": "../../assets/image/nyHotel.jpg",
+        "id": 1,
+        "image": "../../assets/images/nyHotel.jpg",
         "country": "USA, New York",
-        "price": 25.4,
-        "people": 4
+        "price": "27.6",
+        "people": 4,
+        "street": "5th Avenue",
+        "days": 19
       },
       {
-        "image": "../../assets/image/miamiHotel.jpg",
+        "id": 2,
+        "image": "../../assets/images/miamiHotel.jpg",
         "country": "USA, Miami",
         "price": 22.1,
-        "people": 3
+        "people": 3,
+        "street": "Ocean Drive",
+        "days": 7
       },
       {
-        "image": "../../assets/image/torontoHotel.jpg",
+        "id": 3,
+        "image": "../../assets/images/torontoHotel.jpg",
         "country": "Canada, Toronto",
         "price": 20.8,
-        "people": 4
+        "people": 4,
+        "street": "Queen Street",
+        "days": 10
       },
       {
-        "image": "../../assets/image/montrealHotel.jpg",
+        "id": 4,
+        "image": "../../assets/images/montrealHotel.jpg",
         "country": "Canada, Montreal",
         "price": 19.5,
-        "people": 3
+        "people": 3,
+        "street": "Saint Catherine Street",
+        "days": 5
       },
       {
-        "image": "../../assets/image/cancunHotel.jpg",
+        "id": 5,
+        "image": "../../assets/images/cancunHotel.jpg",
         "country": "Mexico, Cancun",
         "price": 18.3,
-        "people": 5
+        "people": 5,
+        "street": "Boulevard Kukulcan",
+        "days": 14
       }
     ],
     "South America": [
       {
-        "image": "../../assets/image/sapHotel.jpg",
+        "id": 6,
+        "image": "../../assets/images/saoPauloHotel.jpg",
         "country": "Brazil, Sao Paulo",
-        "price": 16.9,
-        "people": 4
+        "price": "27.6",
+        "people": 4,
+        "street": "Avenida Paulista",
+        "days": 11
       },
       {
-        "image": "../../assets/image/airesHotel.jpg",
+        "id": 7,
+        "image": "../../assets/images/airesHotel.jpg",
         "country": "Argentina, Buenos Aires",
         "price": 15.7,
-        "people": 3
+        "people": 3,
+        "street": "Avenida 9 de Julio",
+        "days": 8
       },
       {
-        "image": "../../assets/image/limaHotel.jpg",
+        "id": 8,
+        "image": "../../assets/images/limaHotel.jpg",
         "country": "Peru, Lima",
         "price": 14.8,
-        "people": 2
+        "people": 2,
+        "street": "Avenida José Larco",
+        "days": 6
       }
     ],
     "Africa": [
       {
-        "image": "../../assets/image/cairoHotel.jpg",
+        "id": 9,
+        "image": "../../assets/images/cairoHotel.jpg",
         "country": "Egypt, Cairo",
-        "price": 12.5,
-        "people": 3
+        "price": "27.6",
+        "people": 3,
+        "street": "Mohamed Mahmoud Street",
+        "days": 12
       },
       {
-        "image": "../../assets/image/johaHotel.jpg",
+        "id": 10,
+        "image": "../../assets/images/johaHotel.jpg",
         "country": "South Africa, Johannesburg",
         "price": 13.8,
-        "people": 4
+        "people": 4,
+        "street": "Nelson Mandela Square",
+        "days": 9
       },
       {
-        "image": "../../assets/image/marrHotel.jpg",
+        "id": 11,
+        "image": "../../assets/images/marrHotel.jpg",
         "country": "Morocco, Marrakech",
         "price": 11.9,
-        "people": 2
+        "people": 2,
+        "street": "Avenue Mohammed V",
+        "days": 7
       }
     ],
     "Eurasia": [
       {
-        "image": "../../assets/image/muniHotel.jpg",
+        "id": 12,
+        "image": "../../assets/images/muniHotel.jpg",
         "country": "Germany, Munich",
-        "price": 28.3,
-        "people": 4
+        "price": "27.6",
+        "people": 4,
+        "street": "Marienplatz",
+        "days": 15
       },
       {
-        "image": "../../assets/image/lyonHotel.jpg",
+        "id": 13,
+        "image": "../../assets/images/lyonHotel.jpg",
         "country": "France, Lyon",
         "price": 26.7,
-        "people": 3
+        "people": 3,
+        "street": "Rue de la République",
+        "days": 10
       },
       {
-        "image": "../../assets/image/romeHotel.jpg",
+        "id": 14,
+        "image": "../../assets/images/romeHotel.jpg",
         "country": "Italy, Rome",
         "price": 29.1,
-        "people": 5
+        "people": 5,
+        "street": "Via del Corso",
+        "days": 14
       },
       {
-        "image": "../../assets/image/barcelonaHotel.jpg",
+        "id": 15,
+        "image": "../../assets/images/barcelonaHotel.jpg",
         "country": "Spain, Barcelona",
         "price": 25.9,
-        "people": 4
+        "people": 4,
+        "street": "La Rambla",
+        "days": 11
       },
       {
-        "image": "../../assets/image/stHotel.jpg",
+        "id": 16,
+        "image": "../../assets/images/stHotel.jpg",
         "country": "Russia, St. Petersburg",
         "price": 20.4,
-        "people": 3
+        "people": 3,
+        "street": "Nevsky Prospect",
+        "days": 8
       },
       {
-        "image": "../../assets/image/shanHotel.jpg",
+        "id": 17,
+        "image": "../../assets/images/shanHotel.jpg",
         "country": "China, Shanghai",
         "price": 18.7,
-        "people": 4
+        "people": 4,
+        "street": "Nanjing Road",
+        "days": 13
       }
     ],
     "Australia": [
       {
-        "image": "../../assets/image/sydneyHotel.jpg",
+        "id": 18,
+        "image": "../../assets/images/sydneyHotel.jpg",
         "country": "Australia, Sydney",
-        "price": 32.6,
-        "people": 5
+        "price": "27.6",
+        "people": 5,
+        "street": "George Street",
+        "days": 20
       },
       {
-        "image": "../../assets/image/perthHotel.jpg",
+        "id": 19,
+        "image": "../../assets/images/perthHotel.jpg",
         "country": "Australia, Perth",
         "price": 30.2,
-        "people": 4
+        "people": 4,
+        "street": "Hay Street",
+        "days": 15
       },
       {
-        "image": "../../assets/image/wellHotel.jpg",
+        "id": 20,
+        "image": "../../assets/images/wellHotel.jpg",
         "country": "New Zealand, Wellington",
         "price": 28.9,
-        "people": 3
+        "people": 3,
+        "street": "Lambton Quay",
+        "days": 12
       }
     ]
   }

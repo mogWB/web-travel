@@ -243,7 +243,23 @@
     }
 }
 
+#noContinent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 0 0 0;
+    width: 100%;
+}
 
+#noContinent >p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: 700;
+}
 
 /*      ----------- variant -------------      */
 
