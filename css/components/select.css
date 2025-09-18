@@ -44,7 +44,7 @@
     overflow: auto;
     border-radius: 15px;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
     align-items: center;
     box-sizing: border-box;
 }
@@ -65,4 +65,17 @@
 
 .select-option.active{
     display: flex;
+}
+
+.select-option >p{
+    color: var(--text);
+    width: calc(100% - 5px);
+    text-align: center;
+    padding: 10px 0;
+    margin-right: 5px;
+    border-radius: 15px;
+}
+
+.select-option >p:hover{
+    background-color: var(--red20);
 }

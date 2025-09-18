@@ -82,3 +82,20 @@ export const getAllLogin = async (user) => {
     
     return logins;
 };
+
+
+
+// ------------------- hotels
+
+export const getFlights = async () => {
+    const response = await fetch('http://localhost:3000/flights', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if (!response.ok) {
+        throw new Error('Ошибка при получении полетов');
+    }
+    return response.json();
+};

@@ -277,7 +277,7 @@ function formattedDateOfBirthInput(inputElement) {
     }
 
     inputElement.value = value;
-    userData['date of birth'] = value;
+    userData['birthday'] = value;
 }
 
 // Функция для определения максимального числа дней в месяце
@@ -470,7 +470,9 @@ regButton.addEventListener('click', async function(event){
     }else{
         try {
             userData.id = (await maxIndex() + 1).toString();
-            console.log(userData.id)
+            
+            delete userData.repeat;
+
             await addUser(userData);
 
             window.location.href = '../../pages/authorization/authorization.html';

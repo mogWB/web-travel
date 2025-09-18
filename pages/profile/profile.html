@@ -39,33 +39,30 @@
         </div>
     </header>
     <main>
-        <section class="info">
+        <section class="info non-auth">
+            <div class="info-box">
+                <p class="text-gs-20b">Need authorization</p>
+                <p class="text-poppins-14-20n">In order to see personal information, you must register or log in.</p>
+                <div class="info-link">
+                    <div class="text-container">
+                        <p>Login</p>
+                        <button class="button-small" id="login">
+                            <span class="text-gs-14m">Login</span>
+                        </button>
+                    </div>
+                    <div class="text-container">
+                        <p>Sign up</p>
+                        <button class="button-small" id="signup">
+                            <span class="text-gs-14m">Sign up</span>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section class="info auth">
             <div class="info-box">
                 <p class="text-gs-20b">Change password</p>
-                <div class="text-container">
-                    <p>Name</p>
-                    <p>Vladislav</p>
-                </div>
-                <div class="text-container">
-                    <p>Email</p>
-                    <p>vladlench13</p>
-                </div>
-                <div class="text-container">
-                    <p>Surname</p>
-                    <p>Vladislavov</p>
-                </div>
-                <div class="text-container">
-                    <p>telephone</p>
-                    <p>vladlench13</p>
-                </div>
-                <div class="text-container">
-                    <p>Patronymic</p>
-                    <p>Vladislavovich</p>
-                </div>
-                <div class="text-container">
-                    <p>birthday</p>
-                    <p>Vladislavovich</p>
-                </div>
             </div>
             <div class="info-box">
                 <p class="text-gs-20b">Change password</p>
@@ -74,17 +71,17 @@
                         <div class="text-container">
                             <p>old password</p>
                             <label class="input">
-                                <input type="text" placeholder="Old password">
+                                <input type="text" placeholder="Old password" id="old">
                             </label>
                         </div>
                         <div class="text-container">
-                            <p>old password</p>
+                            <p>new password</p>
                             <label class="input">
-                                <input type="text" placeholder="New password">
+                                <input type="text" placeholder="New password" id="new">
                             </label>
                         </div>
                     </div>
-                    <button class="button-small">
+                    <button class="button-small" id="change">
                         <span class="text-gs-14m">Change</span>
                     </button>                 
                 </div>
@@ -142,7 +139,7 @@
                 <p class="text-gs-20b">Local storage</p>
                 <div class="disable-button">
                     <p class="text-poppins-14-20n">Do you really want to reset all the settings?</p>
-                    <button class="button-small">
+                    <button class="button-small" id="reset">
                         <span class="text-gs-14m">Reset</span>
                     </button>     
                 </div>
@@ -171,6 +168,8 @@
                 <div class="navigate-item">
                     <p class="text-poppins-20b">More</p>
                     <a href="../../pages/bookings/bookings.html" class="text-poppins-18n">Bookings</a>
+                    <a href="../../pages/profile/profile.html" class="text-poppins-18n">Profile</a>
+                    <a href="../../pages/authorization/authorization.html" class="text-poppins-18n" id="exit">Exit</a>
                 </div>
             </div>
             <div class="share">
@@ -208,5 +207,8 @@
             <p class="text-gs-16b">All rights reserved@jadoo.com</p>
         </div>
     </footer>
+    <script type="module" src="../../js/basic.js"></script>
+    <script type="module" src="../../js/profile/profile.js"></script>
+    <script type="module" src="../../js/profile/setting.js"></script>
 </body>
 </html>

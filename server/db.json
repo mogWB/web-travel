@@ -1,29 +1,332 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "login": "admin",
-      "password": "admin1",
-      "role": "admin",
-      "name": "admin",
-      "surname": "adminov",
-      "patronymic": "adminovich",
-      "telephone": "+375 (33) 234-51-55",
-      "email": "admin@gmail.com",
-      "date of birth": "20.04.1999"
+    "users": [
+        {
+            "id": "1",
+            "login": "admin",
+            "password": "admin1",
+            "role": "admin",
+            "name": "admin",
+            "surname": "adminov",
+            "patronymic": "adminovich",
+            "telephone": "+375 (33) 234-51-55",
+            "email": "admin@gmail.com",
+            "date of birth": "20.04.1999"
+        },
+        {
+            "id": "2",
+            "role": "user",
+            "name": "Vlad",
+            "surname": "Vladlenov",
+            "patronymic": "Vladlenovich",
+            "telephone": "+375 (33) 944-05-25",
+            "email": "Vladlen@gmail.com",
+            "birthday": "23.12.2003",
+            "login": "Vlad",
+            "password": "Vv1_1234"
+        }
+    ],
+    "flights": {
+        "North America": [
+            {
+                "image": "../../assets/images/newYork.jpg",
+                "country": "USA, New York",
+                "price": 12.5,
+                "people": 3,
+                "departure": "morning",
+                "days": 7
+            },
+            {
+                "image": "../../assets/images/losAngeles.jpg",
+                "country": "USA, Los Angeles",
+                "price": 15.2,
+                "people": 4,
+                "departure": "evening",
+                "days": 10
+            },
+            {
+                "image": "../../assets/images/toronto.jpg",
+                "country": "Canada, Toronto",
+                "price": 11.8,
+                "people": 1,
+                "departure": "day",
+                "days": 8
+            },
+            {
+                "image": "../../assets/images/vancouver.jpg",
+                "country": "Canada, Vancouver",
+                "price": 13.1,
+                "people": 2,
+                "departure": "morning",
+                "days": 9
+            },
+            {
+                "image": "../../assets/images/mexico.jpg",
+                "country": "Mexico, Mexico City",
+                "price": 9.7,
+                "people": 3,
+                "departure": "evening",
+                "days": 6
+            }
+        ],
+        "South America": [
+            {
+                "image": "../../assets/images/brazil.jpg",
+                "country": "Brazil, Rio de Janeiro",
+                "price": 16.3,
+                "people": 3,
+                "departure": "evening",
+                "days": 11
+            },
+            {
+                "image": "../../assets/images/argentina.jpg",
+                "country": "Argentina, Buenos Aires",
+                "price": 14.9,
+                "people": 5,
+                "departure": "morning",
+                "days": 10
+            },
+            {
+                "image": "../../assets/images/chile.jpg",
+                "country": "Chile, Santiago",
+                "price": 15.8,
+                "people": 3,
+                "departure": "evening",
+                "days": 12
+            }
+        ],
+        "Africa": [
+            {
+                "image": "../../assets/images/egypt.jpg",
+                "country": "Egypt, Cairo",
+                "price": 18.2,
+                "people": 2,
+                "departure": "day",
+                "days": 14
+            },
+            {
+                "image": "../../assets/images/capeTown.jpg",
+                "country": "Cape Town",
+                "price": 21.5,
+                "people": 7,
+                "departure": "morning",
+                "days": 16
+            },
+            {
+                "image": "../../assets/images/nairobi.jpg",
+                "country": "Kenya, Nairobi",
+                "price": 19.8,
+                "people": 3,
+                "departure": "evening",
+                "days": 15
+            }
+        ],
+        "Eurasia": [
+            {
+                "image": "../../assets/images/berlin.jpg",
+                "country": "Germany, Berlin",
+                "price": 8.9,
+                "people": 1,
+                "departure": "evening",
+                "days": 5
+            },
+            {
+                "image": "../../assets/images/paris.jpg",
+                "country": "France, Paris",
+                "price": 9.3,
+                "people": 2,
+                "departure": "morning",
+                "days": 6
+            },
+            {
+                "image": "../../assets/images/london.jpg",
+                "country": "UK, London",
+                "price": 10.1,
+                "people": 3,
+                "departure": "day",
+                "days": 7
+            },
+            {
+                "image": "../../assets/images/moscow.jpg",
+                "country": "Russia, Moscow",
+                "price": 11.4,
+                "people": 3,
+                "departure": "evening",
+                "days": 8
+            },
+            {
+                "image": "../../assets/images/beijing.jpg",
+                "country": "China, Beijing",
+                "price": 13.7,
+                "people": 4,
+                "departure": "day",
+                "days": 10
+            },
+            {
+                "image": "../../assets/images/tokya.jpg",
+                "country": "Japan, Tokyo",
+                "price": 14.2,
+                "people": 3,
+                "departure": "morning",
+                "days": 11
+            }
+        ],
+        "Australia": [
+            {
+                "image": "../../assets/images/sydney.jpg",
+                "country": "Australia, Sydney",
+                "price": 22.6,
+                "people": 5,
+                "departure": "evening",
+                "days": 18
+            },
+            {
+                "image": "../../assets/images/melbourne.jpg",
+                "country": "Australia, Melbourne",
+                "price": 21.9,
+                "people": 4,
+                "departure": "day",
+                "days": 17
+            },
+            {
+                "image": "../../assets/images/auckland.jpg",
+                "country": "New Zealand, Auckland",
+                "price": 23.8,
+                "people": 3,
+                "departure": "morning",
+                "days": 19
+            }
+        ]
     },
-    {
-      "id": "2",
-      "role": "user",
-      "name": "Vladislav",
-      "surname": "Vladislavov",
-      "patronymic": "Vladislavovich",
-      "telephone": "+375 (33) 895-25-53",
-      "email": "vladlen@gmail.com",
-      "date of birth": "12.12.2003",
-      "login": "Vlad",
-      "password": "Vv1_1234",
-      "repeat": "Vv1_1234"
+    "hotels": {
+        "North America": [
+            {   
+                "image": "../../assets/image/nyHotel.jpg",
+                "country": "USA, New York",
+                "price": 25.4,
+                "people": 4
+            },
+            {
+                "image": "../../assets/image/miamiHotel.jpg",
+                "country": "USA, Miami",
+                "price": 22.1,
+                "people": 3
+            },
+            {
+                "image": "../../assets/image/torontoHotel.jpg",
+                "country": "Canada, Toronto",
+                "price": 20.8,
+                "people": 4
+            },
+            {
+                "image": "../../assets/image/montrealHotel.jpg",
+                "country": "Canada, Montreal",
+                "price": 19.5,
+                "people": 3
+            },
+            {
+                "image": "../../assets/image/cancunHotel.jpg",
+                "country": "Mexico, Cancun",
+                "price": 18.3,
+                "people": 5
+            }
+        ],
+        "South America": [
+            {
+                "image": "../../assets/image/sapHotel.jpg",
+                "country": "Brazil, Sao Paulo",
+                "price": 16.9,
+                "people": 4
+            },
+            {
+                "image": "../../assets/image/airesHotel.jpg",
+                "country": "Argentina, Buenos Aires",
+                "price": 15.7,
+                "people": 3
+            },
+            {
+                "image": "../../assets/image/limaHotel.jpg",
+                "country": "Peru, Lima",
+                "price": 14.8,
+                "people": 2
+            }
+        ],
+        "Africa": [
+            {
+                "image": "../../assets/image/cairoHotel.jpg",
+                "country": "Egypt, Cairo",
+                "price": 12.5,
+                "people": 3
+            },
+            {
+                "image": "../../assets/image/johaHotel.jpg",
+                "country": "South Africa, Johannesburg",
+                "price": 13.8,
+                "people": 4
+            },
+            {
+                "image": "../../assets/image/marrHotel.jpg",
+                "country": "Morocco, Marrakech",
+                "price": 11.9,
+                "people": 2
+            }
+        ],
+        "Eurasia": [
+            {
+                "image": "../../assets/image/muniHotel.jpg",
+                "country": "Germany, Munich",
+                "price": 28.3,
+                "people": 4
+            },
+            {
+                "image": "../../assets/image/lyonHotel.jpg",
+                "country": "France, Lyon",
+                "price": 26.7,
+                "people": 3
+            },
+            {
+                "image": "../../assets/image/romeHotel.jpg",
+                "country": "Italy, Rome",
+                "price": 29.1,
+                "people": 5
+            },
+            {
+                "image": "../../assets/image/barcelonaHotel.jpg",
+                "country": "Spain, Barcelona",
+                "price": 25.9,
+                "people": 4
+            },
+            {
+                "image": "../../assets/image/stHotel.jpg",
+                "country": "Russia, St. Petersburg",
+                "price": 20.4,
+                "people": 3
+            },
+            {
+                "image": "../../assets/image/shanHotel.jpg",
+                "country": "China, Shanghai",
+                "price": 18.7,
+                "people": 4
+            }
+        ],
+        "Australia": [
+            {
+                "image": "../../assets/image/sydneyHotel.jpg",
+                "country": "Australia, Sydney",
+                "price": 32.6,
+                "people": 5
+            },
+            {
+                "image": "../../assets/image/perthHotel.jpg",
+                "country": "Australia, Perth",
+                "price": 30.2,
+                "people": 4
+            },
+            {
+                "image": "../../assets/image/wellHotel.jpg",
+                "country": "New Zealand, Wellington",
+                "price": 28.9,
+                "people": 3
+            }
+        ]
     }
-  ]
 }

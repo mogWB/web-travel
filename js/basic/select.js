@@ -1,35 +1,49 @@
 // Переменная для хранения текущего открытого селекта
 let currentOpenSelect = null;
 
-export function createSelect(option, box) {
+export function createSelect(options, box, onChangeCallback) {
     const selectIcon = box.querySelector('img');
     const selectText = box.querySelector('p');
     const selectOption = box.querySelector('.select-option');
 
-    for(let i = 0; i < option.length; i++){
+    // Очищаем старые опции
+    selectOption.innerHTML = '';
+
+    // Добавляем новые опции
+    for (let i = 0; i < options.length; i++) {
         const p = document.createElement('p');
-        p.textContent = option[i];
-        p.classList.add('text-gs-14-26m');
+        p.textContent = options[i];
+        p.classList.add('text-poppins-14-20n');
 
-        p.addEventListener('click', function(){
-            selectText.textContent = option[i];
-
-            resolve(option[i]); // Возвращаем выбранное значение
+        p.addEventListener('click', function (e) {
+            e.stopPropagation();
+            selectText.textContent = options[i];
+            
+            // Вызываем callback с выбранным значением
+            if (onChangeCallback) {
+                onChangeCallback(options[i]);
+            }
+            
             closeSelect(box);
-        })
+        });
 
         selectOption.appendChild(p);
     }
 
-    box.addEventListener('click', function(e) {
+    // Обработчик клика по селекту
+    const clickHandler = function (e) {
+        if (e.target.tagName === 'P' && e.target.parentElement === selectOption) {
+            return;
+        }
+
         e.stopPropagation();
-        
+
         if (currentOpenSelect && currentOpenSelect !== box) {
             closeSelect(currentOpenSelect);
         }
-        
+
         const isOpening = !selectOption.classList.contains('active');
-        
+
         if (isOpening) {
             selectIcon.classList.add('active');
             selectOption.classList.add('active');
@@ -37,37 +51,45 @@ export function createSelect(option, box) {
         } else {
             closeSelect(box);
         }
-    });
-    
-    selectOption.addEventListener('scroll', function(e) {
-        e.stopPropagation(); 
+    };
+
+    // Удаляем старый обработчик если был
+    if (box._clickHandler) {
+        box.removeEventListener('click', box._clickHandler);
+    }
+
+    box.addEventListener('click', clickHandler);
+    box._clickHandler = clickHandler;
+
+    selectOption.addEventListener('scroll', function (e) {
+        e.stopPropagation();
     });
 }
 
 function closeSelect(selectElement) {
     const selectIcon = selectElement.querySelector('img');
     const selectOption = selectElement.querySelector('.select-option');
-    
+
     selectIcon.classList.remove('active');
     selectOption.classList.remove('active');
-    
+
     if (currentOpenSelect === selectElement) {
         currentOpenSelect = null;
     }
 }
 
-document.addEventListener('click', function(e) {
+// Глобальные обработчики (оставляем без изменений)
+document.addEventListener('click', function (e) {
     if (currentOpenSelect && !currentOpenSelect.contains(e.target)) {
         closeSelect(currentOpenSelect);
     }
 });
 
-document.addEventListener('scroll', function(e) {
+document.addEventListener('scroll', function (e) {
     if (currentOpenSelect) {
-        // Проверяем, является ли цель прокрутки или ее родители нашим select-option
         let target = e.target;
         let isScrollInsideSelect = false;
-        
+
         while (target && target !== document.documentElement) {
             if (target.classList && target.classList.contains('select-option')) {
                 isScrollInsideSelect = true;
@@ -75,15 +97,14 @@ document.addEventListener('scroll', function(e) {
             }
             target = target.parentElement;
         }
-        
-        // Закрываем только если прокрутка НЕ внутри select-option
+
         if (!isScrollInsideSelect) {
             closeSelect(currentOpenSelect);
         }
     }
 }, true);
 
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     if (currentOpenSelect) {
         closeSelect(currentOpenSelect);
     }
