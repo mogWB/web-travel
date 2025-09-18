@@ -1,4 +1,5 @@
 import { updatePassword } from "../../server/api.js";
+import { createModal } from "../basic/modal.js";
 
 const commonPasswords = [
     "Tes1_0000",
@@ -177,18 +178,20 @@ if(!user){
         if(user.password == oldValue){
             if(checkPassword(newValue)){
                 user.password = newValue;
-
+                
                 localStorage.setItem('user', JSON.stringify(user));
 
                 await updatePassword(user.id, newValue);
 
                 oldPassword.value = '';
                 newPassword.value = '';
+
+                createModal('Success', 'Close', 'Your password has been successfully changed!');
             }else{
-                console.log(textError);
+                createModal('Error', 'Close',  textError);
             }
         }else{
-            console.log('ne sovpadayt')
+            createModal('Error','Close','You have entered an incorrect password. Please try again!');
         }
     })
 }

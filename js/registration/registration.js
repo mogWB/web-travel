@@ -1,4 +1,5 @@
 import { getUsers, addUser, getAllLogin } from "../../server/api.js";
+import { createModal } from "../basic/modal.js";
 
 const commonPasswords = [
     "Tes1_0000",
@@ -465,9 +466,7 @@ function checkPasswordRepeat(value) {
 
 
 regButton.addEventListener('click', async function(event){
-    if(!checkField()){
-        console.log('есть ошибки и незаполненные поля'); // модальное окно
-    }else{
+    if(checkField()){
         try {
             userData.id = (await maxIndex() + 1).toString();
             
@@ -475,7 +474,9 @@ regButton.addEventListener('click', async function(event){
 
             await addUser(userData);
 
-            window.location.href = '../../pages/authorization/authorization.html';
+            createModal('Success','Login','Your account has been successfully registered in the system!',
+                false, '', () => window.location.href = '../../pages/authorization/authorization.html'
+            );
         } catch (error) {
             console.error('Ошибка при добавлении пользователя:', error);
         }
@@ -494,8 +495,8 @@ function checkField() {
     // const checkbox = document.querySelector('#agree input[type="checkbox"]');
     // const isCheckboxChecked = checkbox ? checkbox.checked : false; 
 
-    if (hasError ) {
-        alert('Please fix the errors OR the user agreement is checked!');
+    if (hasError) {
+        createModal('Error','Close','Please fix the errors OR the user agreement is checked!');
     }
 
     return !hasError ;
