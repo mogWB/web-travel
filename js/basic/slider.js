@@ -30,7 +30,7 @@ export function createSlider(boxWithSlide, boxCard, classCard, dataChild) {
     function fillSliderContainer() {
         const cards = dataSlide.boxCard.querySelectorAll(dataSlide.classCard);
         cards.forEach(card => card.remove());
-
+        console.log('sdfdssd')
         for (let i = 0; i < Math.min(3, dataSlide.data.length); i++) {
             dataSlide.boxCard.appendChild(dataSlide.data[i]);
         }

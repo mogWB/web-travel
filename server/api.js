@@ -42,11 +42,11 @@ export const addUser = async (user) => {
 
     const createdUser = await response.json();
 
-    // try{
-    //     await addCartDefault(user.id);
-    // }catch(error){
-    //     await deleteUser(user.id);
-    // }
+    try{
+        await addCartDefault(user.id);
+    }catch(error){
+        await deleteUser(user.id);
+    }
 
     return createdUser;
 };
@@ -85,17 +85,115 @@ export const getAllLogin = async (user) => {
 
 
 
-// ------------------- hotels
 
-export const getFlights = async () => {
-    const response = await fetch('http://localhost:3000/flights', {
+
+//---------------- cart ----
+
+
+export const addCartDefault = async (userId) => {
+    const response = await fetch('http://localhost:3000/carts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({id: userId, last: {"flights": [], "hotels": []}, future: {"flights": [], "hotels": []}}),
+    });
+    if (!response.ok) {
+        throw new Error('Ошибка при добавлении корзины для пользователя');
+    }
+    return response.json();
+};
+
+export const getAllCart = async () => {
+    const response = await fetch(`http://localhost:3000/carts`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         },
     });
     if (!response.ok) {
-        throw new Error('Ошибка при получении полетов');
+        throw new Error('Ошибка при получении корзин пользователей');
     }
+    return response.json();
+};
+
+export const getCartUser = async (userId) => {
+    const response = await fetch(`http://localhost:3000/carts/${userId}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if (!response.ok) {
+        throw new Error('Ошибка при получении корзины для пользователя');
+    }
+    return response.json();
+};
+
+
+
+
+
+
+// ------------------- flights
+
+export const getService = async (type) => {
+    const response = await fetch(`http://localhost:3000/${type}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if (!response.ok) {
+        throw new Error(`Ошибка при получении ${type}]`);
+    }
+    return response.json();
+};
+
+export const addlService = async (userId, type, service) => {
+    const cart = await getCartUser(userId);
+
+    cart.future[type].push(service); 
+
+    const updateResponse = await fetch(`http://localhost:3000/carts/${userId}`, { // Отправляем обновлённую корзину обратно на сервер
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cart),
+    });
+
+    if (!updateResponse.ok) {
+        throw new Error('Ошибка при обновлении корзины для пользователя');
+    }
+
+    return updateResponse.json();
+};
+
+
+export const updateServicePrice = async (serviceId, type, newPrice) => {
+    const services = await getService(type);
+    
+    for (const key in services) {
+        for(let i = 0; i < services[key].length; i++){
+            if(services[key][i].id == serviceId){
+                services[key][i].price = newPrice;
+                break;
+            }
+        }
+    }
+
+    const response = await fetch(`http://localhost:3000/${type}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(services),
+    });
+
+    if (!response.ok) {
+        throw new Error('Ошибка при обновлении цены услуги');
+    }
+
     return response.json();
 };

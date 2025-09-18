@@ -1,11 +1,14 @@
 import { createSlider } from '../basic/slider.js'
 import { createPaggination } from '../basic/paggination.js'
 import { createSelect } from '../basic/select.js';
-import { getFlights } from '../../server/api.js';
+import { addlService, getCartUser, getService, updateServicePrice } from '../../server/api.js';
 import { createModal } from '../basic/modal.js';
 
 const tripDayLink = '../../assets/icons/tripDay.svg';
 const variantItem = ['flights', 'days', 'price', 'people', 'departure'];
+
+let user = null;
+let cart = null;
 
 const dataChild = [];
 let flag = null;
@@ -30,14 +33,30 @@ const sellingErrorText = sellingError.querySelector('p');
 
 const variant = document.querySelector('.variant');
 const headerVariantFlight = variant.querySelector('.section-header >p:nth-of-type(2)');
-const boxVariant = variant.querySelector('.variant-box >div')
+const boxVariant = variant.querySelector('.variant-box >div');
+
+const reserve = variant.querySelector('#reserve');
 
 document.addEventListener('DOMContentLoaded', async function(){
-    flights = await getFlights();
-    
+    flights = await getService('flights');
+
     addDisplayContent(false);
     addDisplayContentVariant(false);
     addDisplayError('Выберите континент');
+
+    user = JSON.parse(localStorage.getItem('user'));
+
+    if(user?.role == 'user'){
+        cart = await getCartUser(user.id);
+    }else{
+        const reserveText = document.createElement('span');
+        reserveText.textContent = 'Change';
+        reserveText.className = 'text-gs-18m';
+
+        reserve.innerHTML = '';
+        
+        reserve.appendChild(reserveText);
+    }
 });
 
 function addDisplayContent(display){
@@ -97,7 +116,7 @@ function createCard(data){
     const p12 = document.createElement('p');
     p12.classList.add('text-poppins-18m');
     p12.textContent = `$${data.price}k`;
-
+    console.log(data.price)
     const div2 = document.createElement('div');
 
     const img2 = document.createElement('img');
@@ -119,6 +138,8 @@ function createCard(data){
 
     card.addEventListener('click', function(){
         currentCardData = data;
+        currentCardData.continent = continent;
+
         setVariant();
     })
 
@@ -183,18 +204,19 @@ function applyFilters() {
 
 function checkScreenWidth() {
     const screenWidth = window.innerWidth; 
-   
-    if(flag == null) flag = screenWidth > 589 ? false : true;
     
+    if(flag == null) flag = screenWidth > 589 ? false : true;
+
     if(flightsChild[continent]){
-        console.log(flag, 'tytyt1234')
         if (screenWidth > 589) {
             if(!flag){
+                
                 createSlider(selling, sellingBox, '.selling-card', flightsChild[continent]);
                 flag = true;
             }
         } else {
             if(flag){
+                console.log(flightsChild[continent])
                 createPaggination(flightsChild[continent], selling, sellingBox, '.selling-card');
                 flag = false;
             }
@@ -261,21 +283,34 @@ images.forEach(image => {
 });
 
 
+//резерв
+reserve.addEventListener('click', async function(){
+    if(!user){
+        createModal('Ooops', 'Well', 'Please log in before placing an order :)')
+    }else{
+        if(user.role == 'admin'){
+            createModal('Change', 'Change', 'Please enter a new price..', true, 'Price', (input) => {
+                updateServicePrice(currentCardData.id, 'flights', input);
+
+                window.location.reload();
+            })
+        }else{
+            if(!cart.future.flights.some(item => item.id == currentCardData.id)){
+                createModal('Reserve', 'Reserve', 'Do you really want to book a flight?', false, '', async () => {
+                    await addlService(user.id, 'flights', {...currentCardData, "date": new Date()});
+                    
+                    cart = await getCartUser(user.id);
+                })
+            }else{
+                createModal('Ooops', 'Well', 'It looks like you already have this position in your booking. Once it\'s completed, it will become available again')
+            }
+        }
+    }
+})
+
+
 // Инициализация
 checkScreenWidth();
 initSelect();
 initSearch();
 window.addEventListener('resize', checkScreenWidth);
-
-
-
-createModal(
-    'Внимание!', 
-    'Понятно', 
-    'Вы уверены, что хотите выполнить это действие?',
-    true,
-    'Some text',
-    (input) => {
-        console.log('Кнопка нажата!', input);
-    }
-);

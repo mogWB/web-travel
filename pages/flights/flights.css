@@ -154,6 +154,7 @@
     height: 450px;
     overflow: hidden;
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .selling-card:hover{
