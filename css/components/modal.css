@@ -15,7 +15,10 @@
 
 .modal{
     background: white;
-    padding: 30px 25px 25px 25px;
+    padding: 15px 15px 10px 25px;
+    border-right: 10px solid white;
+    border-top: 15px solid white;
+    border-bottom: 15px solid white;
     border-radius: 25px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
     max-width: 290px;
@@ -29,6 +32,21 @@
     flex-direction: column;
 }
 
+.modal::-webkit-scrollbar {
+    width: 4px; /* Ширина скроллбара */
+}
+
+.modal::-webkit-scrollbar-track {
+    background: transparent; /* Цвет фона трека */
+    border-radius: 10px; /* Закругление углов трека */
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: var(--black70); /* Цвет ползунка */
+    border-radius: 10px; /* Закругление углов ползунка */
+}
+
+
 .modal-header{
     width: 100%;
     text-align: center;
@@ -36,6 +54,7 @@
 
 .modal-description{
     color: rgba(0, 0, 0, 0.7) !important;
+    white-space: pre-line;
 }
 
 .modal-close{

@@ -136,7 +136,14 @@ function createCard(data, type, time){
     button.appendChild(span);
     button.addEventListener('click', function(){
         if(time != 'future'){
-            createModal('More infornation', 'Well', `${data.country}${data.price}${data.days}${data.people}${data.date}`)
+            createModal('More infornation', 'Well',
+                `Country: ${data.country}\n
+                Price: ${data.price}\n
+                Days: ${data.days}\n
+                People: ${data.people}\n
+                Reserve ${data.reserve}\n
+                Complete ${data.complete}\n
+                ${type == 'hotels' ? `Street ${data.street}` : `Departure ${data.departure}`}`)
         }else{
             if(user.role == 'user'){
                 createModal('Attention', 'Remove', 'Do you really want to cancel your reservation?', false, '', async () => {
@@ -154,7 +161,7 @@ function createCard(data, type, time){
                         await completedCartService(user.id, type, data.id);
                         
                         const serviceDone = cart['future'][type].find(item => item.id == data.id);
-                        serviceDone.dateDone = formatDate();
+                        serviceDone.complete = formatDate();
 
                         cart['last'][type].push(serviceDone);
 
