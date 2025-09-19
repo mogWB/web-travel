@@ -89,6 +89,7 @@
     color: var(--white);
 }
 
+
 @media(max-width: 1140px){
     .order-box{
         max-height: 492px;
@@ -123,4 +124,23 @@
     .order-box{
         max-height: 475px;
     }
+}
+
+
+#noCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 62px 0 0 0;
+    width: 100%;
+}
+
+#noCard >p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text, #212832); 
+    margin: 0;
+    font-weight: 700;
 }

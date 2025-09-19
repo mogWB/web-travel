@@ -24,10 +24,12 @@ let sortFlights = null;
 const orderHotels = document.querySelector('.order:nth-of-type(1)');
 const timeButtonHotels = orderHotels.querySelector('#time');
 const orderBoxHotels = orderHotels.querySelector('.order-box');
+const noCardHotels = orderHotels.querySelector('#noCard');
 
 const orderFlights = document.querySelector('.order:nth-of-type(2)');
 const timeButtonFlights = orderFlights.querySelector('#time');
 const orderBoxFlights = orderFlights.querySelector('.order-box');
+const noCardFlights = orderFlights.querySelector('#noCard');
 
 timeButtonHotels.addEventListener('click', function(){
     timeButtonHotels.textContent = (timeButtonHotels.textContent == 'Future' ? 'Last' : 'Future');
@@ -91,7 +93,10 @@ document.addEventListener('DOMContentLoaded', async function(){
             window.location.href = '../../pages/profile/profile.html';
         }
     }
-    console.log(cart)
+
+    addDisplayError('hotels', false);
+    addDisplayError('flights', false);
+
     startCreate();
     addData('flights');
     addData('hotels');
@@ -228,6 +233,14 @@ function sortData(data, sortOption) {
     }
 }
 
+function addDisplayError(type, status){
+    const box = type == 'hotels' ? orderBoxHotels : orderBoxFlights;
+    const error = type == 'hotels' ? noCardHotels : noCardFlights;
+    
+    box.style.display = status ? 'none' : 'flex';
+    error.style.display = status ? 'flex' : 'none';
+}
+
 function applyFilters(time, type) {
     // if (!continent || !flightsChild[continent]) return;
     console.log('основа', cart[time][type])
@@ -252,8 +265,8 @@ function applyFilters(time, type) {
 
     addData(type);
 
-    // if(filteredData.length == 0) addDisplayError('Нету данных удовлетворяющих условию');
-    // else addDisplayContent(true);
+    if(filteredData.length == 0) addDisplayError(type, true);
+    else addDisplayError(type, false);
 }
 
 
