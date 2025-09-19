@@ -102,21 +102,31 @@
             "departure": "morning",
             "days": 7,
             "date": "2025-09-18T21:46:52.360Z"
+          },
+          {
+            "id": 7,
+            "image": "../../assets/images/argentina.jpg",
+            "country": "Argentina, Buenos Aires",
+            "price": 14.9,
+            "people": 5,
+            "departure": "morning",
+            "days": 10,
+            "continent": "South America",
+            "reserve": "19.09.2025 14:52"
+          },
+          {
+            "id": 8,
+            "image": "../../assets/images/chile.jpg",
+            "country": "Chile, Santiago",
+            "price": 15.8,
+            "people": 3,
+            "departure": "evening",
+            "days": 12,
+            "continent": "South America",
+            "reserve": "19.09.2025 14:52"
           }
         ],
-        "hotels": [
-          {
-            "id": 6,
-            "image": "../../assets/images/saoPauloHotel.jpg",
-            "country": "Brazil, Sao Paulo",
-            "price": "27.6",
-            "people": 4,
-            "street": "Avenida Paulista",
-            "days": 11,
-            "continent": "South America",
-            "date": "2025-09-18T23:02:41.918Z"
-          }
-        ]
+        "hotels": []
       }
     }
   ],

@@ -37,6 +37,7 @@ timeButtonHotels.addEventListener('click', function(){
     timeHotels = timeButtonHotels.textContent.toLowerCase();
 
     addData('hotels');
+    dataError();
 })
 
 timeButtonFlights.addEventListener('click', function(){
@@ -45,6 +46,7 @@ timeButtonFlights.addEventListener('click', function(){
     timeFlights = timeButtonFlights.textContent.toLowerCase();
 
     addData('flights');
+    dataError();
 })
 
 document.addEventListener('DOMContentLoaded', async function(){
@@ -52,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 
     if(user?.role == 'user'){
         cart = await getCartUser(user.id);
+        cartTemp = JSON.parse(JSON.stringify(cart));
     }else{
         if(user?.role == 'admin'){
             const temp = await getAllCart();
@@ -187,10 +190,19 @@ function createCard(data, type, time){
 function createDataChild(type, time){
     const cth = type == 'hotels' ? cartTempHotels : cartTempFlights;
 
+    console.log(cartTemp[time][type].length)
     cth[time] = []
+    
     for(let i = 0; i < cartTemp[time][type].length; i++){
         cth[time].push(createCard(cartTemp[time][type][i], type, time));
     }
+
+    dataError();
+}
+
+function dataError(){
+    addDisplayError('hotels', cartTemp[timeHotels]['hotels'].length == 0 ? true : false);
+    addDisplayError('flights', cartTemp[timeFlights]['flights'].length == 0 ? true : false);
 }
 
 function startCreate(){
