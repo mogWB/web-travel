@@ -1,4 +1,4 @@
-import { deleteQuestion, getQuestions } from "../../server/api.js";
+import { addAnswerQuestion, deleteQuestion, getQuestions } from "../../server/api.js";
 import { createModal } from "../basic/modal.js";
 
 const selIcon = '../../assets/icons/arroww.svg';
@@ -76,7 +76,15 @@ function createCard(data){
     buttonReset.appendChild(spanReset);
 
     buttonAnswer.addEventListener('click', function(){
+        createModal('Answer question', 'Answer', 'Enter the response that other users will see.', true, 'Answer', async (input) =>{
+            await addAnswerQuestion(data.id, input);
 
+            const faqItem = faq.find(item => item.id === data.id);
+            if (faqItem) faqItem.answer = input; 
+
+            createDataChild();
+            dataBox();
+        })
     })
 
     buttonReset.addEventListener('click', async function(){
@@ -136,7 +144,6 @@ function dataBox(){
         paggination.style.display = 'flex';
 
         for (let i = 0; i < page; i++) {
-            console.log(i)
             const item = document.createElement('div');
             item.classList.add('paggination-item');
 
@@ -153,12 +160,12 @@ function dataBox(){
 
             paggination.appendChild(item);
 
-            if (i == 0) {
+            if (i == currentPage - 1) {
                 item.classList.add('active');
                 active = item;
                 currentPage = i + 1;
 
-                fiilBox(faqCard.slice(i, countItemPage));
+                fiilBox(faqCard.slice(countItemPage * i, countItemPage * (i + 1)));
             }
         }
     }else{

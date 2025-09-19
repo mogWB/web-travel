@@ -297,6 +297,20 @@ export const addQuestion = async (question) => {
     return response.json();
 };
 
+export const addAnswerQuestion = async (idQuestion, answer) => {
+    const response = await fetch(`http://localhost:3000/faq/${idQuestion}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({answer}),
+    });
+
+    if (!response.ok) throw new Error('Ошибка при добавлении ответа на вопрос');
+
+    return response.json();
+};
+
 export const deleteQuestion = async (idQuestion) => {
     const response = await fetch(`http://localhost:3000/faq/${idQuestion}`, {
         method: 'DELETE',
