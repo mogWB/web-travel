@@ -3,35 +3,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentTheme = JSON.parse(localStorage.getItem('theme')) || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     
-    const currentPalette = localStorage.getItem('palette') || 'default';
-    // updatePalette(currentPalette);
+    const currentPalette = JSON.parse(localStorage.getItem('palette')) || 'default';
+    updatePalette(currentPalette);
 });
 
 
-// function updatePalette(palette) {
-//     const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+export function updatePalette(palette) {
+    const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
 
-//     const styles = {
-//         default: {
-//             background: isLightTheme ? '#e2d3d3ff' : '#141414',
-//             help: '#BE2B31',
-//             textColor: isLightTheme ? '#141414eb' : '#ffffff'
-//         },
-//         alternative1: {
-//             background: isLightTheme ? '#e2d3d3ff' : '#141414',
-//             help: isLightTheme ? '#5d7f80a1' : '#9c9867ff',
-//             textColor: isLightTheme ? '#141414eb' : '#ffffffff'
-//         },
-//         alternative2: {
-//             background: isLightTheme ? '#cfd1beff' : '#404040ff',
-//             help: isLightTheme ? '#76a45bff' : '#4a5057ff',
-//             textColor: isLightTheme ? '#222222' : '#f5f5f5'
-//         }
-//     };
+    const styles = {
+        default: {
+            text: '#212832',
+            text70: isLightTheme ? '#212832b3' : '#212832b3',
+            background: isLightTheme ? '#ffffff' : '#888888'
+        },
+        'palette 1': {
+            text: isLightTheme ? '#715191ff' : '#3156ebff',
+            text70: isLightTheme ? '#563877a1' : '#3156eb7f',
+            background: isLightTheme ? '#ffc6c6ff' : '#d4abc2ff'
+        },
+        'palette 2': {
+            text: isLightTheme ? '#eb7560f6' : '#3073beff',
+            text70: isLightTheme ? '#eb756074' : '#2e72c071',
+            background: isLightTheme ? '#f7f7bdff' : '#ca7e7eff'
+        }
+    };
 
-//     const selectedStyles = styles[palette] || {};
+    const selectedStyles = styles[palette] || {};
 
-//     document.documentElement.style.setProperty('--background', selectedStyles.background);
-//     document.documentElement.style.setProperty('--help', selectedStyles.help);
-//     document.documentElement.style.setProperty('--text-color', selectedStyles.textColor);
-// }
+    document.documentElement.style.setProperty('--text', selectedStyles.text);
+    document.documentElement.style.setProperty('--text70', selectedStyles.text70);
+    document.documentElement.style.setProperty('--background', selectedStyles.background);
+}

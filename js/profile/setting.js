@@ -2,6 +2,7 @@
 
 import { createModal } from "../basic/modal.js";
 import { createSelect } from "../basic/select.js";
+import { updatePalette } from "../basic/setting.js";
 
 let theme = localStorage.getItem('theme') ? JSON.parse(localStorage.getItem('theme')) : 'light';
 let language = localStorage.getItem('language') ? JSON.parse(localStorage.getItem('language')) : 'english';
@@ -17,6 +18,7 @@ function initSelect() {
                 theme = selectedValue;
                 localStorage.setItem('theme', JSON.stringify(theme));
                 document.documentElement.setAttribute('data-theme', theme);
+                updatePalette(palette);
             },
             theme
         );
@@ -39,6 +41,7 @@ function initSelect() {
             (selectedValue) => {
                 palette = selectedValue;
                 localStorage.setItem('palette', JSON.stringify(palette));
+                updatePalette(palette);
             },
             palette
         );
