@@ -144,8 +144,8 @@ function dataBox(){
                 item.classList.add('active');
                 active = item;
                 currentPage = i + 1;
-
-                fiilBox(faqCard.slice(countItemPage * i, countItemPage * (i + 2)));
+                console.log(countItemPage * i, countItemPage * (i + 1))
+                fiilBox(faqCard.slice(countItemPage * i, countItemPage * (i + 1)));
             });
 
             paggination.appendChild(item);
