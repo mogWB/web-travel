@@ -75,7 +75,10 @@ document.addEventListener('DOMContentLoaded', async function(){
 
     if(user?.role == 'user'){
         cart = await getCartUser(user.id);
-    }else{
+    }
+
+    if(user?.role == 'admin')
+    {
         const reserveText = document.createElement('span');
         reserveText.textContent = 'Change';
         reserveText.className = 'text-gs-18m';
