@@ -16,6 +16,7 @@ function initSelect() {
             (selectedValue) => {
                 theme = selectedValue;
                 localStorage.setItem('theme', JSON.stringify(theme));
+                document.documentElement.setAttribute('data-theme', theme);
             },
             theme
         );

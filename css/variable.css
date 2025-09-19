@@ -15,4 +15,29 @@
     --blue: #5E6281;
     --red20: #F9E1DC;
     --red: #DB6060;
+
+    --some: #F2EFFD;
+    --card: #ffffff;
+}
+
+[data-theme="dark"] {
+    --font-size-base: 16px;
+
+    --background: #888888;
+    --text: #212832;
+    --text70: rgba(33, 40, 50, 0.7);
+    --text-dif: #ffffff;
+    --black: #212832;
+    --black70: rgba(33, 40, 50, 0.7);
+    --white: #ffffff;
+    --dark: #000000;
+
+    --orange: #FF946D;
+    --yellow: #F1A501;
+    --blue: #5E6281;
+    --red20: #F9E1DC;
+    --red: #DB6060;
+
+    --some: rgba(255, 241, 219, 0.8);
+    --card: rgba(255, 241, 219, 0.8);
 }

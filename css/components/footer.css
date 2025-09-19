@@ -66,7 +66,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--background);
+    background-color: var(--card);
 }
 
 .share-item:nth-of-type(2) >img{

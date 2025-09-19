@@ -173,6 +173,7 @@
     gap: 15px;
     border-radius: 30px;
     transition: all 0.5s;
+    background-color: var(--card);
 }
 
 .category-box-item >img{
@@ -259,6 +260,7 @@
     border-radius: 25px;
     height: 450px;
     overflow: hidden;
+    background-color: var(--card);
     transition: all 0.5s;
 }
 

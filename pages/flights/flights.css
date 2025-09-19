@@ -155,6 +155,7 @@
     overflow: hidden;
     transition: all 0.5s;
     cursor: pointer;
+    background-color: var(--card);
 }
 
 .selling-card:hover{

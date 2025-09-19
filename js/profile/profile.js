@@ -134,7 +134,7 @@ if (user) {
         if (attribute[i] == 'email') {
             downText = downText.split('@')[0]; // Оставляем только часть до '@'
         }
-        console.log(downText)
+        
         const down = document.createElement('p');
         down.textContent = downText;
 

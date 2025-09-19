@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: 50px;
     padding: 80px 100px;
-    background-color: #F2EFFD;
+    background-color: var(--some);
     border-radius: 170px 0 0 0;
 }
 
