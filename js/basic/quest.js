@@ -15,36 +15,38 @@ document.addEventListener('DOMContentLoaded', function(){
 
     const box = type == 'email' ? email : quest;
 
-    const input = box.querySelector('input');
-    const button = box.querySelector('button');
-    
-    button.addEventListener('click', async function(){
-        if(!user){
-            createModal('Ooops', 'Well', 'Before asking questions or receiving newsletters, please log in to the website!', false, '', () => {
-                window.location.href = '../../pages/authorization/authorization.html';
-            })
-        }else{
-            if(type == 'email'){
-                if(formattedEmailError(input.value)){
-                    createModal('Thank you', 'Well', 'You\'ve been subscribed to receive the latest updates!');
-                    input.value = '';
-                }else{
-                    createModal('Ooops', 'Well', 'Email must contain 2 to 30 characters and match ...@gmail.com')
-                }
+    if(box){
+        const input = box.querySelector('input');
+        const button = box.querySelector('button');
+        
+        button.addEventListener('click', async function(){
+            if(!user){
+                createModal('Ooops', 'Well', 'Before asking questions or receiving newsletters, please log in to the website!', false, '', () => {
+                    window.location.href = '../../pages/authorization/authorization.html';
+                })
             }else{
-                if(input.value.length >= 10 && input.value.length <= 300){
-                    await addQuestion(input.value);
-                    
-                    if(page.includes('help') && user.role == 'admin') await startUp();
-
-                    createModal('Thank you', 'Well', 'Your question has been added to the system. Please wait for a response from the administrator on the Hepl page!');
-                    input.value = '';
+                if(type == 'email'){
+                    if(formattedEmailError(input.value)){
+                        createModal('Thank you', 'Well', 'You\'ve been subscribed to receive the latest updates!');
+                        input.value = '';
+                    }else{
+                        createModal('Ooops', 'Well', 'Email must contain 2 to 30 characters and match ...@gmail.com')
+                    }
                 }else{
-                    createModal('Ooops', 'Well', 'The question should be between 10 and 300 characters long')
+                    if(input.value.length >= 10 && input.value.length <= 300){
+                        await addQuestion(input.value);
+                        
+                        if(page.includes('help') && user.role == 'admin') await startUp();
+
+                        createModal('Thank you', 'Well', 'Your question has been added to the system. Please wait for a response from the administrator on the Hepl page!');
+                        input.value = '';
+                    }else{
+                        createModal('Ooops', 'Well', 'The question should be between 10 and 300 characters long')
+                    }
                 }
             }
-        }
-    })
+        })
+    }
 })
 
 function formattedEmailError(value) {

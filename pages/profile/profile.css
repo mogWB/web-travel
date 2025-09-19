@@ -96,6 +96,18 @@
     width: 290px;
 }
 
+.info-box-select >div >div:nth-of-type(1){
+    z-index: 60;
+}
+
+.info-box-select >div >div:nth-of-type(2){
+    z-index: 50;
+}
+
+.info-box-select >div >div:nth-of-type(3){
+    z-index: 40;
+}
+
 .disable-button{
     display: flex;
     flex-direction: column;
