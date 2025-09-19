@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function(){
             }else{
                 if(input.value.length >= 10 && input.value.length <= 300){
                     await addQuestion(input.value);
-                    await checkFAQ();
+                    
+                    if(page.includes('help') && user.role == 'admin') await startUp();
+
                     createModal('Thank you', 'Well', 'Your question has been added to the system. Please wait for a response from the administrator on the Hepl page!');
                     input.value = '';
                 }else{
@@ -55,8 +57,4 @@ function formattedEmailError(value) {
     }
 
     return regex.test(value);
-}
-
-async function checkFAQ(){
-    if(page.includes('help') && user.role == 'admin') await startUp();
 }

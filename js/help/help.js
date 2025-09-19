@@ -20,14 +20,14 @@ let active = null;
 let page;
 
 document.addEventListener('DOMContentLoaded', async function(){
-    await startUp();
+    if(window.location.href.includes('help')) await startUp();
 })
 
 export async function startUp(){
     user = JSON.parse(localStorage.getItem('user'));
 
     faq = await getQuestions();
-    console.log(faq);   
+    console.log(faq, 'sdsdfsdf');   
     if(!user || user.role == 'user'){
         faq = faq.filter(item => item.answer != undefined)
     }
