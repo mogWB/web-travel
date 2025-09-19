@@ -3,37 +3,43 @@
 import { createModal } from "../basic/modal.js";
 import { createSelect } from "../basic/select.js";
 
-const theme = null;
-const language = null;
-const palette = null;
+let theme = localStorage.getItem('theme') ? JSON.parse(localStorage.getItem('theme')) : 'light';
+let language = localStorage.getItem('language') ? JSON.parse(localStorage.getItem('language')) : 'english';
+let palette = localStorage.getItem('palette') ? JSON.parse(localStorage.getItem('palette')) : 'default';
 
 function initSelect() {
     try {
         createSelect(
-            ['price 1 - 9', 'price 9 - 1', 'A - Z', 'Z - A'], 
+            ['dark', 'light'], 
             document.querySelector('#theme'),
 
             (selectedValue) => {
-                sortOption = selectedValue;
-            }
+                theme = selectedValue;
+                localStorage.setItem('theme', JSON.stringify(theme));
+            },
+            theme
         );
 
         createSelect(
-            ['price 1 - 9', 'price 9 - 1', 'A - Z', 'Z - A'], 
+            ['russian', 'english'], 
             document.querySelector('#language'),
 
             (selectedValue) => {
-                sortOption = selectedValue;
-            }
+                language = selectedValue;
+                localStorage.setItem('language', JSON.stringify(language));
+            },
+            language
         );
         
         createSelect(
-            ['price 1 - 9', 'price 9 - 1', 'A - Z', 'Z - A'], 
+            ['palette 1', 'palette 2', 'default'], 
             document.querySelector('#palette'),
 
             (selectedValue) => {
-                sortOption = selectedValue;
-            }
+                palette = selectedValue;
+                localStorage.setItem('palette', JSON.stringify(palette));
+            },
+            palette
         );
         
     } catch (error) {

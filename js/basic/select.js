@@ -1,10 +1,12 @@
 // Переменная для хранения текущего открытого селекта
 let currentOpenSelect = null;
 
-export function createSelect(options, box, onChangeCallback) {
+export function createSelect(options, box, onChangeCallback, defaultValue = null) {
     const selectIcon = box.querySelector('img');
     const selectText = box.querySelector('p');
     const selectOption = box.querySelector('.select-option');
+
+    if(defaultValue) selectText.textContent = defaultValue;
 
     // Очищаем старые опции
     selectOption.innerHTML = '';
