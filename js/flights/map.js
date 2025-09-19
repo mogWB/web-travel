@@ -294,10 +294,17 @@ reserve.addEventListener('click', async function(){
         createModal('Ooops', 'Well', 'Please log in before placing an order :)')
     }else{
         if(user.role == 'admin'){
-            createModal('Change', 'Change', 'Please enter a new price..', true, 'Price', (input) => {
-                updateServicePrice(currentCardData.id, 'flights', input);
+            createModal('Change', 'Change', 'Please enter a new price..', true, 'Price', async (input) => {
+                try{
+                    await updateServicePrice(currentCardData.id, 'flights', input);
 
-                window.location.reload();
+                    window.location.reload();
+                }catch(error){
+                    setTimeout(() => {
+                        createModal('Ooops', 'Well', error);
+                    }, 350)
+                    
+                }
             })
         }else{
             if(!cart.future.flights.some(item => item.id == currentCardData.id)){

@@ -171,6 +171,10 @@ export const addlService = async (userId, type, service) => {
 
 
 export const updateServicePrice = async (serviceId, type, newPrice) => {
+    if (typeof newPrice !== 'number' || isNaN(newPrice)) {
+        throw new Error('Новая цена должна быть числом');
+    }
+
     const services = await getService(type);
     
     for (const key in services) {
