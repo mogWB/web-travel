@@ -1,4 +1,5 @@
 import { deleteQuestion, getQuestions } from "../../server/api.js";
+import { createModal } from "../basic/modal.js";
 
 const selIcon = '../../assets/icons/arroww.svg';
 
@@ -79,12 +80,14 @@ function createCard(data){
     })
 
     buttonReset.addEventListener('click', async function(){
-        await deleteQuestion(data.id);
+        createModal('Delete question', 'Remove', 'Do you really want to delete the question?', false, '', async () =>{
+            await deleteQuestion(data.id);
 
-        faq = faq.filter(item => item.id != data.id);
+            faq = faq.filter(item => item.id != data.id);
 
-        createDataChild();
-        dataBox();
+            createDataChild();
+            dataBox();
+        })
     })
 
     divSetting.appendChild(answer);
