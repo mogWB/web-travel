@@ -40,10 +40,6 @@
     {
       "id": "2",
       "last": {
-        "flights": [],
-        "hotels": []
-      },
-      "future": {
         "flights": [
           {
             "id": 1,
@@ -56,14 +52,56 @@
             "date": "2025-09-18T21:46:52.360Z"
           },
           {
-            "id": 2,
-            "image": "../../assets/images/losAngeles.jpg",
-            "country": "USA, Los Angeles",
-            "price": 15.2,
+            "id": 6,
+            "image": "../../assets/images/saoPauloHotel.jpg",
+            "country": "Brazil, Sao Paulo",
+            "price": "27.6",
             "people": 4,
-            "departure": "evening",
-            "days": 10,
-            "date": "2025-09-18T21:49:17.826Z"
+            "street": "Avenida Paulista",
+            "days": 11,
+            "continent": "South America",
+            "date": "2025-09-18T23:02:41.918Z"
+          },
+          {
+            "id": 6,
+            "image": "../../assets/images/saoPauloHotel.jpg",
+            "country": "Brazil, Sao Paulo",
+            "price": "27.6",
+            "people": 4,
+            "street": "Avenida Paulista",
+            "days": 11,
+            "continent": "South America",
+            "departure": "morning",
+            "date": "2025-09-18T23:02:41.918Z",
+            "dateDone": "19.09.2025 09:18"
+          }
+        ],
+        "hotels": [
+          {
+            "id": 9,
+            "image": "../../assets/images/cairoHotel.jpg",
+            "country": "Egypt, Cairo",
+            "price": "27.6",
+            "people": 3,
+            "street": "Mohamed Mahmoud Street",
+            "days": 12,
+            "continent": "Africa",
+            "date": "2025-09-19T06:22:19.820Z",
+            "dateDone": "19.09.2025 09:22"
+          }
+        ]
+      },
+      "future": {
+        "flights": [
+          {
+            "id": 1,
+            "image": "../../assets/images/newYork.jpg",
+            "country": "USA, New York",
+            "price": 12.5,
+            "people": 3,
+            "departure": "morning",
+            "days": 7,
+            "date": "2025-09-18T21:46:52.360Z"
           }
         ],
         "hotels": [

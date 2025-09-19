@@ -197,3 +197,71 @@ export const updateServicePrice = async (serviceId, type, newPrice) => {
 
     return response.json();
 };
+
+
+export const deleteCartService = async (userId, type, serviceId) => {
+    const cart = await getCartUser(userId);
+    
+    const itemIndex = cart['future'][type].findIndex(item => item.id == serviceId);
+    
+    if (itemIndex !== -1) {
+        cart['future'][type].splice(itemIndex, 1); // Удаляем элемент из ordered
+    } else {
+        throw new Error('Элемент не найден в корзине');
+    }
+
+    const updateResponse = await fetch(`http://localhost:3000/carts/${userId}`, {
+        method: 'PUT', 
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cart), 
+    });
+
+    if (!updateResponse.ok) {
+        throw new Error('Ошибка при отказе от услуги для пользователя');
+    }
+
+    return updateResponse.json();
+};
+
+
+export const completedCartService = async (userId, type, serviceId) => {
+    const cart = await getCartUser(userId);
+
+    const serviceDone = cart['future'][type].find(item => item.id == serviceId);
+
+    serviceDone.dateDone = formatDate();
+
+    cart['last'][type].push(serviceDone);
+
+    const updateResponse = await fetch(`http://localhost:3000/carts/${userId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cart),
+    });
+
+    await deleteCartService(userId, type, serviceId);
+
+    if (!updateResponse.ok) {
+        throw new Error('Ошибка при обновлении корзины для пользователя');
+    }
+
+    return updateResponse.json();
+};
+
+
+//----------------
+function formatDate() {
+    const date = new Date();
+
+    const day = String(date.getDate()).padStart(2, '0'); // Получаем день и добавляем ведущий ноль
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Получаем месяц (0-11) и добавляем 1, затем ведущий ноль
+    const year = date.getFullYear(); // Получаем год
+    const hours = String(date.getHours()).padStart(2, '0'); // Получаем часы и добавляем ведущий ноль
+    const minutes = String(date.getMinutes()).padStart(2, '0'); // Получаем минуты и добавляем ведущий ноль
+
+    return `${day}.${month}.${year} ${hours}:${minutes}`; // Форматируем строку
+}
