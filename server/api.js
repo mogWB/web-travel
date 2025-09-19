@@ -134,7 +134,6 @@ export const getCartUser = async (userId) => {
 
 
 
-
 // ------------------- flights
 
 export const getService = async (type) => {
@@ -265,3 +264,35 @@ function formatDate() {
 
     return `${day}.${month}.${year} ${hours}:${minutes}`; // Форматируем строку
 }
+
+
+
+// ------------- faq
+
+export const getQuestions = async () => {
+    const response = await fetch('http://localhost:3000/faq', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if (!response.ok) {
+        throw new Error('Ошибка при получении вопросов');
+    }
+    return response.json();
+};
+
+
+export const addQuestion = async (question) => {
+    const response = await fetch('http://localhost:3000/faq', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({question}),
+    });
+
+    if (!response.ok) throw new Error('Ошибка при добавлении вопроса');
+
+    return response.json();
+};

@@ -503,5 +503,41 @@
         "days": 12
       }
     ]
-  }
+  },
+  "faq": [
+    {
+      "id": 1,
+      "question": "How to choose the perfect family vacation tour?",
+      "answer": "Choosing the perfect family vacation tour requires careful consideration and takes into account a variety of factors. First and foremost, it is important to determine the budget you are willing to allocate for the trip. This includes not only the cost of the tour itself, but also additional expenses such as transportation, accommodation, meals, and entertainment. Additionally, consider any hidden costs, such as excursions or insurance."
+    },
+    {
+      "id": 2,
+      "question": "What are the best destinations for a family vacation?",
+      "answer": "The best destinations for a family vacation often include places with a variety of activities suitable for all ages. Popular options include theme parks like Disneyland, beach resorts with family-friendly amenities, and cities with rich cultural experiences such as Paris or Rome. National parks also offer great opportunities for outdoor adventures and family bonding."
+    },
+    {
+      "id": 3,
+      "question": "How do I find family-friendly accommodations?",
+      "answer": "To find family-friendly accommodations, look for hotels or resorts that offer amenities such as family suites, kid's clubs, and activities for children. Websites like TripAdvisor and family travel blogs often provide reviews and recommendations for family-friendly places to stay. Additionally, consider vacation rentals that provide more space and kitchen facilities."
+    },
+    {
+      "id": 4,
+      "question": "What should I pack for a family vacation?",
+      "answer": "Packing for a family vacation should include essentials such as clothing appropriate for the destination's climate, toiletries, medications, and any necessary travel documents. Don't forget to pack entertainment for kids, such as books or games, and consider bringing snacks for the journey. A first-aid kit and a travel guide can also be helpful."
+    },
+    {
+      "id": 5,
+      "question": "How can I keep my children entertained during long trips?",
+      "answer": "Keeping children entertained during long trips can be achieved by bringing along a variety of activities. Consider packing coloring books, puzzles, or electronic devices with games and movies. Frequent breaks for stretching and exploring can also help keep kids engaged. Planning interactive games or storytelling can make the journey more enjoyable."
+    },
+    {
+      "id": 6,
+      "question": "What are some tips for traveling with toddlers?",
+      "answer": "When traveling with toddlers, it's important to plan ahead. Bring a stroller for convenience, pack snacks and drinks, and have a supply of toys or activities to keep them occupied. Choose accommodations that are child-friendly and consider traveling during nap times to minimize disruptions. Always have a first-aid kit and any necessary medications on hand."
+    },
+    {
+      "id": "2d4d",
+      "question": "sdfsdfsdfsdfsdfsdf"
+    }
+  ]
 }
