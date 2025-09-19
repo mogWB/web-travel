@@ -4,6 +4,7 @@ const selIcon = '../../assets/icons/arroww.svg';
 
 const faqBox = document.querySelector('.faq-box');
 const paggination = document.querySelector('.paggination');
+const noCard = document.querySelector('#noCard');
 
 let faq = null;
 let faqCard = null;
@@ -18,17 +19,21 @@ let active = null;
 let page;
 
 document.addEventListener('DOMContentLoaded', async function(){
+    await startUp();
+})
+
+export async function startUp(){
     user = JSON.parse(localStorage.getItem('user'));
 
     faq = await getQuestions();
-    
+    console.log(faq);   
     if(!user || user.role == 'user'){
         faq = faq.filter(item => item.answer != undefined)
     }
 
     createDataChild();
     dataBox();
-})
+}
 
 function createCard(data){
     const div = document.createElement('div');
@@ -161,8 +166,13 @@ function dataBox(){
 function fiilBox(data){
     faqBox.innerHTML = '';
 
-     for(let i = 0; i < data.length; i++){
-        faqBox.appendChild(data[i]);
+    if(data.length == 0){
+        noCard.style.display = 'flex';
+        faqBox.style.display = 'none'
+    }else{
+        for(let i = 0; i < data.length; i++){
+            faqBox.appendChild(data[i]);
+        }
     }
 }
 
