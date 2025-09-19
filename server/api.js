@@ -296,3 +296,16 @@ export const addQuestion = async (question) => {
 
     return response.json();
 };
+
+export const deleteQuestion = async (idQuestion) => {
+    const response = await fetch(`http://localhost:3000/faq/${idQuestion}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+
+    if (!response.ok) throw new Error('Ошибка при удалении вопроса');
+
+    return response.json(); 
+};
