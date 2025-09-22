@@ -157,7 +157,7 @@ function createCard(data){
 
     const p21 = document.createElement('p');
     p21.classList.add('text-poppins-16-20m');
-    p21.textContent = data.people + 'people';
+    p21.textContent = data.people + ' people';
 
     div1.appendChild(p11);
     div1.appendChild(p12);
@@ -179,7 +179,9 @@ function createCard(data){
 }
 
 function createDataChild(data){
-    flightsChild[continent] = data.map(item => createCard(item));
+    if(data != undefined){
+        flightsChild[continent] = data.map(item => createCard(item));
+    }
 }
 
 
@@ -211,10 +213,16 @@ function sortFlights(data, sortOption) {
 }
 
 function applyFilters() {
-    if (!continent || !flightsChild[continent]) return;
+    if (!continent || 
+        !flightsChild || 
+        !flightsChild[continent] || 
+        !flights || 
+        Object.keys(flights).length === 0) {
+        return;
+    }
 
     let filteredData = [...flights[continent]];
-    
+
     if (searchValue) {
         filteredData = searchFlights(filteredData, searchValue);
     }
@@ -224,7 +232,6 @@ function applyFilters() {
     }
     
     flightsChild[continent] = filteredData;
-    console.log(filteredData)
    
     createDataChild(filteredData);
     
@@ -296,8 +303,11 @@ images.forEach(image => {
         const value = image.getAttribute('data-value');
         continent = value;
 
-        addDisplayContent(true);
-        addDisplayError();
+        if(flights){
+            addDisplayContent(true);
+            addDisplayError();
+        }
+        
         sellingContinent.textContent = value;
 
         // Сбрасываем поиск при смене континента
