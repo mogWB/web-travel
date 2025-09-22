@@ -10,6 +10,8 @@
 
 body{
     background-color: var(--background);
+    max-width: 1440px;
+    margin: 0 auto
 }
 
 a{
