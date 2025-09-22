@@ -23,7 +23,7 @@
             }
         },
         "footer": {
-            "bookTrip": "Забронируйте поездку за минуту, получите полный контроль на гораздо более долгий срок.",
+            "bookTrip": "Забронируйте поездку за минуту,\nполучите полный контроль",
             "navigate": {
                 "company": "Компания",
                 "reviews": "Отзывы",
@@ -80,10 +80,15 @@
         "sell": {
             "sort": "Сортировка",
             "continent": "Континент",
-            "chooseContinent": "Выберите континент"
+            "chooseContinent": "Выберите континент",
+            "search": "Поиск"
         },
         "variant": {
-            "variant": "Отели"
+            "variant": "Отели",
+            "reserve": "Бронь"
+        },
+        "placeholder": {
+            "search": "Поиск"
         }
     },
     "flights": {
@@ -99,6 +104,9 @@
         },
         "variant": {
             "variant": "Полеты"
+        },
+        "placeholder": {
+            "search": "Поиск"
         }
     },
     "help": {

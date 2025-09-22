@@ -6,6 +6,9 @@ import { createModal } from '../basic/modal.js';
 
 const tripDayLink = '../../assets/icons/tripDay.svg';
 const variantItem = ['flights', 'days', 'price', 'people', 'departure'];
+const variantItemRu = ['Тур', 'Дней', 'цена', 'людей', 'выезд'];
+
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
 
 let user = null;
 let cart = null;
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 
     addDisplayContent(false);
     addDisplayContentVariant(false);
-    addDisplayError('Выберите континент');
+    addDisplayError(currentLanguage == 'en' ? 'Select a continent' : 'Выберите континент');
 
     user = JSON.parse(localStorage.getItem('user'));
 
@@ -53,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     if(user?.role == 'admin')
     {
         const reserveText = document.createElement('span');
-        reserveText.textContent = 'Change';
+        reserveText.textContent = currentLanguage == 'en' ? 'Change' : 'Изменить';
         reserveText.className = 'text-gs-18m';
 
         reserve.innerHTML = '';
@@ -89,7 +92,7 @@ function setVariant(){
         div.classList.add('text-container');
 
         const up = document.createElement('p');
-        up.textContent = variantItem[i];
+        up.textContent = currentLanguage == 'en' ? variantItem[i] : variantItemRu[i];
 
         const down = document.createElement('p');
         const dValue = currentCardData[variantItem[i] == 'flights' ? 'country' : variantItem[i]]
@@ -170,12 +173,16 @@ function sortFlights(data, sortOption) {
     
     switch(sortOption) {
         case 'price 1 - 9':
+        case 'цена 1 - 9':
             return sortedArray.sort((a, b) => a.price - b.price);
         case 'price 9 - 1':
+        case 'цена 9 - 1':
             return sortedArray.sort((a, b) => b.price - a.price);
         case 'A - Z':
+        case 'A - Я':
             return sortedArray.sort((a, b) => a.country.localeCompare(b.country));
         case 'Z - A':
+        case 'Я - A':
             return sortedArray.sort((a, b) => b.country.localeCompare(a.country));
         default:
             return sortedArray;
@@ -203,7 +210,7 @@ function applyFilters() {
     flag = null;
     checkScreenWidth();
 
-    if(filteredData.length == 0) addDisplayError('Нету данных удовлетворяющих условию');
+    if(filteredData.length == 0) addDisplayError(currentLanguage == 'en' ? 'No data satisfies the condition' : 'Нету данных удовлетворяющих условию');
     else addDisplayContent(true);
 }
 
@@ -242,7 +249,7 @@ function initSearch() {
 function initSelect() {
     try {
         createSelect(
-            ['price 1 - 9', 'price 9 - 1', 'A - Z', 'Z - A'], 
+            currentLanguage == 'en' ? ['price 1 - 9', 'price 9 - 1', 'A - Z', 'Z - A'] : ['цена 1 - 9', 'цена 9 - 1', 'A - Я', 'Я - A'], 
             selling.querySelector('.sell-setting >div:nth-of-type(1)'),
 
             (selectedValue) => {
@@ -291,30 +298,39 @@ images.forEach(image => {
 //резерв
 reserve.addEventListener('click', async function(){
     if(!user){
-        createModal('Ooops', 'Well', 'Please log in before placing an order :)')
+        currentLanguage == 'en' ? createModal('Ooops', 'Well', 'Please log in before placing an order :)') 
+        : createModal('Ууупс', 'Хорошо', 'Пожалуйста, войдите в систему перед тем, как сделать заказ :)');
     }else{
         if(user.role == 'admin'){
-            createModal('Change', 'Change', 'Please enter a new price..', true, 'Price', async (input) => {
+            const tempText = currentLanguage == 'en' ? ['Change', 'Change', 'Please enter a new price..']
+            : ['Изменить', 'Изменить', 'Пожалуйста введите новую цену..']
+
+            createModal(...tempText, true, 'Price', async (input) => {
                 try{
                     await updateServicePrice(currentCardData.id, 'flights', input);
 
                     window.location.reload();
                 }catch(error){
                     setTimeout(() => {
-                        createModal('Ooops', 'Well', error);
+                        currentLanguage == 'en' ? createModal('Ooops', 'Well', error) :
+                        createModal('Ууупс', 'Хорошо', error)
                     }, 350)
                     
                 }
             })
         }else{
             if(!cart.future.flights.some(item => item.id == currentCardData.id)){
-                createModal('Reserve', 'Reserve', 'Do you really want to book a flight?', false, '', async () => {
+                const tempText = currentLanguage == 'en' ? ['Reserve', 'Reserve', 'Do you really want to book a flight?']
+                : ['Бронь', 'Бронь', 'Вы действительно хотите забронировать данный тур?']
+
+                createModal(...tempText, false, '', async () => {
                     await addlService(user.id, 'flights', {...currentCardData, "reserve": formatDate()});
                     
                     cart = await getCartUser(user.id);
                 })
             }else{
-                createModal('Ooops', 'Well', 'It looks like you already have this position in your booking. Once it\'s completed, it will become available again')
+                currentLanguage == 'en' ? createModal('Ooops', 'Well', 'It looks like you already have this position in your booking. Once it\'s completed, it will become available again')
+                : createModal('Упс', 'Хорошо', 'Похоже, что эта позиция уже есть в вашем бронировании. Как только оно будет завершено, она снова станет доступной.');
             }
         }
     }

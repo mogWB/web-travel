@@ -80,10 +80,15 @@
         "sell": {
             "sort": "Sort",
             "continent": "continent",
-            "chooseContinent": "Select a continent"
+            "chooseContinent": "Select a continent",
+            "search": "Search"
         },
         "variant": {
-            "variant": "Hotels"
+            "variant": "Hotels",
+            "reserve": "Reserve"
+        },
+        "placeholder": {
+            "search": "Search"
         }
     },
     "flights": {
@@ -99,6 +104,9 @@
         },
         "variant": {
             "variant": "Flights"
+        },
+        "placeholder": {
+            "search": "Search"
         }
     },
     "help": {
