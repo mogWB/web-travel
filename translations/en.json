@@ -131,7 +131,13 @@
     "booking": {
         "title": "Booking",
         "order": {
-            "hotels": "Hotels"
+            "hotels": "Hotels",
+            "flights": "Flights",
+            "future": "Future",
+            "sort": "Sort"
+        },
+        "placeholder": {
+            "search": "Search"
         }
     }
 }

@@ -4,10 +4,13 @@ import { createSelect } from "../basic/select.js";
 
 const variantItemHotels = ['hotels', 'days', 'price', 'people', 'street'];
 const variantItemFlights = ['flights', 'days', 'price', 'people', 'departure'];
+const variantItemFlightsRu = ['Тур', 'Дней', 'цена', 'людей', 'выезд'];
+const variantItemHotelsRu = ['Отель', 'дней', 'цена', 'людей', 'улица'];
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
 
-let timeHotels = 'future';
-let timeFlights = 'future';
+let timeHotels = currentLanguage == 'en' ? 'future' : 'будущее';
+let timeFlights = currentLanguage == 'en' ? 'future' : 'будущее';
 
 let user = null;
 let cart = null;
@@ -32,8 +35,9 @@ const orderBoxFlights = orderFlights.querySelector('.order-box');
 const noCardFlights = orderFlights.querySelector('#noCard');
 
 timeButtonHotels.addEventListener('click', function(){
-    timeButtonHotels.textContent = (timeButtonHotels.textContent == 'Future' ? 'Last' : 'Future');
-
+    timeButtonHotels.textContent = currentLanguage == 'en' ? (timeButtonHotels.textContent == 'Future' ? 'Last' : 'Future')
+    : (timeButtonHotels.textContent == 'Будущее' ? 'Прошлое' : 'Будущее');
+    
     timeHotels = timeButtonHotels.textContent.toLowerCase();
 
     addData('hotels');
@@ -41,7 +45,8 @@ timeButtonHotels.addEventListener('click', function(){
 })
 
 timeButtonFlights.addEventListener('click', function(){
-    timeButtonFlights.textContent = (timeButtonFlights.textContent == 'Future' ? 'Last' : 'Future');
+    timeButtonFlights.textContent = currentLanguage == 'en' ? (timeButtonFlights.textContent == 'Future' ? 'Last' : 'Future')
+    : (timeButtonFlights.textContent == 'Будущее' ? 'Прошлое' : 'Будущее');
 
     timeFlights = timeButtonFlights.textContent.toLowerCase();
 
@@ -107,6 +112,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 
 function createCard(data, type, time){
     const att = type == 'hotels' ? variantItemHotels : variantItemFlights;
+    const attRu = type == 'hotels' ? variantItemHotelsRu : variantItemFlightsRu;
 
     const div = document.createElement('div');
     div.className = 'order-box-item';
@@ -118,7 +124,7 @@ function createCard(data, type, time){
         container.className = 'text-container';
 
         const up = document.createElement('p');
-        up.textContent = att[i];
+        up.textContent = currentLanguage == 'en' ? att[i] : attRu[i];
 
         const down = document.createElement('p');
         const vl = att[i];
@@ -134,12 +140,13 @@ function createCard(data, type, time){
 
     const span = document.createElement('span');
     span.className = 'text-gs-14m';
-    span.textContent = time == 'future' ? (user.role == 'user' ? 'Remove' : 'Complete') : 'More';
+    span.textContent = currentLanguage == 'en' ? (time == 'future' ? (user.role == 'user' ? 'Remove' : 'Complete') : 'More')
+                                            : (time == 'future' ? (user.role == 'user' ? 'Удалить' : 'Завершить') : 'Больше') ;
 
     button.appendChild(span);
     button.addEventListener('click', function(){
         if(time != 'future'){
-            createModal('More infornation', 'Well',
+            currentLanguage == 'en' ? createModal('More infornation', 'Well',
                 `Country: ${data.country}\n
                 Price: ${data.price}\n
                 Days: ${data.days}\n
@@ -147,9 +154,18 @@ function createCard(data, type, time){
                 Reserve ${data.date}\n
                 Complete ${data.dateDone}\n
                 ${type == 'hotels' ? `Street: ${data.street}` : `Departure: ${data.departure}`}`)
+            : createModal('Больше информации', 'Хорошо',
+                `Страна: ${data.country}\n
+                Цена: ${data.price}\n
+                Дней: ${data.days}\n
+                Людей: ${data.people}\n
+                Дата бронирования ${data.date}\n
+                Дата завершения ${data.dateDone}\n
+                ${type == 'hotels' ? `Улица: ${data.street}` : `Выезд: ${data.departure}`}`)
         }else{
             if(user.role == 'user'){
-                createModal('Attention', 'Remove', 'Do you really want to cancel your reservation?', false, '', async () => {
+                const textTemp = currentLanguage != 'en' ? ['Внимание', 'Удалить', 'Вы действительно хотите отменить свою бронь?'] : ['Attention', 'Remove', 'Do you really want to cancel your reservation?']
+                createModal(...textTemp, false, '', async () => {
                     await deleteCartService(user.id, type, data.id);
                     
                     const itemIndex = cart['future'][type].findIndex(item => item.id == data.id);
@@ -162,7 +178,8 @@ function createCard(data, type, time){
                 })
             }else{
                 if(user.role == 'admin'){
-                    createModal('Attention', 'Complete', 'Do you really want to complete your booking?', false, '', async () => {
+                    const textTemp = currentLanguage != 'en' ? ['Внимание', 'Удалить', 'Вы действительно хотите завершить бронь?'] : ['Attention', 'Complete', 'Do you really want to complete your booking?']
+                    createModal(...textTemp, false, '', async () => {
                         await completedCartService(user.id, type, data.id);
                         
                         const serviceDone = cart['future'][type].find(item => item.id == data.id);
@@ -205,8 +222,8 @@ function createDataChild(type, time){
 }
 
 function dataError(){
-    addDisplayError('hotels', cartTemp[timeHotels]['hotels'].length == 0 ? true : false);
-    addDisplayError('flights', cartTemp[timeFlights]['flights'].length == 0 ? true : false);
+    addDisplayError('hotels', cartTemp[timeHotels == 'будущее' ? 'future' : timeHotels == 'прошлое' ? 'last' : timeHotels]['hotels'].length == 0 ? true : false);
+    addDisplayError('flights', cartTemp[timeFlights == 'будущее' ? 'future' : timeFlights == 'прошлое' ? 'last' : timeFlights]['flights'].length == 0 ? true : false);
 }
 
 function startCreate(){
@@ -219,7 +236,10 @@ function startCreate(){
 function addData(type){
     const box = type == 'hotels' ? orderBoxHotels : orderBoxFlights;
     const cth = type == 'hotels' ? cartTempHotels : cartTempFlights;
-    const time = type == 'hotels' ? timeHotels : timeFlights;
+
+    const time = type == 'hotels' 
+    ? ((timeHotels == 'будущее') ? 'future' : (timeHotels == 'прошлое') ? 'last' : timeHotels) 
+    : (timeFlights == 'будущее' ? 'future' : timeFlights == 'прошлое' ? 'last' : timeFlights);
 
     box.innerHTML = '';
 
@@ -243,12 +263,16 @@ function sortData(data, sortOption) {
     
     switch(sortOption) {
         case 'price 1 - 9':
+        case 'цена 1 - 9':
             return sortedArray.sort((a, b) => a.price - b.price);
         case 'price 9 - 1':
+        case 'цена 9 - 1':
             return sortedArray.sort((a, b) => b.price - a.price);
         case 'A - Z':
+        case 'A - Я':
             return sortedArray.sort((a, b) => a.country.localeCompare(b.country));
         case 'Z - A':
+        case 'Я - A':
             return sortedArray.sort((a, b) => b.country.localeCompare(a.country));
         default:
             return sortedArray;
@@ -314,7 +338,7 @@ function initSearch() {
 function initSelect() {
     try {
         createSelect(
-            ['price 1 - 9', 'price 9 - 1', 'A - Z', 'Z - A'], 
+            currentLanguage == 'en' ? ['price 1 - 9', 'price 9 - 1', 'A - Z', 'Z - A'] : ['цена 1 - 9', 'цена 9 - 1', 'A - Я', 'Я - A'], 
             orderHotels.querySelector('.select'),
 
             (selectedValue) => {
