@@ -348,7 +348,7 @@ reserve.addEventListener('click', async function(){
         }else{
             if(!cart.future.hotels.some(item => item.id == currentCardData.id)){
                 createModal('Reserve', 'Reserve', 'Do you really want to book a flight?', false, '', async () => {
-                    await addlService(user.id, 'hotels', {...currentCardData, "date": new Date()});
+                    await addlService(user.id, 'hotels', {...currentCardData, "date": formatDate()});
                     
                     cart = await getCartUser(user.id);
                 })
@@ -365,3 +365,15 @@ checkScreenWidth();
 initSelect();
 initSearch();
 window.addEventListener('resize', checkScreenWidth);
+
+function formatDate() {
+    const date = new Date();
+
+    const day = String(date.getDate()).padStart(2, '0'); // Получаем день и добавляем ведущий ноль
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Получаем месяц (0-11) и добавляем 1, затем ведущий ноль
+    const year = date.getFullYear(); // Получаем год
+    const hours = String(date.getHours()).padStart(2, '0'); // Получаем часы и добавляем ведущий ноль
+    const minutes = String(date.getMinutes()).padStart(2, '0'); // Получаем минуты и добавляем ведущий ноль
+
+    return `${day}.${month}.${year} ${hours}:${minutes}`; // Форматируем строку
+}

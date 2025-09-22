@@ -144,9 +144,9 @@ function createCard(data, type, time){
                 Price: ${data.price}\n
                 Days: ${data.days}\n
                 People: ${data.people}\n
-                Reserve ${data.reserve}\n
-                Complete ${data.complete}\n
-                ${type == 'hotels' ? `Street ${data.street}` : `Departure ${data.departure}`}`)
+                Reserve ${data.date}\n
+                Complete ${data.dateDone}\n
+                ${type == 'hotels' ? `Street: ${data.street}` : `Departure: ${data.departure}`}`)
         }else{
             if(user.role == 'user'){
                 createModal('Attention', 'Remove', 'Do you really want to cancel your reservation?', false, '', async () => {
@@ -157,6 +157,8 @@ function createCard(data, type, time){
 
                     createDataChild(type, 'future');
                     addData(type);
+
+                    window.location.reload();
                 })
             }else{
                 if(user.role == 'admin'){
@@ -174,6 +176,8 @@ function createCard(data, type, time){
                         createDataChild(type, 'future');
                         createDataChild(type, 'last');
                         addData(type);
+
+                        window.location.reload();
                 })
                 }
             }
@@ -223,7 +227,6 @@ function addData(type){
         box.appendChild(cth[time][i]);
     }
 }
-
 
 function searchData(data, searchText) {
     if (!searchText) return data;
@@ -288,8 +291,6 @@ function applyFilters(time, type) {
     else addDisplayError(type, false);
 }
 
-
-
 // aply
 function initSearch() {
     const searchInputHotels = orderHotels.querySelector('#search');
@@ -341,8 +342,6 @@ function initSelect() {
 
 initSearch();
 initSelect();
-
-
 
 //----------------
 function formatDate() {
