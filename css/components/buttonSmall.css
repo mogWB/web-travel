@@ -7,8 +7,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.5s;
 }
 
 .button-small >span{
     color: #ffffff;
+}
+
+.button-small:hover{
+    background-color: var(--red20);
 }

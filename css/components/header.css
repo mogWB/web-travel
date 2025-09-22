@@ -33,7 +33,7 @@ nav >a:nth-of-type(5){
 }
 
 .sign-up:hover{
-    background-color: red;
+    background-color: var(--red20);
 }
 
 .burger-button{

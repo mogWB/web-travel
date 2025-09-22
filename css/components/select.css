@@ -10,6 +10,11 @@
     background-color: var(--white);  
     cursor: pointer;
     position: relative;
+    transition: all 0.5s;
+}
+
+.select:hover{
+    background-color: var(--red20);
 }
 
 .select >p{
