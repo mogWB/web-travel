@@ -88,6 +88,18 @@
             "continent": "Africa",
             "date": "2025-09-19T06:22:19.820Z",
             "dateDone": "19.09.2025 09:22"
+          },
+          {
+            "id": 7,
+            "image": "../../assets/images/airesHotel.jpg",
+            "country": "Argentina, Buenos Aires",
+            "price": 15.7,
+            "people": 3,
+            "street": "Avenida 9 de Julio",
+            "days": 8,
+            "continent": "South America",
+            "date": "2025-09-22T00:12:33.666Z",
+            "dateDone": "22.09.2025 03:28"
           }
         ]
       },
@@ -126,19 +138,7 @@
             "reserve": "19.09.2025 14:52"
           }
         ],
-        "hotels": [
-          {
-            "id": 7,
-            "image": "../../assets/images/airesHotel.jpg",
-            "country": "Argentina, Buenos Aires",
-            "price": 15.7,
-            "people": 3,
-            "street": "Avenida 9 de Julio",
-            "days": 8,
-            "continent": "South America",
-            "date": "2025-09-22T00:12:33.666Z"
-          }
-        ]
+        "hotels": []
       }
     }
   ],
@@ -576,6 +576,10 @@
       "id": "844e",
       "question": "sdfsdfsdfsdfsdfsdf",
       "answer": "111"
+    },
+    {
+      "id": "c791",
+      "question": "Some question for answer or delete"
     }
   ]
 }
