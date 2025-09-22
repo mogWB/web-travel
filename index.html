@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./index.css">
-    <title>Main</title>
+    <title data-i18n="title">Main</title>
 </head>
-<body>
+<body data-page="home">
     <div id="preloader">
         <div class="loader"></div>
         <p class="text-gs-16b" data-i18n-common="preloader">Loading...</p>
@@ -16,13 +16,13 @@
     <header>
         <a href="./index.html" class="text-gs-44b">Jadoo</a>
         <nav>
-            <a class="text-gs-18m" href="./pages/reviews/reviews.html">Reviews</a>
-            <a class="text-gs-18m" href="./pages/hotels/hotels.html">Hotels</a>
-            <a class="text-gs-18m" href="./pages/flights/flights.html">Flights</a>
-            <a class="text-gs-18m" href="./pages/bookings/bookings.html">Bookings</a>
-            <a class="text-gs-18m" href="./pages/authorization/authorization.html">Login</a>
+            <a class="text-gs-18m" href="./pages/reviews/reviews.html" data-i18n-common="header.menu.reviews">Reviews</a>
+            <a class="text-gs-18m" href="./pages/hotels/hotels.html" data-i18n-common="header.menu.hotels">Hotels</a>
+            <a class="text-gs-18m" href="./pages/flights/flights.html" data-i18n-common="header.menu.flights">Flights</a>
+            <a class="text-gs-18m" href="./pages/bookings/bookings.html" data-i18n-common="header.menu.bookings">Bookings</a>
+            <a class="text-gs-18m" href="./pages/authorization/authorization.html" data-i18n-common="header.menu.login">Login</a>
             <div class="sign-up">
-                <a class="text-gs-18m" href="./pages/registration/registration.html">Sign up</a>
+                <a class="text-gs-18m" href="./pages/registration/registration.html" data-i18n-common="header.menu.signUp">Sign up</a>
             </div>
         </nav>
         <div class="burger-button">
@@ -31,33 +31,33 @@
             <div></div>
         </div>
         <div class="burger-menu shadow-10">
-            <a class="text-gs-18m" href="./pages/reviews/reviews.html">Reviews</a>
-            <a class="text-gs-18m" href="./pages/hotels/hotels.html">Hotels</a>
-            <a class="text-gs-18m" href="./pages/flights/flights.html">Flights</a>
-            <a class="text-gs-18m" href="./pages/bookings/bookings.html">Bookings</a>
-            <a class="text-gs-18m" href="./pages/help/help.html">Help</a>
-            <a class="text-gs-18m" href="../../pages/profile/profile.html">Profile</a>
+            <a class="text-gs-18m" href="./pages/reviews/reviews.html" data-i18n-common="header.menu.reviews">Reviews</a>
+            <a class="text-gs-18m" href="./pages/hotels/hotels.html" data-i18n-common="header.menu.hotels">Hotels</a>
+            <a class="text-gs-18m" href="./pages/flights/flights.html" data-i18n-common="header.menu.flights">Flights</a>
+            <a class="text-gs-18m" href="./pages/bookings/bookings.html" data-i18n-common="header.menu.bookings">Bookings</a>
+            <a class="text-gs-18m" href="./pages/help/help.html" data-i18n-common="header.menu.help">Help</a>
+            <a class="text-gs-18m" href="../../pages/profile/profile.html" data-i18n-common="header.menu.profile">Profile</a>
             <div class="sign-up">
-                <a class="text-gs-18m" href="./pages/registration/registration.html">Sign up</a>
+                <a class="text-gs-18m" href="./pages/registration/registration.html" data-i18n-common="header.menu.signUp">Sign up</a>
             </div>
-            <a class="text-gs-18m" href="./pages/authorization/authorization.html">Login</a>
+            <a class="text-gs-18m" href="./pages/authorization/authorization.html" data-i18n-common="header.menu.login">Login</a>
         </div>
     </header>
     <main>
         <section class="hello">
             <div class="text-contant">
-                <p class="text-poppins-20b">Best Destinations around the world</p>
-                <p class="text-volkhov-70-80b">Travel, enjoy<br>and live a new<br>and full life</p>
-                <p class="text-poppins-16-30m">Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.</p>
+                <p class="text-poppins-20b" data-i18n="hello.bestDestination">Best Destinations around the world</p>
+                <p class="text-volkhov-70-80b" data-i18n="hello.travelEnjoy">Travel, enjoy<br>and live a new<br>and full life</p>
+                <p class="text-poppins-16-30m" data-i18n="hello.builtWicket">Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.</p>
                 <div class="hello-link">
                     <button class="hello-more">
-                        <p class="text-gs-18m">Find out more</p>
+                        <p class="text-gs-18m" data-i18n="hello.findMore">Find out more</p>
                     </button>
                     <div>
                         <button class="hello-play">
                             <img src="./assets/icons/play.svg" alt="pl">
                         </button>
-                        <p class="text-gs-18m">Play Demo</p>
+                        <p class="text-gs-18m" data-i18n="hello.playDemo">Play Demo</p>
                     </div>
                 </div>
             </div>
@@ -67,16 +67,16 @@
         </section>
         <section class="category">
             <div class="section-header">
-                <p class="text-poppins-18b">CATEGORY</p>
-                <p class="text-volkhov-50-60b">We Offer Best Services</p>
+                <p class="text-poppins-18b" data-i18n="category.category">CATEGORY</p>
+                <p class="text-volkhov-50-60b" data-i18n="category.weOfferBest">We Offer Best Services</p>
             </div>
             <div class="category-box"></div>
             <div class="paggination"></div>
         </section>
         <section class="selling">
             <div class="section-header">
-                <p class="text-poppins-18b">TOP SELLING</p>
-                <p class="text-volkhov-50-60b">Top Destinations</p>
+                <p class="text-poppins-18b" data-i18n="selling.topSelling">TOP SELLING</p>
+                <p class="text-volkhov-50-60b" data-i18n="selling.topDestinations">Top Destinations</p>
             </div>
             <div class="selling-content">
                 <div class="slide">
@@ -91,8 +91,8 @@
         <section class="book">
             <div class="header-box">
                 <div class="section-header-left">
-                    <p class="text-poppins-18b">Easy and Fast</p>
-                    <p class="text-volkhov-50-60b">Book your next trip <br class="line-break">in 3 easy steps</p>
+                    <p class="text-poppins-18b" data-i18n="book.easyAndFast">Easy and Fast</p>
+                    <p class="text-volkhov-50-60b" data-i18n="book.bookYpur">Book your next trip <br class="line-break">in 3 easy steps</p>
                 </div>
                 <div class="book-card">
 
@@ -109,16 +109,16 @@
             <img src="./assets/images/qantas.png" alt="">
             <img src="./assets/images/litalia.png" alt="">
         </section>
-        <section class="quest">
+        <section class="quest" id="email">
             <div class="quest-container">
-                <p class="text-poppins-30-40m">Subscribe to get information, latest news and other interesting offers about Jadoo</p>
+                <p class="text-poppins-30-40m" data-i18n-common="quest.subscribe">Subscribe to get information, latest news and other interesting offers about Jadoo</p>
                 <div class="quest-container-box">
                     <label class="input">
                         <img src="./assets/icons/your.svg" alt="ur">
                         <input type="text" placeholder="Your email">
                     </label>
                     <button class="button-big">
-                        <span class="text-gs-18m">Subscribe</span>
+                        <span class="text-gs-18m" data-i18n-common="quest.subscribeButton">Subscribe</span>
                     </button>
                 </div>
             </div>
@@ -128,26 +128,26 @@
         <div class="up">
             <div class="logo">
                 <p class="text-poppins-44m">Jadoo.</p>
-                <p class="text-poppins-14-20n">Book your trip in minute, get full</br>Control for much longer.</p>
+                <p class="text-poppins-14-20n" data-i18n-common="footer.bookTrip">Book your trip in minute, get full</br>Control for much longer.</p>
             </div>
             <div class="navigate">
                 <div class="navigate-item">
-                    <p class="text-poppins-20b">Company</p>
-                    <a href="./pages/reviews/reviews.html" class="text-poppins-18n">Reviews</a>
-                    <a href="./pages/hotels/hotels.html" class="text-poppins-18n">Hotels</a>
-                    <a href="./pages/flights/flights.html" class="text-poppins-18n">Flights</a>
+                    <p class="text-poppins-20b" data-i18n-common="footer.navigate.company">Company</p>
+                    <a href="./pages/reviews/reviews.html" class="text-poppins-18n" data-i18n-common="footer.navigate.reviews">Reviews</a>
+                    <a href="./pages/hotels/hotels.html" class="text-poppins-18n" data-i18n-common="footer.navigate.hotels">Hotels</a>
+                    <a href="./pages/flights/flights.html" class="text-poppins-18n" data-i18n-common="footer.navigate.flights">Flights</a>
                 </div>
                 <div class="navigate-item">
                     <p class="text-poppins-20b">Contact</p>
-                    <a href="./pages/help/help.html" class="text-poppins-18n">Contact</a>
-                    <a href="./pages/help/help.html" class="text-poppins-18n">Help</a>
-                    <a href="./pages/help/help.html" class="text-poppins-18n">FAQ</a>
+                    <a href="./pages/help/help.html" class="text-poppins-18n" data-i18n-common="footer.navigate.contact">Contact</a>
+                    <a href="./pages/help/help.html" class="text-poppins-18n" data-i18n-common="footer.navigate.help">Help</a>
+                    <a href="./pages/help/help.html" class="text-poppins-18n" data-i18n-common="footer.navigate.faq">FAQ</a>
                 </div>
                 <div class="navigate-item">
-                    <p class="text-poppins-20b">More</p>
-                    <a href="./pages/bookings/bookings.html" class="text-poppins-18n">Bookings</a>
-                    <a href="./pages/profile/profile.html" class="text-poppins-18n">Profile</a>
-                    <a href="./pages/authorization/authorization.html" class="text-poppins-18n" id="exit">Exit</a>
+                    <p class="text-poppins-20b" data-i18n-common="footer.navigate.more">More</p>
+                    <a href="./pages/bookings/bookings.html" class="text-poppins-18n" data-i18n-common="footer.navigate.bookings">Bookings</a>
+                    <a href="./pages/profile/profile.html" class="text-poppins-18n" data-i18n-common="footer.navigate.profile">Profile</a>
+                    <a href="./pages/authorization/authorization.html" class="text-poppins-18n" id="exit" data-i18n-common="footer.navigate.exit">Exit</a>
                 </div>
             </div>
             <div class="share">
@@ -162,19 +162,19 @@
                         <img src="./assets/icons/instagram.svg" alt="ins">
                     </div>
                 </div>
-                <p class="text-poppins-18m">Discover our app</p>
+                <p class="text-poppins-18m" data-i18n-common="footer.discoverOur">Discover our app</p>
                 <div class="link-store">
                     <div class="link-store-item">
                         <img src="./assets/icons/google-play.svg" alt="gp">
                         <div>
-                            <p class="text-poppins-8b">GET IT ON</p>
+                            <p class="text-poppins-8b" data-i18n-common="footer.getItOn">GET IT ON</p>
                             <p class="text-poppins-8l">GOOGLE PLAY</p>
                         </div>
                     </div>
                     <div class="link-store-item">
                         <img src="./assets/icons/apple-store.svg" alt="as">
                         <div>
-                            <p class="text-poppins-8b">GET IT ON</p>
+                            <p class="text-poppins-8b" data-i18n-common="footer.navigate.getItOn">GET IT ON</p>
                             <p class="text-poppins-8l">APPLE STORE</p>
                         </div>
                     </div>

@@ -99,7 +99,7 @@ function checkScreenWidth() {
             flag = false;
         }
     }
-}
+}   
 
 checkScreenWidth();
 window.addEventListener('resize', checkScreenWidth);

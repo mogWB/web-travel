@@ -20,6 +20,10 @@
     text-transform: uppercase;
 }
 
+.text-contant >p:nth-of-type(2){
+    white-space: pre-line;
+}
+
 .text-contant >p:nth-of-type(3){
     color: var(--text70);
     max-width: 470px;

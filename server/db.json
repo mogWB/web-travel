@@ -112,7 +112,7 @@
             "departure": "morning",
             "days": 10,
             "continent": "South America",
-            "reserve": "19.09.2025 14:52"
+            "   ": "19.09.2025 14:52"
           },
           {
             "id": 8,
@@ -126,7 +126,19 @@
             "reserve": "19.09.2025 14:52"
           }
         ],
-        "hotels": []
+        "hotels": [
+          {
+            "id": 7,
+            "image": "../../assets/images/airesHotel.jpg",
+            "country": "Argentina, Buenos Aires",
+            "price": 15.7,
+            "people": 3,
+            "street": "Avenida 9 de Julio",
+            "days": 8,
+            "continent": "South America",
+            "date": "2025-09-22T00:12:33.666Z"
+          }
+        ]
       }
     }
   ],
@@ -413,7 +425,7 @@
         "id": 10,
         "image": "../../assets/images/johaHotel.jpg",
         "country": "South Africa, Johannesburg",
-        "price": 13.8,
+        "price": 13.9,
         "people": 4,
         "street": "Nelson Mandela Square",
         "days": 9

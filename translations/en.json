@@ -1,0 +1,58 @@
+{
+    "common": {
+        "preloader": "",
+        "header": {
+            "menu": {
+                "reviews": "rev",
+                "hotels": "",
+                "flights": "",
+                "bookings": "",
+                "login": "",
+                "help": "",
+                "profile": ""
+            }
+        },
+        "quest": {
+            "subscribe": "",
+            "subscribeButton": ""
+        },
+        "footer": {
+            "bookTrip": "",
+            "navigate": {
+                "company": "",
+                "reviews": "",
+                "hotels": "",
+                "flights": "",
+                "contact": "",
+                "help": "",
+                "faq": "",
+                "bookings": "",
+                "profile": "",
+                "exit": ""
+            },
+            "discoverOur": "",
+            "getItOn": ""
+        }
+    },
+    "home": {
+        "hello": {
+            "bestDestination": "",
+            "travelEnjoy": "",
+            "builtWicket": "",
+            "findMore": "",
+            "playDemo": ""
+        },
+        "category": {
+            "category": "",
+            "weOfferBest": ""
+        },
+        "selling": {
+            "topSelling": "",
+            "topDestinations": ""
+        },
+        "book": {
+            "easyAndFast": "",
+            "bookYpur": ""
+        }
+    }
+}

@@ -29,7 +29,7 @@ function initSelect() {
 
             (selectedValue) => {
                 language = selectedValue;
-                localStorage.setItem('language', JSON.stringify(language));
+                localStorage.setItem('language', JSON.stringify(language == 'russian' ? 'ru' : 'en'));
             },
             language
         );

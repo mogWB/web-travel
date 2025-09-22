@@ -21,6 +21,7 @@ footer{
 
 .logo >p:nth-of-type(2){
     color: var(--text70);
+    white-space: pre-line;
 }
 
 .navigate{
