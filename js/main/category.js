@@ -3,6 +3,8 @@ import {createPaggination} from '../basic/paggination.js'
 const dataChild = [];
 let flag = null;
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+
 const category = document.querySelector('.category');
 const categoryBox = document.querySelector('.category-box');
 
@@ -29,6 +31,29 @@ const data = [
     },
 ]
 
+const dataRu = [
+    {
+        img: './assets/icons/calculate.svg',
+        header: 'Расчёт погоды',
+        desc: 'Созданный Wicket, дольше восхищается, делая ванность самой собой.',
+    },
+    {
+        img: './assets/icons/bestfly.svg',
+        header: 'Лучшие рейсы',
+        desc: 'Заворожённое слушание. Продают ворота парка, они на западе усердно работают.',
+    },
+    {
+        img: './assets/icons/localeve.svg',
+        header: 'Местные события',
+        desc: 'Ванность сама по себе. Предпочитает мужчин, которые заворожены слушанием.',
+    },
+    {
+        img: './assets/icons/customize.svg',
+        header: 'Настройка',
+        desc: 'Мы предоставляем аутсорсинговые авиационные услуги для военных заказчиков.',
+    },
+];
+
 function createCard(data){
     const item = document.createElement('div');
     item.className = 'category-box-item shadow-5';
@@ -52,8 +77,10 @@ function createCard(data){
 }
 
 function createDataChild(){
-    for(let i = 0; i < data.length; i++){
-        dataChild.push(createCard(data[i]));
+    const dataT = currentLanguage == 'en' ? data : dataRu;
+
+    for(let i = 0; i < dataT.length; i++){
+        dataChild.push(createCard(dataT[i]));
     }
 }
 

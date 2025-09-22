@@ -16,7 +16,11 @@
         "quest": {
             "subscribe": "Subscribe to get information, latest news and other interesting offers about Jadoo",
             "feelFree": "Feel free to ask your questions about your plans and you will get an answer in the FAQ soon!",
-            "subscribeButton": "Subscribe"
+            "subscribeButton": "Subscribe",
+            "placeholder": {
+                "email": "Your email",
+                "question": "Your question"
+            }
         },
         "footer": {
             "bookTrip": "Book your trip in minute, get full\nControl for much longer.",
@@ -65,6 +69,61 @@
         "event": {
             "testimonials": "Testimonials",
             "whatPeople": "What people say\nabout Us."
+        }
+    },
+    "hotels": {
+        "title": "Hotels",
+        "continent": {
+            "continent": "continent",
+            "chooseVacation": "Choose Your Vacation"
+        },
+        "sell": {
+            "sort": "Sort",
+            "continent": "continent",
+            "chooseContinent": "Select a continent"
+        },
+        "variant": {
+            "variant": "Hotels"
+        }
+    },
+    "flights": {
+        "title": "Flights",
+        "continent": {
+            "continent": "continent",
+            "chooseVacation": "Choose Your Vacation"
+        },
+        "sell": {
+            "sort": "Sort",
+            "continent": "continent",
+            "chooseContinent": "Select a continent"
+        },
+        "variant": {
+            "variant": "Flights"
+        }
+    },
+    "help": {
+        "title": "Help",
+        "faq": {
+            "faq": "FAQ",
+            "freq": "Frequently asked questions",
+            "choosing": "Choosing the perfect family vacation tour requires careful consideration and takes into account a variety of factors. First and foremost, it is important to determine the budget you are willing to allocate for the trip. This includes not only the cost of the tour itself, but also additional expenses such as transportation, accommodation, meals, and entertainment. Additionally, consider any hidden costs, such as excursions or insurance.",
+            "button": {
+                "answer": "Answer",
+                "reset": "Reset"
+            },
+            "noQuestion": "No questions asked"
+        },
+        "map": {
+            "contact": "Contact",
+            "howFind": "How to find\nand contact us",
+            "address": "Address",
+            "canFind": "You can find us at 43 Mira Avenue, Mogilev"
+        }
+    },
+    "booking": {
+        "title": "Booking",
+        "order": {
+            "hotels": "Hotels"
         }
     }
 }

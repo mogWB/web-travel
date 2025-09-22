@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./flights.css">
     <title>Flights</title>
 </head>
-<body>
+<body data-page="flights">
     <div id="preloader">
         <div class="loader"></div>
         <p class="text-gs-16b" data-i18n-common="preloader">Loading...</p>
@@ -46,8 +46,8 @@
     <main>
         <section class="continent">
             <div class="section-header">
-                <p class="text-poppins-18b">continent</p>
-                <p class="text-volkhov-50-60b">Choose Your Vacation</p>
+                <p class="text-poppins-18b" data-i18n="continent.continent">continent</p>
+                <p class="text-volkhov-50-60b" data-i18n="continent.chooseVacation">Choose Your Vacation</p>
             </div>
             <div class="continent-box">
                 <img src="../../assets/images/check.svg" alt="ch">
@@ -64,13 +64,13 @@
                     <input type="text" id="search" placeholder="Search">
                 </label>
                 <div class="select">
-                    <p class="text-gs-14n">Sort</p>
+                    <p class="text-gs-14n" data-i18n="sell.sort">Sort</p>
                     <img src="../../assets/icons/arroww.svg" alt="ar">
                     <div class="select-option"></div>
                 </div>
             </div>
             <div class="section-header">
-                <p class="text-poppins-18b">continent</p>
+                <p class="text-poppins-18b" data-i18n="sell.continent">continent</p>
                 <p class="text-volkhov-50-60b" id="continentText">South America</p>
             </div>
             <div class="sell-box">
@@ -82,13 +82,13 @@
                 </div>
             </div>
             <div class="no-continent" id="noContinent">
-                <p>Выберите континент</p>
+                <p data-i18n="sell.chooseContinent">Выберите континент</p>
             </div>
             <div class="paggination"></div>
         </section>
         <section class="variant">
             <div class="section-header">
-                <p class="text-poppins-18b">Hotels</p>
+                <p class="text-poppins-18b" data-i18n="variant.variant">Flights</p>
                 <p class="text-volkhov-50-60b">London, UK</p>
             </div>
             <div class="variant-box">
@@ -100,14 +100,14 @@
         </section>
         <section class="quest" id="email">
             <div class="quest-container">
-                <p class="text-poppins-30-40m">Subscribe to get information, latest news and other interesting offers about Jadoo</p>
+                <p class="text-poppins-30-40m" data-i18n-common="quest.subscribe">Subscribe to get information, latest news and other interesting offers about Jadoo</p>
                 <div class="quest-container-box">
                     <label class="input">
                         <img src="../../assets/icons/your.svg" alt="ur">
-                        <input type="text" placeholder="Your email">
+                        <input type="text" placeholder="Your email" data-i18n-common="quest.placeholder.email">
                     </label>
                     <button class="button-big">
-                        <span class="text-gs-18m">Subscribe</span>
+                        <span class="text-gs-18m" data-i18n-common="quest.subscribeButton">Subscribe</span>
                     </button>
                 </div>
             </div>

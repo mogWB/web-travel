@@ -1,23 +1,43 @@
 const book = document.querySelector('.book');
 const bookCardBox = book.querySelector('.book-card');
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+
 const data = [
     {
         img: './assets/icons/book1.svg',
         up: 'Choose Destination',
-        down: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. '
+        down: 'Select your travel destination from various options.'
     },
     {
         img: './assets/icons/book2.svg',
         up: 'Make Payment',
-        down: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. '
+        down: 'Complete your booking with a secure payment method for convenience.'
     },
     {
         img: './assets/icons/book3.svg',
         up: 'Reach Airport on Selected Date',
-        down: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. '
+        down: 'Arrive at the airport on your selected date for a smooth check-in.'
     }
-]
+];
+
+const dataRu = [
+    {
+        img: './assets/icons/book1.svg',
+        up: 'Выберите направление',
+        down: 'Выберите направление путешествия из различных вариантов.'
+    },
+    {
+        img: './assets/icons/book2.svg',
+        up: 'Сделайте оплату',
+        down: 'Завершите бронирование с помощью безопасного способа оплаты для удобства.'
+    },
+    {
+        img: './assets/icons/book3.svg',
+        up: 'Прибудьте в аэропорт',
+        down: 'Прибудьте в аэропорт в выбранную дату для плавной регистрации.'
+    }
+];
 
 const dataChild = [];
 
@@ -54,8 +74,10 @@ function createCard(data){
 }
 
 function createDataChild(){
-    for(let i = 0; i < data.length; i++){
-        dataChild.push(createCard(data[i]));
+    const dataT = currentLanguage == 'en' ? data : dataRu;
+
+    for(let i = 0; i < dataT.length; i++){
+        dataChild.push(createCard(dataT[i]));
     }
 }
 

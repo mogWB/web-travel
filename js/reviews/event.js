@@ -7,28 +7,75 @@ const cardBox = box.querySelector('.event-box');
 const dataChild = [];
 let flag = null;
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+
 const data = [
     {
-        img: '../../assets/images/sl1.png',
-        up: 'Local Events',
-        down: 'Barton vanity itself do in it. Preferd to men it engrossed listening. '
+        img: '../../assets/images/event1.jpg',
+        up: 'Cultural Festival',
+        down: 'Experience the vibrant culture with local music and art'
     },
     {
-        img: '../../assets/images/sl2.png',
-        up: 'Local Events',
-        down: 'Barton vanity itself do in it. Preferd to men it engrossed listening. '
+        img: '../../assets/images/event2.jpg',
+        up: 'Food and Wine Tour',
+        down: 'Taste local delicacies and fine wines from the best vineyards'
     },
     {
-        img: '../../assets/images/sl3.png',
-        up: 'Local Events',
-        down: 'Barton vanity itself do in it. Preferd to men it engrossed listening. '
+        img: '../../assets/images/event3.jpg',
+        up: 'Adventure Sports Day',
+        down: 'Join us for thrilling activities'
     },
     {
-        img: '../../assets/images/sl3.png',
-        up: 'Local Events',
-        down: 'Barton vanity itself do in it. Preferd to men it engrossed listening. '
+        img: '../../assets/images/event4.jpg',
+        up: 'Historical City Tour',
+        down: 'Explore the city’s rich history with guided tours'
     },
-]
+    {
+        img: '../../assets/images/event5.jpg',
+        up: 'Nature Retreat',
+        down: 'Reconnect with nature through hiking and meditation'
+    },
+    {
+        img: '../../assets/images/event6.jpeg', 
+        up: 'Wildlife Safari',
+        down: 'Experience the thrill of seeing wildlife in their natural habitat'
+    }
+];
+
+const dataRu = [
+    {
+        img: '../../assets/images/event1.jpg',
+        up: 'Культурный фестиваль',
+        down: 'Погрузитесь в яркую культуру с местной музыкой и искусством'
+    },
+    {
+        img: '../../assets/images/event2.jpg',
+        up: 'Гастрономический тур с вином',
+        down: 'Попробуйте местные деликатесы и лучшие вина из виноделен'
+    },
+    {
+        img: '../../assets/images/event3.jpg',
+        up: 'День приключенческих видов спорта',
+        down: 'Присоединяйтесь к захватывающим активностям'
+    },
+    {
+        img: '../../assets/images/event4.jpg',
+        up: 'Исторический городской тур',
+        down: 'Исследуйте богатую историю города с экскурсиями'
+    },
+    {
+        img: '../../assets/images/event5.jpg',
+        up: 'Природный ретрит',
+        down: 'Восстановите связь с природой через пешие прогулки и медитацию'
+    },
+    {
+        img: '../../assets/images/event6.jpeg', // Новое изображение
+        up: 'Сафари на дикой природе',
+        down: 'Испытайте волнение от встречи с дикой природой'
+    }
+];
+
+
 
 function createCard(data, reverse){
     const div = document.createElement('div');
@@ -63,8 +110,10 @@ function createCard(data, reverse){
 }
 
 function createDataChild(){
-    for(let i = 0; i < data.length; i++){
-        dataChild.push(createCard(data[i], i % 2));
+    const dataT = currentLanguage == 'en' ? data : dataRu;
+
+    for(let i = 0; i < dataT.length; i++){
+        dataChild.push(createCard(dataT[i], i % 2));
     }
 }
 

@@ -9,6 +9,8 @@ let flag = null;
 const selling = document.querySelector('.selling');
 const sellingBox = selling.querySelector('.selling-content');
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+
 const data = [
     {
         img: './assets/images/sl1.png',
@@ -29,12 +31,63 @@ const data = [
         dayt: '28 Days Trip',
     },
     {
-        img: './assets/images/sl2.png',
-        place: 'London, UK',
-        cost: 4.2,
-        dayt: '12 Days Trip',
+        img: './assets/images/sl4.jpg',
+        place: 'Barcelona, Spain',
+        cost: 6.5,
+        dayt: '7 Days Trip',
     },
-]
+    {
+        img: './assets/images/sl5.jpg',
+        place: 'Paris, France',
+        cost: 8.0,
+        dayt: '5 Days Trip',
+    },
+    {
+        img: './assets/images/sl6.jpg',
+        place: 'Berlin, Germany',
+        cost: 7.25,
+        dayt: '9 Days Trip',
+    },
+];
+
+const dataRu = [
+    {
+        img: './assets/images/sl1.png',
+        place: 'Рим, Италия',
+        cost: 5.42,
+        dayt: '10 дневная поездка',
+    },
+    {
+        img: './assets/images/sl2.png',
+        place: 'Лондон, Великобритания',
+        cost: 4.2,
+        dayt: '12 дневная поездка',
+    },
+    {
+        img: './assets/images/sl3.png',
+        place: 'Вся Европа',
+        cost: 15,
+        dayt: '28 дневная поездка',
+    },
+    {
+        img: './assets/images/sl4.jpg',
+        place: 'Барселона, Испания',
+        cost: 6.5,
+        dayt: '7 дневная поездка',
+    },
+    {
+        img: './assets/images/sl5.jpg',
+        place: 'Париж, Франция',
+        cost: 8.0,
+        dayt: '5 дневная поездка',
+    },
+    {
+        img: './assets/images/sl6.jpg',
+        place: 'Берлин, Германия',
+        cost: 7.25,
+        dayt: '9 дневная поездка',
+    },
+];
 
 function createCard(data){
     const card = document.createElement('div');
@@ -76,8 +129,10 @@ function createCard(data){
 }
 
 function createDataChild(){
-    for(let i = 0; i < data.length; i++){
-        dataChild.push(createCard(data[i]));
+    const dataT = currentLanguage == 'en' ? data : dataRu;
+
+    for(let i = 0; i < dataT.length; i++){
+        dataChild.push(createCard(dataT[i]));
     }
 }
 

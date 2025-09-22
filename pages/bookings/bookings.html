@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./bookings.css">
-    <title>Booking</title>
+    <title data-i18n="title">Booking</title>
 </head>
-<body>
+<body data-page="booking">
     <div id="preloader">
         <div class="loader"></div>
         <p class="text-gs-16b" data-i18n-common="preloader">Loading...</p>
@@ -46,7 +46,7 @@
     <main>
         <section class="order">
             <div class="order-header">
-                <p class="text-poppins-30-40b">Hotels</p>
+                <p class="text-poppins-30-40b" data-i18n="order.hotels">Hotels</p>
                 <p class="text-gs-16b" id="time">Future</p>
             </div>
             <div class="order-setting">
@@ -54,19 +54,19 @@
                     <input type="text" id="search" placeholder="Search">
                 </label>
                 <div class="select">
-                    <p class="text-gs-14n">Sort</p>
+                    <p class="text-gs-14n" data-i18n="order.sort">Sort</p>
                     <img src="../../assets/icons/arroww.svg" alt="ar">
                     <div class="select-option"></div>
                 </div>
             </div>
             <div class="order-box"></div>
             <div class="no-card" id="noCard">
-                <p>Нету данных позиций в заказах</p>
+                <p data-i18n="order.noCard">Нету данных позиций в заказах</p>
             </div>
         </section>
         <section class="order">
             <div class="order-header">
-                <p class="text-poppins-30-40b">Flights</p>
+                <p class="text-poppins-30-40b" data-i18n="order.flights">Flights</p>
                 <p class="text-gs-16b" id="time">Future</p>
             </div>
             <div class="order-setting">
@@ -74,26 +74,26 @@
                     <input type="text" id="search" placeholder="Search">
                 </label>
                 <div class="select">
-                    <p class="text-gs-14n">Sort</p>
+                    <p class="text-gs-14n" data-i18n="order.sort">Sort</p>
                     <img src="../../assets/icons/arroww.svg" alt="ar">
                     <div class="select-option"></div>
                 </div>
             </div>
             <div class="order-box"></div>
             <div class="no-card" id="noCard">
-                <p>Нету данных позиций в заказах</p>
+                <p data-i18n="order.noCard">Нету данных позиций в заказах</p>
             </div>
         </section>
         <section class="quest" id="email">
             <div class="quest-container">
-                <p class="text-poppins-30-40m">Subscribe to get information, latest news and other interesting offers about Jadoo</p>
+                <p class="text-poppins-30-40m" data-i18n-common="quest.subscribe">Subscribe to get information, latest news and other interesting offers about Jadoo</p>
                 <div class="quest-container-box">
                     <label class="input">
                         <img src="../../assets/icons/your.svg" alt="ur">
-                        <input type="text" placeholder="Your email">
+                        <input type="text" placeholder="Your email" data-i18n-common="quest.placeholder.email">
                     </label>
                     <button class="button-big">
-                        <span class="text-gs-18m">Subscribe</span>
+                        <span class="text-gs-18m" data-i18n-common="quest.subscribeButton">Subscribe</span>
                     </button>
                 </div>
             </div>
