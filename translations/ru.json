@@ -1,58 +1,71 @@
 {
     "common": {
-        "preloader": "",
+        "preloader": "Загрузка...",
         "header": {
             "menu": {
-                "reviews": "ревв",
-                "hotels": "",
-                "flights": "",
-                "bookings": "",
-                "login": "",
-                "help": "",
-                "profile": ""
+                "reviews": "Отзывы",
+                "hotels": "Отели",
+                "flights": "Туры",
+                "bookings": "Бронирование",
+                "login": "Логин",
+                "signUp": "Создание",
+                "help": "Помощь",
+                "profile": "Профиль"
             }
         },
         "quest": {
-            "subscribe": "",
-            "subscribeButton": ""
+            "subscribe": "Подпишитесь, чтобы получать информацию, последние новости и другие интересные предложения о Jadoo",
+            "feelFree": "Не стесняйтесь задавать свои вопросы о ваших планах, и вскоре вы получите ответ в разделе Часто задаваемых вопросов!",
+            "subscribeButton": "Подписаться"
         },
         "footer": {
-            "bookTrip": "",
+            "bookTrip": "Забронируйте поездку за минуту, получите полный контроль на гораздо более долгий срок.",
             "navigate": {
-                "company": "",
-                "reviews": "",
-                "hotels": "",
-                "flights": "",
-                "contact": "",
-                "help": "",
-                "faq": "",
-                "bookings": "",
-                "profile": "",
-                "exit": ""
+                "company": "Компания",
+                "reviews": "Отзывы",
+                "hotels": "Отели",
+                "flights": "Туры",
+                "contact": "Контакты",
+                "help": "Помощь",
+                "faq": "ЧЗВ",
+                "more": "Больше",
+                "bookings": "Бронирование",
+                "profile": "Профиль",
+                "exit": "Выход"
             },
-            "discoverOur": "",
-            "getItOn": ""
+            "discoverOur": "Откройте в приложении",
+            "getItOn": "ПОЛУЧИТЬ",
+            "rights": "Все права защищены @jadoo.com"
         }
     },
     "home": {
+        "title": "Главная",
         "hello": {
-            "bestDestination": "",
-            "travelEnjoy": "",
-            "builtWicket": "",
-            "findMore": "",
-            "playDemo": ""
+            "bestDestination": "Лучшие направления по всему миру",
+            "travelEnjoy": "Путешествуйте, наслаждайтесь\nи живите новой\nполной жизнью",
+            "builtWicket": "Built Wicket больше не вызывает восхищения, как и сам Barton Vanity. Он популярен среди спортсменов, которые слушают его с удовольствием. Park Gate продают, они на западе, тяжело для...",
+            "findMore": "Узнать больше",
+            "playDemo": "Играть демо"
         },
         "category": {
-            "category": "",
-            "weOfferBest": ""
+            "category": "Категория",
+            "weOfferBest": "Мы предлагаем лучшие услуги"
         },
         "selling": {
-            "topSelling": "",
-            "topDestinations": ""
+            "topSelling": "ЛУЧШИЕ ПРОДАЖИ",
+            "topDestinations": "Лучшие направления"
         },
         "book": {
-            "easyAndFast": "",
-            "bookYpur": ""
+            "easyAndFast": "Легко и быстро",
+            "bookYpur": "Забронируйте свою следующую поездку легко в 3 шага"
+        }
+    },
+    "reviews": {
+        "title": "Отзывы",
+        "event": {
+            "testimonials": "Отзывы",
+            "whatPeople": "Что люди говорят о нас"
         }
     }
+
 }

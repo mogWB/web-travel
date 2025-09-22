@@ -1,58 +1,70 @@
 {
     "common": {
-        "preloader": "",
+        "preloader": "Loading...",
         "header": {
             "menu": {
-                "reviews": "rev",
-                "hotels": "",
-                "flights": "",
-                "bookings": "",
-                "login": "",
-                "help": "",
-                "profile": ""
+                "reviews": "Reviews",
+                "hotels": "Hotels",
+                "flights": "Flights",
+                "bookings": "Bookings",
+                "login": "Login",
+                "signUp": "Sign up",
+                "help": "Help",
+                "profile": "Profile"
             }
         },
         "quest": {
-            "subscribe": "",
-            "subscribeButton": ""
+            "subscribe": "Subscribe to get information, latest news and other interesting offers about Jadoo",
+            "feelFree": "Feel free to ask your questions about your plans and you will get an answer in the FAQ soon!",
+            "subscribeButton": "Subscribe"
         },
         "footer": {
-            "bookTrip": "",
+            "bookTrip": "Book your trip in minute, get full\nControl for much longer.",
             "navigate": {
-                "company": "",
-                "reviews": "",
-                "hotels": "",
-                "flights": "",
-                "contact": "",
-                "help": "",
-                "faq": "",
-                "bookings": "",
-                "profile": "",
-                "exit": ""
+                "company": "Company",
+                "reviews": "Reviews",
+                "hotels": "Hotels",
+                "flights": "Flights",
+                "contact": "Contact",
+                "help": "Help",
+                "faq": "FAQ",
+                "more": "More",
+                "bookings": "Bookings",
+                "profile": "Profile",
+                "exit": "Exit"
             },
-            "discoverOur": "",
-            "getItOn": ""
+            "discoverOur": "Discover our app",
+            "getItOn": "GET IT ON",
+            "rights": "All rights reserved@jadoo.com"
         }
     },
     "home": {
+        "title": "Main",
         "hello": {
-            "bestDestination": "",
-            "travelEnjoy": "",
-            "builtWicket": "",
-            "findMore": "",
-            "playDemo": ""
+            "bestDestination": "Best Destinations around the world",
+            "travelEnjoy": "Travel, enjoy\nand live a new\nand full life",
+            "builtWicket": "Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening. Park gate sell they west hard for the.",
+            "findMore": "Find out more",
+            "playDemo": "Play Demo"
         },
         "category": {
-            "category": "",
-            "weOfferBest": ""
+            "category": "CATEGORY",
+            "weOfferBest": "We Offer Best Services"
         },
         "selling": {
-            "topSelling": "",
-            "topDestinations": ""
+            "topSelling": "TOP SELLING",
+            "topDestinations": "Top Destinations"
         },
         "book": {
-            "easyAndFast": "",
-            "bookYpur": ""
+            "easyAndFast": "Easy and Fast",
+            "bookYpur": ">Book your next trip\nin 3 easy steps"
+        }
+    },
+    "reviews": {
+        "title": "Reviews",
+        "event": {
+            "testimonials": "Testimonials",
+            "whatPeople": "What people say\nabout Us."
         }
     }
 }

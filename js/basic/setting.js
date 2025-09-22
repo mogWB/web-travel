@@ -1,10 +1,15 @@
+import translationModule from './i18n.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('sdfsdf')
     const currentTheme = JSON.parse(localStorage.getItem('theme')) || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     
     const currentPalette = JSON.parse(localStorage.getItem('palette')) || 'default';
     updatePalette(currentPalette);
+
+    // const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+    // console.log(currentLanguage)
+    translationModule.setLanguage();
 });
 
 
