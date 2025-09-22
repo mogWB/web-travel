@@ -305,7 +305,7 @@ reserve.addEventListener('click', async function(){
             const tempText = currentLanguage == 'en' ? ['Change', 'Change', 'Please enter a new price..']
             : ['Изменить', 'Изменить', 'Пожалуйста введите новую цену..']
 
-            createModal(...tempText, true, 'Price', async (input) => {
+            createModal(...tempText, true, currentLanguage == 'en' ? 'Price' : 'Цена', async (input) => {
                 try{
                     await updateServicePrice(currentCardData.id, 'flights', input);
 

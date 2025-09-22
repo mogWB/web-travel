@@ -19,6 +19,8 @@ let currentPage = 1;
 let active = null;
 let page;
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+
 document.addEventListener('DOMContentLoaded', async function(){
     if(window.location.href.includes('help')) await startUp();
 })
@@ -27,7 +29,7 @@ export async function startUp(){
     user = JSON.parse(localStorage.getItem('user'));
 
     faq = await getQuestions();
-    console.log(faq, 'sdsdfsdf');   
+    
     if(!user || user.role == 'user'){
         faq = faq.filter(item => item.answer != undefined)
     }
@@ -63,20 +65,23 @@ function createCard(data){
 
     const spanAnswer = document.createElement('span');
     spanAnswer.className = 'text-gs-14m'
-    spanAnswer.textContent = 'Answer';
+    spanAnswer.textContent = currentLanguage == 'en' ? 'Answer' : 'Ответ';
 
     const buttonReset = document.createElement('button');
     buttonReset.className = 'button-small'
 
     const spanReset = document.createElement('span');
     spanReset.className = 'text-gs-14m'
-    spanReset.textContent = 'Delete';
+    spanReset.textContent =  currentLanguage == 'en' ? 'Delete' : 'Удалить';
 
     buttonAnswer.appendChild(spanAnswer);
     buttonReset.appendChild(spanReset);
 
     buttonAnswer.addEventListener('click', function(){
-        createModal('Answer question', 'Answer', 'Enter the response that other users will see.', true, 'Answer', async (input) =>{
+        const textTemp = currentLanguage == 'en' ? ['Answer question', 'Answer', 'Enter the response that other users will see.'] 
+        :['Ответить на вопрос', 'Ответить', 'Введите ответ, который увидят другие пользователи']
+
+        createModal(...textTemp, true, currentLanguage == 'en' ? 'Answer' : 'Ответ', async (input) =>{
             await addAnswerQuestion(data.id, input);
 
             const faqItem = faq.find(item => item.id === data.id);
@@ -88,7 +93,10 @@ function createCard(data){
     })
 
     buttonReset.addEventListener('click', async function(){
-        createModal('Delete question', 'Remove', 'Do you really want to delete the question?', false, '', async () =>{
+        const textTemp = currentLanguage == 'en' ? ['Delete question', 'Remove', 'Do you really want to delete the question?'] 
+        :['Удалить вопрос', 'Удалить', 'Вы действительно хотите удалить этот вопрос?']
+
+        createModal(...textTemp, false, '', async () =>{
             await deleteQuestion(data.id);
 
             faq = faq.filter(item => item.id != data.id);
@@ -185,4 +193,3 @@ function fiilBox(data){
         }
     }
 }
-

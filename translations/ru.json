@@ -92,7 +92,7 @@
         }
     },
     "flights": {
-        "title": "Отели",
+        "title": "Туры",
         "continent": {
             "continent": "Континент",
             "chooseVacation": "Выберите Свой отпуск"
