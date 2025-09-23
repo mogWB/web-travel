@@ -62,6 +62,8 @@
     line-height: calc(20 / 14) !important;
     font-weight: 400 !important;
     color: var(--red) !important;
+
+    white-space: pre-line;
 }
 
 .text-container.error{

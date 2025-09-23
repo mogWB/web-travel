@@ -181,5 +181,52 @@
                 "password": "Password"
             }
         }
+    },
+    "registration": {
+        "title": "Registration",
+        "reg": {
+            "signUp": "Sign up",
+            "name": "Name",
+            "surname": "Surname",
+            "patronymic": "Patronymic",
+            "telephone": "Telephone",
+            "email": "Email",
+            "birthday": "Birthday",
+            "login": "Login",
+            "password": "Password",
+            "repeat": "Repeat",
+            "placeholder": {
+                "name": "Name",
+                "surname": "Surname",
+                "patronymic": "Patronymic",
+                "telephone": "Telephone",
+                "email": "Email",
+                "birthday": "Birthday",
+                "login": "Login",
+                "password": "Password",
+                "repeat": "Repeat the password"
+            },
+            "error":{
+                "name": "name must contain 2 to 20 characters",
+                "surname": "surname must contain 2 to 20 characters",
+                "patronymic": "no more than 20 characters\n(*optional field)",
+                "telephone": "number corresponds to +375 (xx) xxx-xx-xx",
+                "email": "email must contain 2 to 30 characters and match ...@gmail.com",
+                "birthday": "There is no such date.\nOnly for users over the age of 16",
+                "loginBusy": "This username is busy",
+                "loginGenerate": "Please try again later. Enter your username",
+                "passwordGenerate": "Please try again later. Enter your password",
+                "1": "The password must include at least one lowercase letter",
+                "2": "The password must include at least one capital letter",
+                "3": "The password must include at least one circe",
+                "4": "The password must include at least one special character",
+                "5": "The password must contain 8-20 characters",
+                "6": "The password should not be among the top 100 passwords of 2023",
+                "password": "Password",
+                "repeat": "passwords don't match"
+            },
+            "generate": "generate",
+            "agree": "User Agreement"
+        }
     }
 }

@@ -1,6 +1,8 @@
 import { getUsers, addUser, getAllLogin } from "../../server/api.js";
 import { createModal } from "../basic/modal.js";
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+
 const commonPasswords = [
     "Tes1_0000",
     "password",
@@ -474,6 +476,9 @@ regButton.addEventListener('click', async function(event){
 
             await addUser(userData);
 
+            const textTemp = currentLanguage == 'en' ? ['Success','Login','Your account has been successfully registered in the system!']
+            : ['Успех','Логин','Ваш аккаунт был успешно зарегистрирован на сайте!']
+
             createModal('Success','Login','Your account has been successfully registered in the system!',
                 false, '', () => window.location.href = '../../pages/authorization/authorization.html'
             );
@@ -490,14 +495,15 @@ function checkField() {
         input.focus();
     });
 
-    const hasError = document.querySelector('.error') !== null && document.querySelector('.err') !== null;
+    const hasError = document.querySelector('.error') !== null || document.querySelector('.err') !== null;
 
-    // const checkbox = document.querySelector('#agree input[type="checkbox"]');
-    // const isCheckboxChecked = checkbox ? checkbox.checked : false; 
+    const checkbox = document.querySelector('#agree input[type="checkbox"]');
+    const isCheckboxChecked = checkbox ? checkbox.checked : false; 
 
-    if (hasError) {
-        createModal('Error','Close','Please fix the errors OR the user agreement is checked!');
+    if (hasError || !isCheckboxChecked) {
+        currentLanguage == 'en' ? createModal('Error','Close','Please fix the errors OR the user agreement is checked!') :
+        createModal('Ошибка','Закрыть','Пожалуйста исправьте ошибки, или проверьте соглашение пользователя!')
     }
-
-    return !hasError ;
+    console.log(hasError)
+    return !hasError && isCheckboxChecked;
 }

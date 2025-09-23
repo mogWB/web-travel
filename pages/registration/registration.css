@@ -14,9 +14,9 @@
     width: 290px;
 }
 
-.registration-container >button{
+/* .registration-container >button{
     margin-top: 20px;
-}
+} */
 
 @media(max-width: 678px){
     .registration{
@@ -36,3 +36,41 @@
     z-index: 100000;
     background-color: var(--white);
 } */
+
+
+#agree {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+#agree >input {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+#agree .checkmark {
+    width: 20px; 
+    height: 20px; 
+    border: 1px solid var(--black70);
+    margin-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+#agree .checkmark:hover {
+    background-color: var(--red20);
+}
+
+#agree >input:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 4px; 
+    top: 4px; 
+    width: 10px; 
+    height: 10px; 
+    background-color: var(--black70);
+    border-radius: 3px;
+}

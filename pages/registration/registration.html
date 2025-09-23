@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./registration.css">
-    <title>Registration</title>
+    <title data-i18n="title">Registration</title>
 </head>
-<body>
+<body data-page="registration">
     <div id="preloader">
         <div class="loader"></div>
         <p class="text-gs-16b" data-i18n-common="preloader">Loading...</p>
@@ -45,86 +45,91 @@
     </header>
     <main>
         <section class="registration">
-            <p class="text-volkhov-50-60b">Sign up</p>
+            <p class="text-volkhov-50-60b" data-i18n="reg.signUp">Sign up</p>
             <div class="registration-container">
                 <div class="text-container" id="name">
-                    <p>name</p>
+                    <p data-i18n="reg.name">name</p>
                     <label class="input">
-                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Name" data-i18n="reg.placeholder.name">
                     </label>
-                    <p class="input-error">name must contain 2 to 20 characters</p>
+                    <p class="input-error" data-i18n="reg.error.name">name must contain 2 to 20 characters</p>
                 </div>
                 <div class="text-container" id="surname">
-                    <p>Surname</p>
+                    <p data-i18n="reg.surname">Surname</p>
                     <label class="input">
-                        <input type="text" placeholder="Surname">
+                        <input type="text" placeholder="Surname" data-i18n="reg.placeholder.surname">
                     </label>
-                    <p class="input-error">surname must contain 2 to 20 characters</p>
+                    <p class="input-error" data-i18n="reg.error.surname">surname must contain 2 to 20 characters</p>
                 </div>
                 <div class="text-container" id="patronymic">
-                    <p>Patronymic</p>
+                    <p data-i18n="reg.patronymic">Patronymic</p>
                     <label class="input">
-                        <input type="text" placeholder="Patronymic">
+                        <input type="text" placeholder="Patronymic" data-i18n="reg.placeholder.patronymic">
                     </label>
-                    <p class="input-error">no more than 20 characters <br> (*optional field)</p>
+                    <p class="input-error" data-i18n="reg.error.patronymic">no more than 20 characters <br> (*optional field)</p>
                 </div>
                 <div class="text-container" id="telephone">
-                    <p>Telephone</p>
+                    <p data-i18n="reg.telephone">Telephone</p>
                     <label class="input">
-                        <input type="text" placeholder="Telephone">
+                        <input type="text" placeholder="Telephone" data-i18n="reg.placeholder.telephone">
                     </label>
-                    <p class="input-error">number corresponds to +375 (xx) xxx-xx-xx</p>
+                    <p class="input-error" data-i18n="reg.error.telephone">number corresponds to +375 (xx) xxx-xx-xx</p>
                 </div>
                 <div class="text-container" id="email">
-                    <p>Email</p>
+                    <p data-i18n="reg.email">Email</p>
                     <label class="input">
-                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Email" data-i18n="reg.placeholder.email">
                     </label>
-                    <p class="input-error">email must contain 2 to 30 characters and match ...@gmail.com</p>
+                    <p class="input-error" data-i18n="reg.error.email">email must contain 2 to 30 characters and match ...@gmail.com</p>
                 </div>
                 <div class="text-container" id="birthday">
-                    <p>Birthday</p>
+                    <p data-i18n="reg.birthday">Birthday</p>
                     <label class="input">
-                        <input type="text" placeholder="Birthday">
+                        <input type="text" placeholder="Birthday" data-i18n="reg.placeholder.birthday">
                     </label>
-                    <p class="input-error">There is no such date.<br>Only for users over the age of 16</p>
+                    <p class="input-error" data-i18n="reg.error.birthday">There is no such date.<br>Only for users over the age of 16</p>
                 </div>
                 <div class="text-container" id="login">
-                    <p>Login</p>
+                    <p data-i18n="reg.login">Login</p>
                     <label class="input">
-                        <input type="text" placeholder="Login">
-                        <p class="text-poppins-14-20n" id="loginGenerate">generate</p>
+                        <input type="text" placeholder="Login" data-i18n="reg.placeholder.login">
+                        <p class="text-poppins-14-20n" id="loginGenerate" data-i18n="reg.generate">generate</p>
                     </label>
-                    <p class="input-error">This username is busy</p>
-                    <p class="input-error-generate">Please try again later. Enter your username</p>
+                    <p class="input-error" data-i18n="reg.error.loginBusy">This username is busy</p>
+                    <p class="input-error-generate" data-i18n="reg.error.loginGenerate">Please try again later. Enter your username</p>
                 </div>
                 <div class="text-container" id="password">
-                    <p>Password</p>
+                    <p data-i18n="reg.password">Password</p>
                     <label class="input">
-                        <input type="text" placeholder="Password">
+                        <input type="text" placeholder="Password" data-i18n="reg.placeholder.password">
                         <div id="showHide">
                             <img src="../../assets/icons/hide.svg"  alt="">
                         </div>
-                        <p class="text-poppins-14-20n generate" id="passwordGenerate">generate</p>
+                        <p class="text-poppins-14-20n generate" id="passwordGenerate" data-i18n="reg.generate">generate</p>
                     </label>
-                    <p class="input-error">there is no such login</p>
-                    <p class="input-error-generate">Please try again later. Enter your password</p>
-                    <p class="input-error-one" data-i18n="error.1">The password must include at least one lowercase letter</p>
-                    <p class="input-error-two" data-i18n="error.2">The password must include at least one capital letter</p>
-                    <p class="input-error-three" data-i18n="error.3">The password must include at least one circe</p>
-                    <p class="input-error-four" data-i18n="error.4">The password must include at least one special character</p>
-                    <p class="input-error-five" data-i18n="error.5">The password must contain 8-20 characters</p>
-                    <p class="input-error-six" data-i18n="error.6">The password should not be among the top 100 passwords of 2023</p>
+                    <!-- <p class="input-error" >there is no such login</p> -->
+                    <p class="input-error-generate" data-i18n="reg.error.passwordGenerate">Please try again later. Enter your password</p>
+                    <p class="input-error-one" data-i18n="reg.error.1">The password must include at least one lowercase letter</p>
+                    <p class="input-error-two" data-i18n="reg.error.2">The password must include at least one capital letter</p>
+                    <p class="input-error-three" data-i18n="reg.error.3">The password must include at least one circe</p>
+                    <p class="input-error-four" data-i18n="reg.error.4">The password must include at least one special character</p>
+                    <p class="input-error-five" data-i18n="reg.error.5">The password must contain 8-20 characters</p>
+                    <p class="input-error-six" data-i18n="reg.error.6">The password should not be among the top 100 passwords of 2023</p>
                 </div>
                 <div class="text-container" id="repeat">
-                    <p>Repeat</p>
+                    <p data-i18n="reg.repeat">Repeat</p>
                     <label class="input">
-                        <input type="text" placeholder="Repeat the password">
+                        <input type="text" placeholder="Repeat the password" data-i18n="reg.placeholder.repeat">
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error" data-i18n="reg.error.repeat">passwords don't match</p>
                 </div>
+                <label id="agree">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                    <p class="text-gs-14n" data-i18n="reg.agree">User Agreement</p>
+                </label>
                 <button class="button-small" id="registration">
-                    <span class="text-gs-14m">Sign up</span>
+                    <span class="text-gs-14m" data-i18n="reg.signUp">Sign up</span>
                 </button>
             </div>
         </section>
