@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
                 createModal(...textTemp, false, '', () => {
                     const hasIndexOrEndsWithSlash = page.includes('index') || page.endsWith('/');
-                    window.location.href = hasIndexOrEndsWithSlash ? '/pages/authorization/authorization.html' :'../../pages/authorization/authorization.html';
+                    window.location.href = hasIndexOrEndsWithSlash ? './pages/authorization/authorization.html' :'../../pages/authorization/authorization.html';
                 })
             }else{
                 if(type == 'email'){
