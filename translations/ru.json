@@ -8,7 +8,7 @@
                 "flights": "Туры",
                 "bookings": "Бронирование",
                 "login": "Логин",
-                "signUp": "Создание",
+                "signUp": "Создать",
                 "help": "Помощь",
                 "profile": "Профиль"
             }
@@ -181,7 +181,7 @@
     "registration": {
         "title": "Регистрация",
         "reg": {
-            "signUp": "Создание",
+            "signUp": "Создать",
             "name": "Имя",
             "surname": "Фамилия",
             "patronymic": "Отчество",
