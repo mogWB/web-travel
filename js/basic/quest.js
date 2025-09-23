@@ -2,6 +2,8 @@ import { addQuestion } from "../../server/api.js";
 import { startUp } from "../help/help.js";
 import { createModal } from "./modal.js";
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+
 const email = document.querySelector('#email');
 const quest = document.querySelector('#quest');
 
@@ -21,16 +23,25 @@ document.addEventListener('DOMContentLoaded', function(){
         
         button.addEventListener('click', async function(){
             if(!user){
-                createModal('Ooops', 'Well', 'Before asking questions or receiving newsletters, please log in to the website!', false, '', () => {
+                const textTemp = currentLanguage == 'en' ? ['Ooops', 'Well', 'Before asking questions or receiving newsletters, please log in to the website!'] :
+                ['Ууупс', 'Хорошо', 'Прежде чем задавать вопросы или получать новостную рассылку, пожалуйста, войдите на сайт!']
+
+                createModal(...textTemp, false, '', () => {
                     window.location.href = '../../pages/authorization/authorization.html';
                 })
             }else{
                 if(type == 'email'){
                     if(formattedEmailError(input.value)){
-                        createModal('Thank you', 'Well', 'You\'ve been subscribed to receive the latest updates!');
+                        const textTemp = currentLanguage == 'en' ? ['Thank you', 'Well', 'You\'ve been subscribed to receive the latest updates!'] :
+                        ["Спасибо", "Хорошо", "Вы подписаны на получение последних обновлений!"]
+
+                        createModal(...textTemp);
                         input.value = '';
                     }else{
-                        createModal('Ooops', 'Well', 'Email must contain 2 to 30 characters and match ...@gmail.com')
+                        const textTemp = currentLanguage == 'en' ? ['Ooops', 'Well', 'Email must contain 2 to 30 characters and match ...@gmail.com'] :
+                        ['Ууупс', 'Хорошо', 'Почта должна содержать 2 - 30 символов и совпадать ...@gmail.com']
+
+                        createModal(...textTemp)
                     }
                 }else{
                     if(input.value.length >= 10 && input.value.length <= 300){
@@ -38,10 +49,16 @@ document.addEventListener('DOMContentLoaded', function(){
                         
                         if(page.includes('help') && user.role == 'admin') await startUp();
 
-                        createModal('Thank you', 'Well', 'Your question has been added to the system. Please wait for a response from the administrator on the Hepl page!');
+                        const textTemp = currentLanguage == 'en' ? ['Thank you', 'Well', 'Your question has been added to the system. Please wait for a response from the administrator on the Hepl page!'] :
+                        ["Спасибо", "Хорошо", 'Ваш вопрос был добавлен в систему. Пожалуйста, дождитесь ответа от администратора на странице Hepl!']
+
+                        createModal(...textTemp);
                         input.value = '';
                     }else{
-                        createModal('Ooops', 'Well', 'The question should be between 10 and 300 characters long')
+                        const textTemp = currentLanguage == 'en' ? ['Ooops', 'Well', 'The question should be between 10 and 300 characters long'] :
+                        ['Ууупс', 'Хорошо', "Длина вопроса должна составлять от 10 до 300 символов"]
+                        
+                        createModal(...textTemp)
                     }
                 }
             }
