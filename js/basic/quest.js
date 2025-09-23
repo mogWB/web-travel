@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function(){
                 ['Ууупс', 'Хорошо', 'Прежде чем задавать вопросы или получать новостную рассылку, пожалуйста, войдите на сайт!']
 
                 createModal(...textTemp, false, '', () => {
-                    window.location.href = page.includes('index') ? '/pages/authorization/authorization.html' :'../../pages/authorization/authorization.html';
+                    const hasIndexOrEndsWithSlash = page.includes('index') || page.endsWith('/');
+                    window.location.href = hasIndexOrEndsWithSlash ? '/pages/authorization/authorization.html' :'../../pages/authorization/authorization.html';
                 })
             }else{
                 if(type == 'email'){
