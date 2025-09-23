@@ -4,6 +4,7 @@ import { createModal } from "../basic/modal.js";
 import { createSelect } from "../basic/select.js";
 import { updatePalette } from "../basic/setting.js";
 import translationModule from '../basic/i18n.js';
+import {createInfo} from "./profile.js";
 
 const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
 
@@ -81,6 +82,8 @@ function setLanguageChange(){
     ln.textContent = language == 'english' ? (['en', 'english'].includes(language) ? 'english' : 'russian') : (['en', 'english'].includes(language) ? 'английский' : 'русский')
     pl.textContent = language == 'english' ? (['palette 1', 'палитра 1'].includes(palette) ? 'palette 1' : ['palette 2', 'палитра 2'].includes(palette) ? 'palette 2' : 'default') :
     (['palette 1', 'палитра 1'].includes(palette) ? 'палитра 1' : ['palette 2', 'палитра 2'].includes(palette) ? 'палитра 2' : 'по умолчанию')
+
+    createInfo();
 }
 
 // ------------------- reset

@@ -1,7 +1,7 @@
 import { updatePassword } from "../../server/api.js";
 import { createModal } from "../basic/modal.js";
 
-const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+let currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
 
 const commonPasswords = [
     "Tes1_0000",
@@ -108,6 +108,7 @@ const commonPasswords = [
 
 let textError = '';
 const attribute = ['name', 'email', 'surname', 'telephone', 'patronymic', 'birthday']
+const attributeRu = ['имя', 'почта', 'фамилия', 'телефон', 'отчетство', 'дата рождения']
 
 const infoBox = document.querySelector('.auth');
 const infoNonBox = document.querySelector('.non-auth');
@@ -116,38 +117,45 @@ const user = JSON.parse(localStorage.getItem('user'));
 
 // ------------- info
 
-if (user) { 
-    const infoBoxMain = infoBox.querySelector('.info-box');
+export function createInfo(){
+    currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
 
-    for (let i = 0; i < attribute.length; i++) {
-        const div = document.createElement('div');
-        div.classList.add('text-container');
+    if (user) { 
+        const infoBoxMain = infoBox.querySelector('.info-box');
 
-        const up = document.createElement('p');
-        up.textContent = attribute[i];
+        infoBoxMain.innerHTML = '';
 
-        let downText = user[attribute[i]];
+        for (let i = 0; i < attribute.length; i++) {
+            console.log('sdf')
+            const div = document.createElement('div');
+            div.classList.add('text-container');
 
-        // Обработка телефона
-        if (attribute[i] == 'telephone') {
-            downText = downText.replace(/^\+\d{3}\s*/, ''); // Удаляем код страны и оператора
+            const up = document.createElement('p');
+            up.textContent = currentLanguage == 'en' ? attribute[i] : attributeRu[i];
+
+            let downText = user[attribute[i]];
+
+            // Обработка телефона
+            if (attribute[i] == 'telephone') {
+                downText = downText.replace(/^\+\d{3}\s*/, ''); // Удаляем код страны и оператора
+            }
+
+            if (attribute[i] == 'email') {
+                downText = downText.split('@')[0]; // Оставляем только часть до '@'
+            }
+            
+            const down = document.createElement('p');
+            down.textContent = downText;
+
+            div.appendChild(up);
+            div.appendChild(down);
+
+            infoBoxMain.appendChild(div);
         }
-
-        if (attribute[i] == 'email') {
-            downText = downText.split('@')[0]; // Оставляем только часть до '@'
-        }
-        
-        const down = document.createElement('p');
-        down.textContent = downText;
-
-        div.appendChild(up);
-        div.appendChild(down);
-
-        infoBoxMain.appendChild(div);
     }
 }
 
-
+createInfo();
 
 
 // ---------------- change password
@@ -188,12 +196,15 @@ if(!user){
                 oldPassword.value = '';
                 newPassword.value = '';
 
-                createModal('Success', 'Close', 'Your password has been successfully changed!');
+                currentLanguage == 'en' ? createModal('Success', 'Close', 'Your password has been successfully changed!') :
+                createModal('Успешно', 'Закрыть', 'Ваш пароль был успешно изменен!')  
             }else{
-                createModal('Error', 'Close',  textError);
+                currentLanguage == 'en' ? createModal('Error', 'Close',  textError) : 
+                createModal('Ошибка', 'Закрыть',  textError)
             }
         }else{
-            createModal('Error','Close','You have entered an incorrect password. Please try again!');
+            currentLanguage == 'en' ? createModal('Error','Close','You have entered an incorrect password. Please try again!') : 
+            createModal('Ошибка','Закрыть','Вы ввели неверный пароль. Пожалуйста, повторите попытку!') 
         }
     })
 }
