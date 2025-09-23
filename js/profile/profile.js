@@ -1,6 +1,8 @@
 import { updatePassword } from "../../server/api.js";
 import { createModal } from "../basic/modal.js";
 
+const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
+
 const commonPasswords = [
     "Tes1_0000",
     "password",

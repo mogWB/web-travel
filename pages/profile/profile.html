@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./profile.css">
-    <title>Profile</title>
+    <title data-i18n="title">Profile</title>
 </head>
-<body>
+<body data-page="profile">
     <div id="preloader">
         <div class="loader"></div>
         <p class="text-gs-16b" data-i18n-common="preloader">Loading...</p>
@@ -46,19 +46,19 @@
     <main>
         <section class="info non-auth">
             <div class="info-box">
-                <p class="text-gs-20b">Need authorization</p>
-                <p class="text-poppins-14-20n">In order to see personal information, you must register or log in.</p>
+                <p class="text-gs-20b" data-i18n="info.need">Need authorization</p>
+                <p class="text-poppins-14-20n" data-i18n="info.must">In order to see personal information, you must register or log in.</p>
                 <div class="info-link">
                     <div class="text-container">
-                        <p>Login</p>
+                        <p data-i18n="info.login">Login</p>
                         <button class="button-small" id="login">
-                            <span class="text-gs-14m">Login</span>
+                            <span class="text-gs-14m" data-i18n="info.login">Login</span>
                         </button>
                     </div>
                     <div class="text-container">
-                        <p>Sign up</p>
+                        <p data-i18n="info.signUp">Sign up</p>
                         <button class="button-small" id="signup">
-                            <span class="text-gs-14m">Sign up</span>
+                            <span class="text-gs-14m" data-i18n="info.signUp">Sign up</span>
                         </button>
                     </div>
                 </div>
@@ -67,38 +67,38 @@
         </section>
         <section class="info auth">
             <div class="info-box">
-                <p class="text-gs-20b">Change password</p>
+                <p class="text-gs-20b" data-i18n="info.changePassword">Change password</p>
             </div>
             <div class="info-box">
-                <p class="text-gs-20b">Change password</p>
+                <p class="text-gs-20b" data-i18n="info.changePassword">Change password</p>
                 <div class="info-box-setting">
                     <div>
                         <div class="text-container">
-                            <p>old password</p>
+                            <p data-i18n="info.oldPassword">old password</p>
                             <label class="input">
-                                <input type="text" placeholder="Old password" id="old">
+                                <input type="text" placeholder="Old password" id="old" data-i18n="info.placeholder.oldPassword">
                             </label>
                         </div>
                         <div class="text-container">
-                            <p>new password</p>
+                            <p data-i18n="info.newPassword">new password</p>
                             <label class="input">
-                                <input type="text" placeholder="New password" id="new">
+                                <input type="text" placeholder="New password" id="new" data-i18n="info.placeholder.newPassword">
                             </label>
                         </div>
                     </div>
                     <button class="button-small" id="change">
-                        <span class="text-gs-14m">Change</span>
+                        <span class="text-gs-14m" data-i18n="info.change">Change</span>
                     </button>                 
                 </div>
             </div>
         </section>
         <section class="setting">
             <div class="info-box">
-                <p class="text-gs-20b">Change password</p>
+                <p class="text-gs-20b" data-i18n="setting.setting">Setting</p>
                 <div class="info-box-select">
                     <div>
                         <div class="text-container">
-                            <p>theme</p>
+                            <p data-i18n="setting.theme">theme</p>
                             <div class="select" id="theme">
                                 <p class="text-gs-14n">Theme</p>
                                 <img src="../../assets/icons/arroww.svg" alt="ar">
@@ -106,17 +106,17 @@
                             </div>
                         </div>
                         <div class="text-container">
-                            <p>language</p>
+                            <p data-i18n="setting.language">language</p>
                             <div class="select" id="language">
-                                <p class="text-gs-14n">Language</p>
+                                <p class="text-gs-14n" >Language</p>
                                 <img src="../../assets/icons/arroww.svg" alt="ar">
                                 <div class="select-option"></div>
                             </div>
                         </div>
                         <div class="text-container">
-                            <p>palette</p>
+                            <p data-i18n="setting.palette">palette</p>
                             <div class="select" id="palette">
-                                <p class="text-gs-14n">Palette</p>
+                                <p class="text-gs-14n" >Palette</p>
                                 <img src="../../assets/icons/arroww.svg" alt="ar">
                                 <div class="select-option"></div>
                             </div>
@@ -126,26 +126,26 @@
                         <div class="text-container" >
                             <p>size font</p>
                             <div class="select">
-                                <p class="text-gs-14n">Size font</p>
+                                <p class="text-gs-14n" data-i18n="setting.size">Size font</p>
                                 <img src="../../assets/icons/arroww.svg" alt="ar">
                                 <div class="select-option"></div>
                             </div>
                         </div>
                         <div class="disable-button">
-                            <p class="text-poppins-14-20n">Do you really want to turn off the images?</p>
+                            <p class="text-poppins-14-20n" data-i18n="setting.turn">Do you really want to turn off the images?</p>
                             <button class="button-small">
-                                <span class="text-gs-14m">Disable</span>
+                                <span class="text-gs-14m" data-i18n="setting.disable">Disable</span>
                             </button>     
                         </div>
                     </div>
                 </div>
             </div>
             <div class="info-box">
-                <p class="text-gs-20b">Local storage</p>
+                <p class="text-gs-20b" data-i18n="setting.local">Local storage</p>
                 <div class="disable-button">
-                    <p class="text-poppins-14-20n">Do you really want to reset all the settings?</p>
+                    <p class="text-poppins-14-20n" data-i18n="setting.resetAll">Do you really want to reset all the settings?</p>
                     <button class="button-small" id="reset">
-                        <span class="text-gs-14m">Reset</span>
+                        <span class="text-gs-14m" data-i18n="setting.reset">Reset</span>
                     </button>     
                 </div>
             </div>

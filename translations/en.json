@@ -139,5 +139,34 @@
         "placeholder": {
             "search": "Search"
         }
+    },
+    "profile": {
+        "title": "Profile",
+        "info":{
+            "need": "Need authorization",
+            "must": "In order to see personal information, you must register or log in.",
+            "login": "Login",
+            "signUp": "Sign up",
+            "changePassword": "Change password",
+            "oldPassword": "Old password",
+            "newPassword": "New password",
+            "placeholder": {
+                "oldPassword": "Old password",
+                "newPassword": "New password"
+            },
+            "change": "Change"
+        },
+        "setting": {
+            "setting": "Setting",
+            "theme": "Theme",
+            "language": "Language",
+            "palette": "Palette",
+            "size": "Size font",
+            "turn": "Do you really want to turn off the images?",
+            "disable": "Disable",
+            "local": "Local storage",
+            "resetAll": "Do you really want to reset all the settings?",
+            "reset": "Reset"
+        }
     }
 }
