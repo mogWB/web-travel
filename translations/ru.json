@@ -103,7 +103,8 @@
             "chooseContinent": "Выберите континент"
         },
         "variant": {
-            "variant": "Полеты"
+            "variant": "Полеты",
+            "reserve": "Бронь"
         },
         "placeholder": {
             "search": "Поиск"

@@ -336,6 +336,7 @@ images.forEach(image => {
 //резерв
 reserve.addEventListener('click', async function(){
     if(!user){
+        console.log(currentLanguage)
         currentLanguage == 'en' ? createModal('Ooops', 'Well', 'Please log in before placing an order :)') 
         : createModal('Ууупс', 'Хорошо', 'Пожалуйста, войдите в систему перед тем, как сделать заказ :)');
     }else{
@@ -343,7 +344,7 @@ reserve.addEventListener('click', async function(){
             const tempText = currentLanguage == 'en' ? ['Change', 'Change', 'Please enter a new price..']
             : ['Изменить', 'Изменить', 'Пожалуйста введите новую цену..']
 
-            createModal(...tempText, true, (currentLanguage == 'en' ? 'Price' : 'Цена'), async (input) => {
+            createModal(...tempText, true, currentLanguage == 'en' ? 'Price' : 'Цена', async (input) => {
                 try{
                     await updateServicePrice(currentCardData.id, 'hotels', input);
 
@@ -359,13 +360,17 @@ reserve.addEventListener('click', async function(){
             
         }else{
             if(!cart.future.hotels.some(item => item.id == currentCardData.id)){
-                createModal('Reserve', 'Reserve', 'Do you really want to book a flight?', false, '', async () => {
+                const tempText = currentLanguage == 'en' ? ['Reserve', 'Reserve', 'Do you really want to book a flight?']
+                : ['Бронь', 'Бронь', 'Вы действительно хотите забронировать данный тур?']
+
+                createModal(...tempText, false, '', async () => {
                     await addlService(user.id, 'hotels', {...currentCardData, "date": formatDate()});
                     
                     cart = await getCartUser(user.id);
                 })
             }else{
-                createModal('Ooops', 'Well', 'It looks like you already have this position in your booking. Once it\'s completed, it will become available again')
+                currentLanguage == 'en' ? createModal('Ooops', 'Well', 'It looks like you already have this position in your booking. Once it\'s completed, it will become available again')
+                : createModal('Упс', 'Хорошо', 'Похоже, что эта позиция уже есть в вашем бронировании. Как только оно будет завершено, она снова станет доступной.');
             }
         }
     }

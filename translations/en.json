@@ -103,7 +103,8 @@
             "chooseContinent": "Select a continent"
         },
         "variant": {
-            "variant": "Flights"
+            "variant": "Flights",
+            "reserve": "Reserve"
         },
         "placeholder": {
             "search": "Search"

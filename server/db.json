@@ -124,36 +124,36 @@
             "continent": "Eurasia",
             "date": "2025-09-22T07:46:43.673Z",
             "dateDone": "22.09.2025 10:47"
+          },
+          {
+            "id": 3,
+            "image": "../../assets/images/torontoHotel.jpg",
+            "country": "Canada, Toronto",
+            "price": 20.8,
+            "people": 4,
+            "street": "Queen Street",
+            "days": 10,
+            "continent": "North America",
+            "date": "23.09.2025 10:16",
+            "dateDone": "23.09.2025 10:16"
+          },
+          {
+            "id": 12,
+            "image": "../../assets/images/muniHotel.jpg",
+            "country": "Germany, Munich",
+            "price": "27.6",
+            "people": 4,
+            "street": "Marienplatz",
+            "days": 15,
+            "continent": "Eurasia",
+            "date": "23.09.2025 10:16",
+            "dateDone": "23.09.2025 10:17"
           }
         ]
       },
       "future": {
-        "flights": [
-          {
-            "id": 7,
-            "image": "../../assets/images/argentina.jpg",
-            "country": "Argentina, Buenos Aires",
-            "price": 14.9,
-            "people": 5,
-            "departure": "morning",
-            "days": 10,
-            "continent": "South America",
-            "   ": "19.09.2025 14:52"
-          }
-        ],
-        "hotels": [
-          {
-            "id": 13,
-            "image": "../../assets/images/lyonHotel.jpg",
-            "country": "France, Lyon",
-            "price": 26.7,
-            "people": 3,
-            "street": "Rue de la République",
-            "days": 10,
-            "continent": "Eurasia",
-            "date": "2025-09-22T07:46:49.329Z"
-          }
-        ]
+        "flights": [],
+        "hotels": []
       }
     }
   ],

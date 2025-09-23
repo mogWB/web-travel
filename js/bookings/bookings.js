@@ -167,14 +167,14 @@ function createCard(data, type, time){
                 const textTemp = currentLanguage != 'en' ? ['Внимание', 'Удалить', 'Вы действительно хотите отменить свою бронь?'] : ['Attention', 'Remove', 'Do you really want to cancel your reservation?']
                 createModal(...textTemp, false, '', async () => {
                     await deleteCartService(user.id, type, data.id);
-                    
+                    console.log('1', cartTempHotels)
+                    console.log('1', cartTempFlights)
                     const itemIndex = cart['future'][type].findIndex(item => item.id == data.id);
                     cart['future'][type].splice(itemIndex, 1);
-
+                    cartTemp['future'][type].splice(itemIndex, 1);
+                   
                     createDataChild(type, 'future');
                     addData(type);
-
-                    window.location.reload();
                 })
             }else{
                 if(user.role == 'admin'){
@@ -186,15 +186,15 @@ function createCard(data, type, time){
                         serviceDone.complete = formatDate();
 
                         cart['last'][type].push(serviceDone);
+                        cartTemp['last'][type].push(serviceDone);
 
                         const itemIndex = cart['future'][type].findIndex(item => item.id == data.id);
                         cart['future'][type].splice(itemIndex, 1);
+                        cartTemp['future'][type].splice(itemIndex, 1);
 
                         createDataChild(type, 'future');
                         createDataChild(type, 'last');
                         addData(type);
-
-                        window.location.reload();
                 })
                 }
             }
@@ -242,6 +242,9 @@ function addData(type){
     : (timeFlights == 'будущее' ? 'future' : timeFlights == 'прошлое' ? 'last' : timeFlights);
 
     box.innerHTML = '';
+
+    console.log('3', cartTempHotels)
+    console.log('3', cartTempFlights)
 
     for(let i = 0; i < cth[time].length; i++){
         box.appendChild(cth[time][i]);
