@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./authorization.css">
-    <title>Autorization</title>
+    <title data-i18n="title">Autorization</title>
 </head>
-<body>
+<body data-page="authorization">
     <div id="preloader">
         <div class="loader"></div>
         <p class="text-gs-16b" data-i18n-common="preloader">Loading...</p>
@@ -45,24 +45,24 @@
     </header>
     <main>
         <section class="login">
-            <p class="text-volkhov-50-60b">Login</p>
+            <p class="text-volkhov-50-60b" data-i18n="login.login">Login</p>
             <div class="login-container">
                 <div class="text-container" id="login">
-                    <p>login</p>
+                    <p data-i18n="login.login">login</p>
                     <label class="input">
-                        <input type="text" placeholder="Login">
+                        <input type="text" placeholder="Login" data-i18n="login.placeholder.login">
                     </label>
-                    <p class="input-error">there is no such login</p>
+                    <p class="input-error" data-i18n="login.loginError">there is no such login</p>
                 </div>
                 <div class="text-container" id="password">
-                    <p>password</p>
+                    <p data-i18n="login.password">password</p>
                     <label class="input">
-                        <input type="text" placeholder="Password">
+                        <input type="text" placeholder="Password" data-i18n="login.placeholder.password">
                     </label>
-                    <p class="input-error">invalid password</p>
+                    <p class="input-error" data-i18n="login.passwordError">invalid password</p>
                 </div>
                 <button class="button-small" id="authorization">
-                    <span class="text-gs-14m">Login</span>
+                    <span class="text-gs-14m" data-i18n="login.login">Login</span>
                 </button>
             </div>
         </section>

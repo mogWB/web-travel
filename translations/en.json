@@ -168,5 +168,18 @@
             "resetAll": "Do you really want to reset all the settings?",
             "reset": "Reset"
         }
+    },
+    "authorization": {
+        "title": "Authorization",
+        "login": {
+            "login": "Login",
+            "loginError": "there is no such login",
+            "password": "Password",
+            "passwordError": "invalid password",
+            "placeholder": {
+                "login": "Login",
+                "password": "Password"
+            }
+        }
     }
 }

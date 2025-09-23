@@ -163,5 +163,18 @@
             "resetAll": "Вы действительно хотите сбросить все настройки?",
             "reset": "Сбросить"
         }
+    },
+    "authorization": {
+        "title": "Авторизация",
+        "login": {
+            "login": "Логин",
+            "loginError": "такого логина нет",
+            "password": "Пароль",
+            "passwordError": "неверный пароль",
+            "placeholder": {
+                "login": "Логин",
+                "password": "Пароль"
+            }
+        }
     }
 }
