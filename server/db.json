@@ -3,7 +3,7 @@
     {
       "id": "1",
       "login": "admin",
-      "password": "admin1",
+      "password": "Admin@11",
       "role": "admin",
       "name": "admin",
       "surname": "adminov",
@@ -23,6 +23,18 @@
       "birthday": "23.12.2003",
       "login": "Vlad",
       "password": "Vv3_1234"
+    },
+    {
+      "id": "3",
+      "role": "user",
+      "name": "Damad",
+      "surname": "Abbasov",
+      "patronymic": "Babasov",
+      "telephone": "+375 (44) 333-30-03",
+      "email": "addasov@mail.ru",
+      "birthday": "12.12.2000",
+      "login": "barsik",
+      "password": "Barsik@12"
     }
   ],
   "carts": [
@@ -154,6 +166,41 @@
       "future": {
         "flights": [],
         "hotels": []
+      }
+    },
+    {
+      "id": "3",
+      "last": {
+        "flights": [],
+        "hotels": []
+      },
+      "future": {
+        "flights": [
+          {
+            "id": 13,
+            "image": "../../assets/images/paris.jpg",
+            "country": "France, Paris",
+            "price": 9.3,
+            "people": 2,
+            "departure": "morning",
+            "days": 6,
+            "continent": "Eurasia",
+            "reserve": "25.09.2025 12:39"
+          }
+        ],
+        "hotels": [
+          {
+            "id": 13,
+            "image": "../../assets/images/lyonHotel.jpg",
+            "country": "France, Lyon",
+            "price": 26.7,
+            "people": 3,
+            "street": "Rue de la République",
+            "days": 10,
+            "continent": "Eurasia",
+            "date": "25.09.2025 12:40"
+          }
+        ]
       }
     }
   ],
@@ -342,7 +389,7 @@
         "id": 20,
         "image": "../../assets/images/auckland.jpg",
         "country": "New Zealand, Auckland",
-        "price": 23.8,
+        "price": 30,
         "people": 3,
         "departure": "morning",
         "days": 19
