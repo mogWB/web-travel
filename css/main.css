@@ -11,7 +11,8 @@
 body{
     background-color: var(--background);
     max-width: 1440px;
-    margin: 0 auto
+    margin: 0 auto;
+    font-size: calc(1rem * var(--font-size-multiplier, 1));
 }
 
 a{
@@ -51,5 +52,98 @@ button, input{
     .decore{
         width: 238px;
         height: 251px;
+    }
+}
+
+/* Стили для настроек доступности */
+.accessibility-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    color: var(--text);
+}
+
+.accessibility-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.accessibility-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Стили для модального окна доступности */
+#accessibilityModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#accessibilityModal .modal-content {
+    background: var(--background);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#accessibilityModal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#accessibilityModal .modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text);
+}
+
+#accessibilityModal .accessibility-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#accessibilityModal .setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#accessibilityModal .setting-group label {
+    font-weight: 500;
+}
+
+/* Адаптивность для мобильных устройств */
+@media(max-width: 768px) {
+    .accessibility-toggle {
+        padding: 6px;
+    }
+    
+    .accessibility-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    #accessibilityModal .modal-content {
+        margin: 20px;
+        width: calc(100% - 40px);
     }
 }

@@ -4,6 +4,7 @@ import { createModal } from "../basic/modal.js";
 import { createSelect } from "../basic/select.js";
 import { updatePalette } from "../basic/setting.js";
 import translationModule from '../basic/i18n.js';
+import accessibilityManager from '../basic/accessibility.js';
 import {createInfo} from "./profile.js";
 
 const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
@@ -63,6 +64,30 @@ function initSelect() {
             currentLanguage == 'en' ? (['palette 1', 'палитра 1'].includes(palette) ? 'palette 1' : ['palette 2', 'палитра 2'].includes(palette) ? 'palette 2' : 'default') :
             (['palette 1', 'палитра 1'].includes(palette) ? 'палитра 1' : ['palette 2', 'палитра 2'].includes(palette) ? 'палитра 2' : 'по умолчанию')
         );
+
+        // Добавляем селект для размера шрифта
+        const fontSizeSelect = document.querySelector('#size .select');
+        if (fontSizeSelect) {
+            createSelect(
+                currentLanguage == 'en' ? ['small', 'normal', 'large', 'extra-large'] : ['маленький', 'обычный', 'большой', 'очень большой'], 
+                fontSizeSelect,
+
+                (selectedValue) => {
+                    const temp = ['small', 'маленький'].includes(selectedValue) ? 'small' : 
+                    ['large', 'большой'].includes(selectedValue) ? 'large' : 
+                    ['extra-large', 'очень большой'].includes(selectedValue) ? 'extra-large' : 'normal';
+
+                    accessibilityManager.updateFontSize(temp);
+                },
+                currentLanguage == 'en' ? 
+                    (accessibilityManager.getFontSize() == 'small' ? 'small' : 
+                     accessibilityManager.getFontSize() == 'large' ? 'large' : 
+                     accessibilityManager.getFontSize() == 'extra-large' ? 'extra-large' : 'normal') :
+                    (accessibilityManager.getFontSize() == 'small' ? 'маленький' : 
+                     accessibilityManager.getFontSize() == 'large' ? 'большой' : 
+                     accessibilityManager.getFontSize() == 'extra-large' ? 'очень большой' : 'обычный')
+            );
+        }
         
     } catch (error) {
         console.error('Ошибка:', error);
@@ -70,6 +95,38 @@ function initSelect() {
 }
 
 initSelect();
+
+
+// Обработчик для кнопки отключения изображений
+const disableImagesButton = document.querySelector('#size .disable-button button');
+if (disableImagesButton) {
+    disableImagesButton.addEventListener('click', function() {
+        const newState = !accessibilityManager.getImagesDisabled();
+        accessibilityManager.updateImagesVisibility(newState);
+        
+        // Обновляем текст кнопки
+        const buttonText = disableImagesButton.querySelector('span');
+        if (newState) {
+            buttonText.textContent = currentLanguage == 'en' ? 'Enable' : 'Включить';
+        } else {
+            buttonText.textContent = currentLanguage == 'en' ? 'Disable' : 'отключить';
+        }
+    });
+}
+
+// Применяем сохраненные настройки при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+    // Обновляем текст кнопки отключения изображений
+    const disableImagesButton = document.querySelector('#size .disable-button button');
+    if (disableImagesButton) {
+        const buttonText = disableImagesButton.querySelector('span');
+        if (accessibilityManager.getImagesDisabled()) {
+            buttonText.textContent = currentLanguage == 'en' ? 'Enable' : 'Включить';
+        } else {
+            buttonText.textContent = currentLanguage == 'en' ? 'Disable' : 'отключить';
+        }
+    }
+});
 
 function setLanguageChange(){
     const th = document.querySelector('#theme >p');

@@ -165,9 +165,16 @@
             "size": "Size font",
             "turn": "Do you really want to turn off the images?",
             "disable": "Disable",
+            "enable": "Enable",
             "local": "Local storage",
             "resetAll": "Do you really want to reset all the settings?",
-            "reset": "Reset"
+            "reset": "Reset",
+            "fontSize": {
+                "small": "small",
+                "normal": "normal",
+                "large": "large",
+                "extraLarge": "extra-large"
+            }
         }
     },
     "authorization": {

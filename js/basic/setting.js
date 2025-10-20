@@ -1,4 +1,5 @@
 import translationModule from './i18n.js';
+import accessibilityManager from './accessibility.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const currentTheme = JSON.parse(localStorage.getItem('theme')) || 'light';
@@ -6,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const currentPalette = JSON.parse(localStorage.getItem('palette')) || 'default';
     updatePalette(currentPalette);
+
+    // Применяем настройки доступности
+    const fontSize = localStorage.getItem('fontSize') ? JSON.parse(localStorage.getItem('fontSize')) : 'normal';
+    const imagesDisabled = localStorage.getItem('imagesDisabled') ? JSON.parse(localStorage.getItem('imagesDisabled')) : false;
+    
+    accessibilityManager.updateFontSize(fontSize);
+    accessibilityManager.updateImagesVisibility(imagesDisabled);
 
     // const currentLanguage = JSON.parse(localStorage.getItem('language')) ?? 'en';
     // console.log(currentLanguage)
